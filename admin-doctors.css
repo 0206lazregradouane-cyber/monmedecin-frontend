@@ -1,0 +1,1942 @@
+/* =====================================================
+   MON MÉDECIN
+   ADMIN DOCTORS
+
+   COMPLETE STYLE
+   - Responsive
+   - Glassmorphism
+   - Medical blue identity
+   - Dark mode
+   ===================================================== */
+
+
+/* =====================================================
+   PAGE
+   ===================================================== */
+
+.admin-doctors {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  direction: rtl;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(66, 116, 217, 0.13),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(149, 204, 221, 0.18),
+      transparent 32%
+    ),
+    #f7f9fc;
+
+  color: #15263e;
+}
+
+
+/* =====================================================
+   ORBS
+   ===================================================== */
+
+.admin-doctors__orb {
+  position: fixed;
+  z-index: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(30px);
+  opacity: 0.5;
+}
+
+.admin-doctors__orb--blue {
+  width: 260px;
+  height: 260px;
+  top: -110px;
+  right: -100px;
+  background: rgba(66, 116, 217, 0.18);
+}
+
+.admin-doctors__orb--cyan {
+  width: 225px;
+  height: 225px;
+  left: -95px;
+  bottom: 60px;
+  background: rgba(149, 204, 221, 0.2);
+}
+
+
+/* =====================================================
+   GLASS
+   ===================================================== */
+
+.admin-doctors .glass {
+  background: rgba(255, 255, 255, 0.82);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.86);
+
+  box-shadow:
+    0 16px 42px rgba(27, 59, 99, 0.08);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.admin-doctors__header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+
+  display: grid;
+
+  grid-template-columns:
+    44px
+    1fr
+    44px;
+
+  align-items: center;
+
+  gap: 12px;
+
+  min-height: 72px;
+
+  padding:
+    10px
+    16px;
+
+  background:
+    rgba(255, 255, 255, 0.84);
+
+  border-bottom:
+    1px solid rgba(35, 66, 105, 0.06);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+
+.admin-doctors__back,
+.admin-doctors__theme {
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+  place-items: center;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 14px;
+
+  background:
+    rgba(255, 255, 255, 0.9);
+
+  color: #3568ad;
+
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 900;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 7px 20px rgba(22, 54, 91, 0.07);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.admin-doctors__back:hover,
+.admin-doctors__theme:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 10px 24px rgba(22, 54, 91, 0.11);
+}
+
+
+.admin-doctors__back:active,
+.admin-doctors__theme:active {
+  transform: scale(0.96);
+}
+
+
+.admin-doctors__header-copy {
+  min-width: 0;
+}
+
+
+.admin-doctors__header-copy strong {
+  display: block;
+
+  overflow: hidden;
+
+  color: #172c48;
+
+  font-size: 14px;
+  font-weight: 950;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+.admin-doctors__header-copy span {
+  display: block;
+
+  margin-top: 2px;
+
+  overflow: hidden;
+
+  color: #8996a6;
+
+  font-size: 9px;
+  font-weight: 750;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+   CONTAINER
+   ===================================================== */
+
+.admin-doctors__container {
+  position: relative;
+  z-index: 1;
+
+  width:
+    min(
+      100%,
+      1180px
+    );
+
+  margin: 0 auto;
+
+  padding:
+    22px
+    14px
+    70px;
+}
+
+
+/* =====================================================
+   HERO
+   ===================================================== */
+
+.admin-doctors__hero {
+  margin-bottom: 17px;
+}
+
+
+.admin-doctors__hero > span {
+  display: inline-flex;
+
+  align-items: center;
+
+  min-height: 27px;
+
+  padding:
+    0
+    10px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(66, 116, 217, 0.09);
+
+  color: #3f70bd;
+
+  font-size: 9px;
+  font-weight: 900;
+}
+
+
+.admin-doctors__hero h1 {
+  margin:
+    10px
+    0
+    6px;
+
+  color: #142a47;
+
+  font-size:
+    clamp(
+      25px,
+      6vw,
+      36px
+    );
+
+  line-height: 1.2;
+
+  font-weight: 950;
+}
+
+
+.admin-doctors__hero p {
+  max-width: 680px;
+
+  margin: 0;
+
+  color: #7c8a9c;
+
+  font-size: 10px;
+  line-height: 1.75;
+}
+
+
+/* =====================================================
+   MESSAGE
+   ===================================================== */
+
+.admin-doctors-message {
+  margin-bottom: 14px;
+
+  padding:
+    12px
+    14px;
+
+  border-radius: 14px;
+
+  font-size: 10px;
+  font-weight: 850;
+
+  line-height: 1.6;
+}
+
+
+.admin-doctors-message.is-success {
+  background:
+    rgba(35, 157, 104, 0.1);
+
+  border:
+    1px solid rgba(35, 157, 104, 0.12);
+
+  color: #25815b;
+}
+
+
+.admin-doctors-message.is-error {
+  background:
+    rgba(209, 67, 67, 0.08);
+
+  border:
+    1px solid rgba(209, 67, 67, 0.12);
+
+  color: #ad4949;
+}
+
+
+/* =====================================================
+   STATS
+   ===================================================== */
+
+.admin-doctors-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(0, 1fr)
+    );
+
+  gap: 10px;
+
+  margin-bottom: 15px;
+}
+
+
+.admin-doctors-stat {
+  padding: 14px;
+
+  border-radius: 18px;
+}
+
+
+.admin-doctors-stat span {
+  display: block;
+
+  color: #8492a3;
+
+  font-size: 8px;
+  font-weight: 800;
+}
+
+
+.admin-doctors-stat strong {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #17304f;
+
+  font-size: 21px;
+  font-weight: 950;
+}
+
+
+.admin-doctors-stat.is-success strong {
+  color: #25815b;
+}
+
+
+.admin-doctors-stat.is-warning strong {
+  color: #a87924;
+}
+
+
+.admin-doctors-stat.is-approved strong {
+  color: #3f70bd;
+}
+
+
+/* =====================================================
+   CREATE
+   ===================================================== */
+
+.admin-doctors-create {
+  margin-bottom: 15px;
+
+  padding: 16px;
+
+  border-radius: 22px;
+}
+
+
+.admin-doctors-create__head {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 14px;
+}
+
+
+.admin-doctors-create__head > div {
+  min-width: 0;
+}
+
+
+.admin-doctors-create__head span {
+  display: block;
+
+  color: #8996a6;
+
+  font-size: 8px;
+  font-weight: 800;
+}
+
+
+.admin-doctors-create__head h2 {
+  margin:
+    3px
+    0
+    0;
+
+  color: #172b47;
+
+  font-size: 17px;
+  font-weight: 950;
+}
+
+
+.admin-doctors-create__icon {
+  flex-shrink: 0;
+
+  width: 39px;
+  height: 39px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 13px;
+
+  background:
+    rgba(66, 116, 217, 0.08);
+
+  color: #4274d9;
+
+  font-size: 18px;
+  font-weight: 950;
+}
+
+
+/* =====================================================
+   FORM
+   ===================================================== */
+
+.admin-doctor-form {
+  width: 100%;
+}
+
+
+.admin-doctor-form__grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap: 10px;
+}
+
+
+.admin-doctor-field {
+  display: block;
+  min-width: 0;
+}
+
+
+.admin-doctor-field--full {
+  grid-column:
+    1 / -1;
+}
+
+
+.admin-doctor-field > span {
+  display: block;
+
+  margin:
+    0
+    2px
+    6px;
+
+  color: #708197;
+
+  font-size: 8px;
+  font-weight: 850;
+}
+
+
+.admin-doctor-field input,
+.admin-doctor-field select {
+  width: 100%;
+
+  min-height: 44px;
+
+  padding:
+    0
+    10px;
+
+  border:
+    1px solid rgba(38, 71, 114, 0.09);
+
+  border-radius: 13px;
+
+  outline: 0;
+
+  background:
+    rgba(248, 251, 255, 0.96);
+
+  color: #19314f;
+
+  font-family: inherit;
+  font-size: 9px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.admin-doctor-field select {
+  cursor: pointer;
+}
+
+
+.admin-doctor-field input:focus,
+.admin-doctor-field select:focus {
+  background: #ffffff;
+
+  border-color:
+    rgba(66, 116, 217, 0.32);
+
+  box-shadow:
+    0 0 0 4px rgba(66, 116, 217, 0.06);
+}
+
+
+.admin-doctor-field input::placeholder {
+  color: #9ca7b5;
+}
+
+
+/* =====================================================
+   ERROR
+   ===================================================== */
+
+.admin-doctors-error {
+  display: block;
+
+  min-height: 14px;
+
+  margin-top: 4px;
+
+  color: #b34d4d;
+
+  font-size: 7px;
+  font-weight: 800;
+}
+
+
+/* =====================================================
+   APPROVED SWITCH
+   ===================================================== */
+
+.admin-doctor-approved-control {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 13px;
+
+  padding:
+    11px;
+
+  border-radius: 14px;
+
+  background:
+    rgba(66, 116, 217, 0.05);
+
+  cursor: pointer;
+}
+
+
+.admin-doctor-approved-control input {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+
+.admin-doctor-approved-control > span {
+  position: relative;
+
+  flex-shrink: 0;
+
+  width: 42px;
+  height: 24px;
+
+  border-radius: 999px;
+
+  background: #dce3ec;
+
+  transition: background 0.2s ease;
+}
+
+
+.admin-doctor-approved-control > span::after {
+  content: "";
+
+  position: absolute;
+
+  top: 4px;
+  right: 4px;
+
+  width: 16px;
+  height: 16px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 2px 7px rgba(22, 44, 74, 0.17);
+
+  transition:
+    transform 0.2s ease;
+}
+
+
+.admin-doctor-approved-control
+input:checked +
+span {
+  background:
+    #4274d9;
+}
+
+
+.admin-doctor-approved-control
+input:checked +
+span::after {
+  transform:
+    translateX(-18px);
+}
+
+
+.admin-doctor-approved-control > div {
+  min-width: 0;
+}
+
+
+.admin-doctor-approved-control strong {
+  display: block;
+
+  color: #19314f;
+
+  font-size: 9px;
+  font-weight: 900;
+}
+
+
+.admin-doctor-approved-control small {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #8391a3;
+
+  font-size: 7px;
+}
+
+
+/* =====================================================
+   FORM SUBMIT
+   ===================================================== */
+
+.admin-doctor-form__submit {
+  width: 100%;
+
+  min-height: 45px;
+
+  margin-top: 13px;
+
+  border: 0;
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #4274d9,
+      #345fa9
+    );
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 9px;
+  font-weight: 950;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 20px rgba(66, 116, 217, 0.18);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.admin-doctor-form__submit:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 11px 25px rgba(66, 116, 217, 0.23);
+}
+
+
+/* =====================================================
+   FILTERS
+   ===================================================== */
+
+.admin-doctors-filters {
+  display: grid;
+
+  grid-template-columns:
+    minmax(200px, 1.5fr)
+    minmax(130px, 0.7fr)
+    minmax(150px, 0.8fr)
+    auto;
+
+  align-items: end;
+
+  gap: 9px;
+
+  margin-bottom: 15px;
+
+  padding: 13px;
+
+  border-radius: 19px;
+}
+
+
+.admin-doctors-search {
+  display: grid;
+
+  grid-template-columns:
+    36px
+    1fr;
+
+  align-items: center;
+
+  gap: 7px;
+
+  min-width: 0;
+}
+
+
+.admin-doctors-search > span {
+  width: 34px;
+  height: 34px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 11px;
+
+  background:
+    rgba(66, 116, 217, 0.08);
+
+  color: #4274d9;
+
+  font-size: 15px;
+  font-weight: 900;
+}
+
+
+.admin-doctors-search input,
+.admin-doctors-filters select {
+  width: 100%;
+
+  min-height: 42px;
+
+  padding:
+    0
+    9px;
+
+  border:
+    1px solid rgba(38, 71, 114, 0.09);
+
+  border-radius: 12px;
+
+  outline: 0;
+
+  background:
+    rgba(248, 251, 255, 0.96);
+
+  color: #19314f;
+
+  font-family: inherit;
+  font-size: 9px;
+}
+
+
+.admin-doctors-filters select {
+  cursor: pointer;
+}
+
+
+.admin-doctors-search input:focus,
+.admin-doctors-filters select:focus {
+  border-color:
+    rgba(66, 116, 217, 0.3);
+
+  box-shadow:
+    0 0 0 4px rgba(66, 116, 217, 0.06);
+}
+
+
+.admin-doctors-filters > button {
+  min-height: 42px;
+
+  padding:
+    0
+    13px;
+
+  border:
+    1px solid rgba(210, 72, 72, 0.11);
+
+  border-radius: 12px;
+
+  background:
+    rgba(210, 72, 72, 0.05);
+
+  color: #b34d4d;
+
+  font-family: inherit;
+
+  font-size: 8px;
+  font-weight: 900;
+
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   RESULTS HEAD
+   ===================================================== */
+
+.admin-doctors-results__head {
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin:
+    18px
+    0
+    10px;
+}
+
+
+.admin-doctors-results__head span {
+  display: block;
+
+  color: #8996a6;
+
+  font-size: 8px;
+  font-weight: 800;
+}
+
+
+.admin-doctors-results__head h2 {
+  margin:
+    2px
+    0
+    0;
+
+  color: #172b47;
+
+  font-size: 18px;
+  font-weight: 950;
+}
+
+
+.admin-doctors-results__head > strong {
+  min-width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  padding:
+    0
+    8px;
+
+  border-radius: 13px;
+
+  background:
+    rgba(66, 116, 217, 0.09);
+
+  color: #3c6fb9;
+
+  font-size: 11px;
+  font-weight: 950;
+}
+
+
+/* =====================================================
+   RESULTS GRID
+   ===================================================== */
+
+.admin-doctors-results {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 11px;
+}
+
+
+/* =====================================================
+   DOCTOR CARD
+   ===================================================== */
+
+.admin-doctor-card {
+  padding: 14px;
+
+  border-radius: 21px;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+
+.admin-doctor-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 20px 45px rgba(31, 61, 102, 0.11);
+}
+
+
+.admin-doctor-card.is-inactive {
+  opacity: 0.7;
+}
+
+
+/* =====================================================
+   CARD TOP
+   ===================================================== */
+
+.admin-doctor-card__top {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 11px;
+
+  margin-bottom: 11px;
+}
+
+
+.admin-doctor-card__identity {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  min-width: 0;
+}
+
+
+.admin-doctor-card__avatar {
+  flex-shrink: 0;
+
+  width: 47px;
+  height: 47px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      140deg,
+      rgba(66, 116, 217, 0.15),
+      rgba(149, 204, 221, 0.23)
+    );
+
+  color: #3566aa;
+
+  font-size: 16px;
+  font-weight: 950;
+}
+
+
+.admin-doctor-card__identity > div:last-child {
+  min-width: 0;
+}
+
+
+.admin-doctor-card__identity span {
+  display: block;
+
+  color: #4774ad;
+
+  font-size: 8px;
+  font-weight: 900;
+}
+
+
+.admin-doctor-card__identity h3 {
+  margin:
+    3px
+    0
+    0;
+
+  overflow: hidden;
+
+  color: #172d49;
+
+  font-size: 12px;
+  font-weight: 950;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+.admin-doctor-card__identity small {
+  display: block;
+
+  margin-top: 3px;
+
+  overflow: hidden;
+
+  color: #8492a3;
+
+  font-size: 8px;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+   BADGES
+   ===================================================== */
+
+.admin-doctor-card__badges {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  gap: 5px;
+
+  flex-shrink: 0;
+}
+
+
+.admin-doctor-status,
+.admin-doctor-approval {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 24px;
+
+  padding:
+    0
+    8px;
+
+  border-radius: 999px;
+
+  font-size: 6px;
+  font-weight: 900;
+
+  white-space: nowrap;
+}
+
+
+.admin-doctor-status.is-on {
+  background:
+    rgba(37, 158, 106, 0.1);
+
+  color: #25815b;
+}
+
+
+.admin-doctor-status.is-off {
+  background:
+    rgba(210, 72, 72, 0.09);
+
+  color: #b34d4d;
+}
+
+
+.admin-doctor-approval.is-approved {
+  background:
+    rgba(66, 116, 217, 0.09);
+
+  color: #3f70bd;
+}
+
+
+.admin-doctor-approval.is-pending {
+  background:
+    rgba(222, 166, 53, 0.1);
+
+  color: #a97a22;
+}
+
+
+/* =====================================================
+   META
+   ===================================================== */
+
+.admin-doctor-card__meta {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 7px;
+}
+
+
+.admin-doctor-card__meta > div {
+  min-width: 0;
+
+  padding: 9px;
+
+  border-radius: 12px;
+
+  background:
+    rgba(247, 250, 254, 0.84);
+}
+
+
+.admin-doctor-card__meta span {
+  display: block;
+
+  color: #8996a6;
+
+  font-size: 7px;
+  font-weight: 800;
+}
+
+
+.admin-doctor-card__meta strong {
+  display: block;
+
+  margin-top: 3px;
+
+  overflow: hidden;
+
+  color: #19314f;
+
+  font-size: 8px;
+  font-weight: 950;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+   ACTIONS
+   ===================================================== */
+
+.admin-doctor-card__actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 6px;
+
+  margin-top: 11px;
+
+  padding-top: 10px;
+
+  border-top:
+    1px solid rgba(36, 67, 105, 0.06);
+}
+
+
+.admin-doctor-card__actions button {
+  min-height: 35px;
+
+  padding:
+    0
+    10px;
+
+  border-radius: 11px;
+
+  font-family: inherit;
+
+  font-size: 7px;
+  font-weight: 900;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.admin-doctor-card__actions button:hover {
+  transform: translateY(-1px);
+}
+
+
+.admin-doctor-card__actions .is-view {
+  border:
+    1px solid rgba(66, 116, 217, 0.1);
+
+  background:
+    rgba(66, 116, 217, 0.06);
+
+  color: #3f70b8;
+}
+
+
+.admin-doctor-card__actions .is-approve,
+.admin-doctor-card__actions .is-enable {
+  border:
+    1px solid rgba(37, 158, 106, 0.12);
+
+  background:
+    rgba(37, 158, 106, 0.07);
+
+  color: #27815d;
+}
+
+
+.admin-doctor-card__actions .is-unapprove {
+  border:
+    1px solid rgba(222, 166, 53, 0.12);
+
+  background:
+    rgba(222, 166, 53, 0.07);
+
+  color: #9b7225;
+}
+
+
+.admin-doctor-card__actions .is-disable {
+  border:
+    1px solid rgba(222, 166, 53, 0.12);
+
+  background:
+    rgba(222, 166, 53, 0.07);
+
+  color: #9b7225;
+}
+
+
+.admin-doctor-card__actions .is-delete {
+  border:
+    1px solid rgba(210, 72, 72, 0.12);
+
+  background:
+    rgba(210, 72, 72, 0.06);
+
+  color: #b34d4d;
+}
+
+
+/* =====================================================
+   EMPTY
+   ===================================================== */
+
+.admin-doctors-empty {
+  grid-column:
+    1 / -1;
+
+  padding:
+    34px
+    18px;
+
+  border-radius: 22px;
+
+  text-align: center;
+}
+
+
+.admin-doctors-empty > span {
+  width: 55px;
+  height: 55px;
+
+  display: grid;
+  place-items: center;
+
+  margin:
+    0 auto
+    11px;
+
+  border-radius: 17px;
+
+  background:
+    rgba(66, 116, 217, 0.09);
+
+  color: #4274d9;
+
+  font-size: 21px;
+  font-weight: 950;
+}
+
+
+.admin-doctors-empty h3 {
+  margin: 0;
+
+  color: #172c48;
+
+  font-size: 15px;
+  font-weight: 950;
+}
+
+
+.admin-doctors-empty p {
+  max-width: 360px;
+
+  margin:
+    6px
+    auto
+    0;
+
+  color: #8492a4;
+
+  font-size: 9px;
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   MODAL OVERLAY
+   ===================================================== */
+
+.admin-doctor-modal-overlay {
+  position: fixed;
+
+  z-index: 100;
+
+  inset: 0;
+
+  display: grid;
+
+  align-items: end;
+
+  padding:
+    20px
+    12px;
+
+  background:
+    rgba(7, 17, 30, 0.44);
+
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+
+  animation:
+    adminDoctorOverlayIn
+    0.18s ease;
+}
+
+
+@keyframes adminDoctorOverlayIn {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+
+/* =====================================================
+   MODAL
+   ===================================================== */
+
+.admin-doctor-modal {
+  width:
+    min(
+      100%,
+      860px
+    );
+
+  max-height:
+    min(
+      90vh,
+      850px
+    );
+
+  margin:
+    0 auto;
+
+  padding: 16px;
+
+  overflow-y: auto;
+
+  border-radius: 24px;
+
+  animation:
+    adminDoctorModalIn
+    0.22s ease;
+}
+
+
+@keyframes adminDoctorModalIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =====================================================
+   MODAL HEADER
+   ===================================================== */
+
+.admin-doctor-modal__header {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 14px;
+}
+
+
+.admin-doctor-modal__header > div {
+  min-width: 0;
+}
+
+
+.admin-doctor-modal__header span {
+  display: block;
+
+  color: #8996a6;
+
+  font-size: 8px;
+  font-weight: 800;
+}
+
+
+.admin-doctor-modal__header h2 {
+  margin:
+    3px
+    0
+    0;
+
+  overflow: hidden;
+
+  color: #172b47;
+
+  font-size: 18px;
+  font-weight: 950;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+.admin-doctor-modal__header > button {
+  flex-shrink: 0;
+
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  border: 0;
+  border-radius: 12px;
+
+  background:
+    rgba(66, 116, 217, 0.07);
+
+  color: #4872a6;
+
+  font-size: 22px;
+
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   TABLET
+   ===================================================== */
+
+@media (max-width: 1000px) {
+
+  .admin-doctor-form__grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+
+  .admin-doctors-filters {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 720px) {
+
+  .admin-doctors__container {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+
+
+  .admin-doctors__header {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+
+
+  .admin-doctors-stats {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+
+  .admin-doctors-results {
+    grid-template-columns: 1fr;
+  }
+
+
+  .admin-doctor-form__grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .admin-doctor-field--full {
+    grid-column: auto;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL PHONE
+   ===================================================== */
+
+@media (max-width: 430px) {
+
+  .admin-doctors-filters {
+    grid-template-columns: 1fr;
+  }
+
+
+  .admin-doctor-card__top {
+    flex-direction: column;
+  }
+
+
+  .admin-doctor-card__badges {
+    flex-direction: row;
+
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+
+  .admin-doctor-card__meta {
+    grid-template-columns: 1fr;
+  }
+
+
+  .admin-doctor-card__actions {
+    flex-direction: column;
+  }
+
+
+  .admin-doctor-card__actions button {
+    width: 100%;
+  }
+
+}
+
+
+/* =====================================================
+   VERY SMALL
+   ===================================================== */
+
+@media (max-width: 350px) {
+
+  .admin-doctors-stats {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =====================================================
+   DESKTOP
+   ===================================================== */
+
+@media (min-width: 760px) {
+
+  .admin-doctors__container {
+    padding:
+      30px
+      22px
+      60px;
+  }
+
+
+  .admin-doctor-modal-overlay {
+    align-items: center;
+  }
+
+}
+
+
+@media (min-width: 1220px) {
+
+  .admin-doctors__header {
+    padding-right:
+      max(
+        24px,
+        calc(
+          (100vw - 1180px) / 2
+        )
+      );
+
+    padding-left:
+      max(
+        24px,
+        calc(
+          (100vw - 1180px) / 2
+        )
+      );
+  }
+
+}
+
+
+/* =====================================================
+   DARK MODE
+   ===================================================== */
+
+html[data-theme="dark"]
+.admin-doctors,
+body.dark
+.admin-doctors {
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(66, 116, 217, 0.14),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(149, 204, 221, 0.08),
+      transparent 32%
+    ),
+    #0b1321;
+
+  color: #edf3fc;
+}
+
+
+html[data-theme="dark"]
+.admin-doctors__header,
+body.dark
+.admin-doctors__header {
+  background:
+    rgba(12, 21, 36, 0.87);
+
+  border-bottom-color:
+    rgba(255, 255, 255, 0.05);
+}
+
+
+html[data-theme="dark"]
+.admin-doctors .glass,
+body.dark
+.admin-doctors .glass {
+  background:
+    rgba(18, 30, 49, 0.8);
+
+  border-color:
+    rgba(255, 255, 255, 0.06);
+
+  box-shadow:
+    0 16px 42px rgba(0, 0, 0, 0.19);
+}
+
+
+html[data-theme="dark"]
+.admin-doctors__back,
+html[data-theme="dark"]
+.admin-doctors__theme,
+body.dark
+.admin-doctors__back,
+body.dark
+.admin-doctors__theme {
+  background:
+    rgba(22, 36, 57, 0.9);
+
+  color: #abc5f4;
+
+  box-shadow: none;
+}
+
+
+html[data-theme="dark"]
+.admin-doctors__header-copy strong,
+html[data-theme="dark"]
+.admin-doctors__hero h1,
+html[data-theme="dark"]
+.admin-doctors-stat strong,
+html[data-theme="dark"]
+.admin-doctors-create__head h2,
+html[data-theme="dark"]
+.admin-doctors-results__head h2,
+html[data-theme="dark"]
+.admin-doctor-card__identity h3,
+html[data-theme="dark"]
+.admin-doctor-card__meta strong,
+html[data-theme="dark"]
+.admin-doctors-empty h3,
+html[data-theme="dark"]
+.admin-doctor-modal__header h2,
+html[data-theme="dark"]
+.admin-doctor-approved-control strong,
+body.dark
+.admin-doctors__header-copy strong,
+body.dark
+.admin-doctors__hero h1,
+body.dark
+.admin-doctors-stat strong,
+body.dark
+.admin-doctors-create__head h2,
+body.dark
+.admin-doctors-results__head h2,
+body.dark
+.admin-doctor-card__identity h3,
+body.dark
+.admin-doctor-card__meta strong,
+body.dark
+.admin-doctors-empty h3,
+body.dark
+.admin-doctor-modal__header h2,
+body.dark
+.admin-doctor-approved-control strong {
+  color: #eef4fc;
+}
+
+
+html[data-theme="dark"]
+.admin-doctor-field input,
+html[data-theme="dark"]
+.admin-doctor-field select,
+html[data-theme="dark"]
+.admin-doctors-search input,
+html[data-theme="dark"]
+.admin-doctors-filters select,
+body.dark
+.admin-doctor-field input,
+body.dark
+.admin-doctor-field select,
+body.dark
+.admin-doctors-search input,
+body.dark
+.admin-doctors-filters select {
+  background:
+    rgba(10, 19, 32, 0.78);
+
+  border-color:
+    rgba(255, 255, 255, 0.07);
+
+  color: #eef4fc;
+}
+
+
+html[data-theme="dark"]
+.admin-doctor-field select option,
+html[data-theme="dark"]
+.admin-doctors-filters select option,
+body.dark
+.admin-doctor-field select option,
+body.dark
+.admin-doctors-filters select option {
+  background: #101b2c;
+  color: #eef4fc;
+}
+
+
+html[data-theme="dark"]
+.admin-doctor-approved-control,
+body.dark
+.admin-doctor-approved-control {
+  background:
+    rgba(66, 116, 217, 0.07);
+}
+
+
+html[data-theme="dark"]
+.admin-doctor-card__meta > div,
+body.dark
+.admin-doctor-card__meta > div {
+  background:
+    rgba(10, 19, 32, 0.62);
+}
+
+
+html[data-theme="dark"]
+.admin-doctor-card__actions,
+body.dark
+.admin-doctor-card__actions {
+  border-top-color:
+    rgba(255, 255, 255, 0.06);
+}
+
+
+/* =====================================================
+   ACCESSIBILITY
+   ===================================================== */
+
+.admin-doctors button:focus-visible,
+.admin-doctors input:focus-visible,
+.admin-doctors select:focus-visible {
+  outline:
+    3px solid rgba(66, 116, 217, 0.2);
+
+  outline-offset: 2px;
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .admin-doctors *,
+  .admin-doctors *::before,
+  .admin-doctors *::after {
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+
+}

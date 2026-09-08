@@ -1,0 +1,1643 @@
+/* =====================================================
+   MON MÉDECIN
+   ADMIN SETTINGS
+
+   COMPLETE STYLE
+   - Responsive
+   - Medical blue identity
+   - Glassmorphism
+   - Dark mode
+   - Mobile first
+   ===================================================== */
+
+
+/* =====================================================
+   PAGE
+   ===================================================== */
+
+.admin-settings {
+  position: relative;
+
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
+  direction: rtl;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(66, 116, 217, 0.13),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(149, 204, 221, 0.18),
+      transparent 32%
+    ),
+    #f7f9fc;
+
+  color: #15263e;
+}
+
+
+/* =====================================================
+   BACKGROUND ORBS
+   ===================================================== */
+
+.admin-settings__orb {
+  position: fixed;
+
+  z-index: 0;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(32px);
+
+  opacity: 0.5;
+}
+
+
+.admin-settings__orb--blue {
+  width: 250px;
+  height: 250px;
+
+  top: -100px;
+  right: -95px;
+
+  background:
+    rgba(66, 116, 217, 0.18);
+}
+
+
+.admin-settings__orb--cyan {
+  width: 220px;
+  height: 220px;
+
+  left: -90px;
+  bottom: 60px;
+
+  background:
+    rgba(149, 204, 221, 0.2);
+}
+
+
+/* =====================================================
+   GLASS
+   ===================================================== */
+
+.admin-settings .glass {
+  background:
+    rgba(255, 255, 255, 0.82);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.86);
+
+  box-shadow:
+    0 16px 42px rgba(27, 59, 99, 0.08);
+
+  backdrop-filter: blur(18px);
+
+  -webkit-backdrop-filter: blur(18px);
+}
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.admin-settings__header {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 40;
+
+  display: grid;
+
+  grid-template-columns:
+    44px
+    1fr
+    44px;
+
+  align-items: center;
+
+  gap: 12px;
+
+  min-height: 72px;
+
+  padding:
+    10px
+    16px;
+
+  background:
+    rgba(255, 255, 255, 0.84);
+
+  border-bottom:
+    1px solid rgba(35, 66, 105, 0.06);
+
+  backdrop-filter: blur(18px);
+
+  -webkit-backdrop-filter: blur(18px);
+}
+
+
+.admin-settings__back,
+.admin-settings__theme {
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+
+  place-items: center;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 14px;
+
+  background:
+    rgba(255, 255, 255, 0.9);
+
+  color: #3568ad;
+
+  font-family: inherit;
+
+  font-size: 18px;
+
+  font-weight: 900;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 7px 20px rgba(22, 54, 91, 0.07);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.admin-settings__back:hover,
+.admin-settings__theme:hover {
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 10px 24px rgba(22, 54, 91, 0.11);
+}
+
+
+.admin-settings__back:active,
+.admin-settings__theme:active {
+  transform:
+    scale(0.96);
+}
+
+
+.admin-settings__header-copy {
+  min-width: 0;
+}
+
+
+.admin-settings__header-copy strong {
+  display: block;
+
+  overflow: hidden;
+
+  color: #172c48;
+
+  font-size: 14px;
+
+  font-weight: 950;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+
+.admin-settings__header-copy span {
+  display: block;
+
+  margin-top: 2px;
+
+  overflow: hidden;
+
+  color: #8996a6;
+
+  font-size: 9px;
+
+  font-weight: 750;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+   CONTAINER
+   ===================================================== */
+
+.admin-settings__container {
+  position: relative;
+
+  z-index: 1;
+
+  width:
+    min(
+      100%,
+      940px
+    );
+
+  margin:
+    0 auto;
+
+  padding:
+    22px
+    14px
+    70px;
+}
+
+
+/* =====================================================
+   HERO
+   ===================================================== */
+
+.admin-settings__hero {
+  margin-bottom: 17px;
+}
+
+
+.admin-settings__hero > span {
+  display: inline-flex;
+
+  align-items: center;
+
+  min-height: 27px;
+
+  padding:
+    0
+    10px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(66, 116, 217, 0.09);
+
+  color: #3f70bd;
+
+  font-size: 9px;
+
+  font-weight: 900;
+}
+
+
+.admin-settings__hero h1 {
+  margin:
+    10px
+    0
+    6px;
+
+  color: #142a47;
+
+  font-size:
+    clamp(
+      25px,
+      6vw,
+      35px
+    );
+
+  line-height: 1.2;
+
+  font-weight: 950;
+}
+
+
+.admin-settings__hero p {
+  margin: 0;
+
+  max-width: 620px;
+
+  color: #7c8a9c;
+
+  font-size: 10px;
+
+  line-height: 1.75;
+}
+
+
+/* =====================================================
+   MESSAGE
+   ===================================================== */
+
+.admin-settings-message {
+  margin-bottom: 14px;
+
+  padding:
+    12px
+    14px;
+
+  border-radius: 14px;
+
+  font-size: 10px;
+
+  font-weight: 850;
+
+  line-height: 1.6;
+
+  animation:
+    adminSettingsMessageIn
+    0.2s ease;
+}
+
+
+@keyframes adminSettingsMessageIn {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+.admin-settings-message.is-success {
+  background:
+    rgba(35, 157, 104, 0.1);
+
+  border:
+    1px solid rgba(35, 157, 104, 0.12);
+
+  color: #25815b;
+}
+
+
+.admin-settings-message.is-error {
+  background:
+    rgba(209, 67, 67, 0.08);
+
+  border:
+    1px solid rgba(209, 67, 67, 0.12);
+
+  color: #ad4949;
+}
+
+
+.admin-settings-message.is-info {
+  background:
+    rgba(66, 116, 217, 0.08);
+
+  border:
+    1px solid rgba(66, 116, 217, 0.1);
+
+  color: #3f70bd;
+}
+
+
+/* =====================================================
+   ACCOUNT
+   ===================================================== */
+
+.admin-settings-account {
+  display: grid;
+
+  grid-template-columns:
+    58px
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 13px;
+
+  padding: 15px;
+
+  border-radius: 22px;
+}
+
+
+.admin-settings-account__avatar {
+  width: 56px;
+  height: 56px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      140deg,
+      rgba(66, 116, 217, 0.17),
+      rgba(149, 204, 221, 0.26)
+    );
+
+  color: #3566aa;
+
+  font-size: 20px;
+
+  font-weight: 950;
+}
+
+
+.admin-settings-account__content {
+  min-width: 0;
+}
+
+
+.admin-settings-account__content > span {
+  display: block;
+
+  color: #4975aa;
+
+  font-size: 8px;
+
+  font-weight: 900;
+}
+
+
+.admin-settings-account__content h2 {
+  margin:
+    3px
+    0
+    0;
+
+  overflow: hidden;
+
+  color: #172d49;
+
+  font-size: 15px;
+
+  font-weight: 950;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+
+.admin-settings-account__content small {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #8492a3;
+
+  font-size: 8px;
+}
+
+
+.admin-settings-account__status {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 27px;
+
+  padding:
+    0
+    9px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(37, 158, 106, 0.1);
+
+  color: #25815b;
+
+  font-size: 7px;
+
+  font-weight: 900;
+}
+
+
+/* =====================================================
+   CARD
+   ===================================================== */
+
+.admin-settings-card {
+  margin-top: 13px;
+
+  padding: 15px;
+
+  border-radius: 22px;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.admin-settings-card:hover {
+  box-shadow:
+    0 19px 45px rgba(27, 59, 99, 0.1);
+}
+
+
+.admin-settings-card__head {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 14px;
+}
+
+
+.admin-settings-card__head > div {
+  min-width: 0;
+}
+
+
+.admin-settings-card__head > div > span {
+  display: block;
+
+  color: #8996a6;
+
+  font-size: 8px;
+
+  font-weight: 800;
+}
+
+
+.admin-settings-card__head h2 {
+  margin:
+    3px
+    0
+    0;
+
+  color: #172b47;
+
+  font-size: 16px;
+
+  font-weight: 950;
+}
+
+
+.admin-settings-card__icon {
+  flex-shrink: 0;
+
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 12px;
+
+  background:
+    rgba(66, 116, 217, 0.08);
+
+  color: #4274d9;
+
+  font-size: 14px;
+
+  font-weight: 950;
+}
+
+
+/* =====================================================
+   IDENTITY
+   ===================================================== */
+
+.admin-settings-identity {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 9px;
+}
+
+
+.admin-settings-identity > div {
+  min-width: 0;
+
+  padding:
+    11px;
+
+  border:
+    1px solid rgba(38, 71, 114, 0.05);
+
+  border-radius: 14px;
+
+  background:
+    rgba(247, 250, 254, 0.8);
+}
+
+
+.admin-settings-identity span {
+  display: block;
+
+  color: #8492a3;
+
+  font-size: 8px;
+
+  font-weight: 800;
+}
+
+
+.admin-settings-identity strong {
+  display: block;
+
+  margin-top: 4px;
+
+  overflow-wrap: anywhere;
+
+  color: #19314f;
+
+  font-size: 9px;
+
+  font-weight: 950;
+}
+
+
+/* =====================================================
+   LOCK NOTE
+   ===================================================== */
+
+.admin-settings-lock-note {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 8px;
+
+  margin-top: 10px;
+
+  padding:
+    10px
+    11px;
+
+  border-radius: 13px;
+
+  background:
+    rgba(66, 116, 217, 0.055);
+
+  border:
+    1px solid rgba(66, 116, 217, 0.06);
+}
+
+
+.admin-settings-lock-note > span {
+  flex-shrink: 0;
+
+  font-size: 12px;
+}
+
+
+.admin-settings-lock-note p {
+  margin: 0;
+
+  color: #6f8197;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   FORM
+   ===================================================== */
+
+.admin-settings-form {
+  width: 100%;
+}
+
+
+.admin-settings-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 11px;
+}
+
+
+/* =====================================================
+   FIELD
+   ===================================================== */
+
+.admin-settings-field {
+  display: block;
+
+  min-width: 0;
+}
+
+
+.admin-settings-field > span {
+  display: block;
+
+  margin:
+    0
+    2px
+    6px;
+
+  color: #708197;
+
+  font-size: 8px;
+
+  font-weight: 850;
+}
+
+
+.admin-settings-field > input,
+.admin-settings-field > select {
+  width: 100%;
+
+  min-height: 44px;
+
+  padding:
+    0
+    11px;
+
+  border:
+    1px solid rgba(38, 71, 114, 0.09);
+
+  border-radius: 13px;
+
+  outline: 0;
+
+  background:
+    rgba(248, 251, 255, 0.96);
+
+  color: #19314f;
+
+  font-family: inherit;
+
+  font-size: 9px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.admin-settings-field > select {
+  cursor: pointer;
+}
+
+
+.admin-settings-field > input:focus,
+.admin-settings-field > select:focus {
+  background: #ffffff;
+
+  border-color:
+    rgba(66, 116, 217, 0.32);
+
+  box-shadow:
+    0 0 0 4px rgba(66, 116, 217, 0.06);
+}
+
+
+.admin-settings-field > input:disabled {
+  background:
+    rgba(236, 241, 247, 0.75);
+
+  color: #8996a6;
+
+  opacity: 0.75;
+
+  cursor: not-allowed;
+}
+
+
+/* =====================================================
+   ERRORS
+   ===================================================== */
+
+.admin-settings-error {
+  display: block;
+
+  min-height: 14px;
+
+  margin-top: 4px;
+
+  color: #b34d4d;
+
+  font-size: 7px;
+
+  font-weight: 800;
+
+  line-height: 1.4;
+}
+
+
+/* =====================================================
+   PASSWORD
+   ===================================================== */
+
+.admin-settings-password {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    36px;
+
+  align-items: center;
+
+  gap: 7px;
+
+  min-height: 44px;
+
+  padding:
+    0
+    7px
+    0
+    10px;
+
+  border:
+    1px solid rgba(38, 71, 114, 0.09);
+
+  border-radius: 13px;
+
+  background:
+    rgba(248, 251, 255, 0.96);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.admin-settings-password:focus-within {
+  background: #ffffff;
+
+  border-color:
+    rgba(66, 116, 217, 0.32);
+
+  box-shadow:
+    0 0 0 4px rgba(66, 116, 217, 0.06);
+}
+
+
+.admin-settings-password input {
+  width: 100%;
+
+  min-width: 0;
+
+  min-height: 42px;
+
+  padding: 0;
+
+  border: 0;
+
+  outline: 0;
+
+  background: transparent;
+
+  color: #19314f;
+
+  font-family: inherit;
+
+  font-size: 9px;
+}
+
+
+.admin-settings-password button {
+  width: 32px;
+  height: 32px;
+
+  display: grid;
+
+  place-items: center;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 10px;
+
+  background:
+    rgba(66, 116, 217, 0.07);
+
+  color: #4972a5;
+
+  font-size: 12px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.admin-settings-password button:hover {
+  background:
+    rgba(66, 116, 217, 0.11);
+}
+
+
+.admin-settings-password button:active {
+  transform:
+    scale(0.94);
+}
+
+
+/* =====================================================
+   SECURITY NOTE
+   ===================================================== */
+
+.admin-settings-security-note {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 8px;
+
+  margin-top: 12px;
+
+  padding:
+    10px
+    11px;
+
+  border-radius: 13px;
+
+  background:
+    rgba(37, 158, 106, 0.055);
+
+  border:
+    1px solid rgba(37, 158, 106, 0.07);
+}
+
+
+.admin-settings-security-note > span {
+  flex-shrink: 0;
+
+  font-size: 13px;
+}
+
+
+.admin-settings-security-note p {
+  margin: 0;
+
+  color: #617d70;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   PRIMARY BUTTON
+   ===================================================== */
+
+.admin-settings-primary-button {
+  width: 100%;
+
+  min-height: 44px;
+
+  margin-top: 13px;
+
+  border: 0;
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #4274d9,
+      #345fa9
+    );
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 19px rgba(66, 116, 217, 0.17);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.admin-settings-primary-button:hover {
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 11px 24px rgba(66, 116, 217, 0.22);
+}
+
+
+.admin-settings-primary-button:active {
+  transform:
+    scale(0.99);
+}
+
+
+/* =====================================================
+   THEME CONTROL
+   ===================================================== */
+
+.admin-settings-theme-control {
+  min-width: 0;
+}
+
+
+.admin-settings-theme-control > span {
+  display: block;
+
+  margin:
+    0
+    2px
+    6px;
+
+  color: #708197;
+
+  font-size: 8px;
+
+  font-weight: 850;
+}
+
+
+.admin-settings-theme-control > button {
+  width: 100%;
+
+  min-height: 44px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+  padding:
+    0
+    11px;
+
+  border:
+    1px solid rgba(38, 71, 114, 0.09);
+
+  border-radius: 13px;
+
+  background:
+    rgba(248, 251, 255, 0.96);
+
+  color: #19314f;
+
+  font-family: inherit;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.admin-settings-theme-control > button:hover {
+  border-color:
+    rgba(66, 116, 217, 0.2);
+}
+
+
+.admin-settings-theme-control > button:active {
+  transform:
+    scale(0.99);
+}
+
+
+.admin-settings-theme-control > button > span {
+  width: 28px;
+  height: 28px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 9px;
+
+  background:
+    rgba(66, 116, 217, 0.08);
+
+  color: #4274d9;
+
+  font-size: 13px;
+}
+
+
+.admin-settings-theme-control > button strong {
+  flex: 1;
+
+  color: #19314f;
+
+  font-size: 8px;
+
+  font-weight: 900;
+
+  text-align: right;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+   ===================================================== */
+
+.admin-settings-description {
+  margin:
+    -2px
+    0
+    13px;
+
+  color: #7d8c9f;
+
+  font-size: 9px;
+
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   DANGER
+   ===================================================== */
+
+.admin-settings-card--danger {
+  border-color:
+    rgba(210, 72, 72, 0.08) !important;
+}
+
+
+.admin-settings-card--danger
+.admin-settings-card__icon {
+  background:
+    rgba(210, 72, 72, 0.07);
+
+  color: #b34d4d;
+}
+
+
+/* =====================================================
+   LOGOUT
+   ===================================================== */
+
+.admin-settings-logout {
+  width: 100%;
+
+  min-height: 43px;
+
+  border:
+    1px solid rgba(210, 72, 72, 0.13);
+
+  border-radius: 13px;
+
+  background:
+    rgba(210, 72, 72, 0.06);
+
+  color: #b34d4d;
+
+  font-family: inherit;
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.admin-settings-logout:hover {
+  transform:
+    translateY(-1px);
+
+  background:
+    rgba(210, 72, 72, 0.1);
+
+  box-shadow:
+    0 8px 20px rgba(180, 67, 67, 0.08);
+}
+
+
+.admin-settings-logout:active {
+  transform:
+    scale(0.99);
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 680px) {
+
+  .admin-settings__container {
+    padding-right: 13px;
+
+    padding-left: 13px;
+  }
+
+
+  .admin-settings__header {
+    padding-right: 13px;
+
+    padding-left: 13px;
+  }
+
+
+  .admin-settings-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .admin-settings-identity {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL PHONE
+   ===================================================== */
+
+@media (max-width: 430px) {
+
+  .admin-settings-account {
+    grid-template-columns:
+      50px
+      minmax(0, 1fr);
+  }
+
+
+  .admin-settings-account__avatar {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 15px;
+
+    font-size: 17px;
+  }
+
+
+  .admin-settings-account__status {
+    grid-column:
+      1 / -1;
+
+    justify-self: start;
+  }
+
+
+  .admin-settings-card {
+    padding: 13px;
+
+    border-radius: 19px;
+  }
+
+
+  .admin-settings-card__head h2 {
+    font-size: 14px;
+  }
+
+}
+
+
+/* =====================================================
+   VERY SMALL PHONE
+   ===================================================== */
+
+@media (max-width: 350px) {
+
+  .admin-settings-account {
+    grid-template-columns: 1fr;
+
+    text-align: center;
+  }
+
+
+  .admin-settings-account__avatar {
+    margin:
+      0 auto;
+  }
+
+
+  .admin-settings-account__status {
+    justify-self: center;
+  }
+
+
+  .admin-settings-card__head {
+    align-items: center;
+  }
+
+}
+
+
+/* =====================================================
+   DESKTOP
+   ===================================================== */
+
+@media (min-width: 760px) {
+
+  .admin-settings__container {
+    padding:
+      30px
+      22px
+      60px;
+  }
+
+}
+
+
+@media (min-width: 980px) {
+
+  .admin-settings__header {
+    padding-right:
+      max(
+        24px,
+        calc(
+          (100vw - 940px) / 2
+        )
+      );
+
+    padding-left:
+      max(
+        24px,
+        calc(
+          (100vw - 940px) / 2
+        )
+      );
+  }
+
+}
+
+
+/* =====================================================
+   DARK MODE
+   ===================================================== */
+
+html[data-theme="dark"]
+.admin-settings,
+body.dark
+.admin-settings {
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(66, 116, 217, 0.14),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(149, 204, 221, 0.08),
+      transparent 32%
+    ),
+    #0b1321;
+
+  color: #edf3fc;
+}
+
+
+html[data-theme="dark"]
+.admin-settings__header,
+body.dark
+.admin-settings__header {
+  background:
+    rgba(12, 21, 36, 0.87);
+
+  border-bottom-color:
+    rgba(255, 255, 255, 0.05);
+}
+
+
+html[data-theme="dark"]
+.admin-settings .glass,
+body.dark
+.admin-settings .glass {
+  background:
+    rgba(18, 30, 49, 0.8);
+
+  border-color:
+    rgba(255, 255, 255, 0.06);
+
+  box-shadow:
+    0 16px 42px rgba(0, 0, 0, 0.19);
+}
+
+
+html[data-theme="dark"]
+.admin-settings__back,
+html[data-theme="dark"]
+.admin-settings__theme,
+body.dark
+.admin-settings__back,
+body.dark
+.admin-settings__theme {
+  background:
+    rgba(22, 36, 57, 0.9);
+
+  color: #abc5f4;
+
+  box-shadow: none;
+}
+
+
+html[data-theme="dark"]
+.admin-settings__header-copy strong,
+html[data-theme="dark"]
+.admin-settings__hero h1,
+html[data-theme="dark"]
+.admin-settings-account__content h2,
+html[data-theme="dark"]
+.admin-settings-card__head h2,
+html[data-theme="dark"]
+.admin-settings-identity strong,
+html[data-theme="dark"]
+.admin-settings-theme-control > button strong,
+body.dark
+.admin-settings__header-copy strong,
+body.dark
+.admin-settings__hero h1,
+body.dark
+.admin-settings-account__content h2,
+body.dark
+.admin-settings-card__head h2,
+body.dark
+.admin-settings-identity strong,
+body.dark
+.admin-settings-theme-control > button strong {
+  color: #eef4fc;
+}
+
+
+html[data-theme="dark"]
+.admin-settings-identity > div,
+body.dark
+.admin-settings-identity > div {
+  background:
+    rgba(10, 19, 32, 0.56);
+
+  border-color:
+    rgba(255, 255, 255, 0.06);
+}
+
+
+html[data-theme="dark"]
+.admin-settings-lock-note,
+body.dark
+.admin-settings-lock-note {
+  background:
+    rgba(66, 116, 217, 0.08);
+
+  border-color:
+    rgba(100, 145, 232, 0.08);
+}
+
+
+html[data-theme="dark"]
+.admin-settings-security-note,
+body.dark
+.admin-settings-security-note {
+  background:
+    rgba(37, 158, 106, 0.06);
+
+  border-color:
+    rgba(72, 180, 127, 0.07);
+}
+
+
+html[data-theme="dark"]
+.admin-settings-field > input,
+html[data-theme="dark"]
+.admin-settings-field > select,
+html[data-theme="dark"]
+.admin-settings-password,
+html[data-theme="dark"]
+.admin-settings-theme-control > button,
+body.dark
+.admin-settings-field > input,
+body.dark
+.admin-settings-field > select,
+body.dark
+.admin-settings-password,
+body.dark
+.admin-settings-theme-control > button {
+  background:
+    rgba(10, 19, 32, 0.78);
+
+  border-color:
+    rgba(255, 255, 255, 0.07);
+
+  color: #eef4fc;
+}
+
+
+html[data-theme="dark"]
+.admin-settings-password input,
+body.dark
+.admin-settings-password input {
+  color: #eef4fc;
+}
+
+
+html[data-theme="dark"]
+.admin-settings-field > input:disabled,
+body.dark
+.admin-settings-field > input:disabled {
+  background:
+    rgba(22, 31, 44, 0.72);
+
+  color: #8492a3;
+}
+
+
+html[data-theme="dark"]
+.admin-settings-field > select option,
+body.dark
+.admin-settings-field > select option {
+  background:
+    #101b2c;
+
+  color:
+    #eef4fc;
+}
+
+
+/* =====================================================
+   ACCESSIBILITY
+   ===================================================== */
+
+.admin-settings button:focus-visible,
+.admin-settings input:focus-visible,
+.admin-settings select:focus-visible {
+  outline:
+    3px solid rgba(66, 116, 217, 0.2);
+
+  outline-offset: 2px;
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .admin-settings *,
+  .admin-settings *::before,
+  .admin-settings *::after {
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+
+}

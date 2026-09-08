@@ -1,0 +1,1107 @@
+/* =====================================================
+   MON MÉDECIN
+   DOCTOR PROFESSIONAL
+   ===================================================== */
+
+
+.doctor-professional {
+
+  position: relative;
+
+  width: 100%;
+
+  min-height: 100vh;
+
+  min-height: 100dvh;
+
+  isolation: isolate;
+
+  overflow-x: hidden;
+
+}
+
+
+/* BACKGROUND */
+
+.doctor-professional__orb {
+
+  position: fixed;
+
+  z-index: -2;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+}
+
+
+.doctor-professional__orb--blue {
+
+  width: 430px;
+
+  height: 430px;
+
+  top: -220px;
+
+  right: -220px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(85, 184, 243, 0.18),
+      transparent 72%
+    );
+
+}
+
+
+.doctor-professional__orb--purple {
+
+  width: 480px;
+
+  height: 480px;
+
+  left: -260px;
+
+  bottom: -250px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(120, 104, 230, 0.15),
+      transparent 74%
+    );
+
+}
+
+
+/* HEADER */
+
+.doctor-professional__header {
+
+  position: sticky;
+
+  z-index: 40;
+
+  top: 0;
+
+  min-height: 72px;
+
+  padding:
+    max(13px, env(safe-area-inset-top))
+    18px
+    11px;
+
+  display: grid;
+
+  grid-template-columns:
+    42px 1fr 42px;
+
+  align-items: center;
+
+  gap: 10px;
+
+  border-bottom:
+    1px solid var(--border);
+
+  background:
+    rgba(244, 247, 255, 0.80);
+
+  backdrop-filter: blur(22px);
+
+  -webkit-backdrop-filter: blur(22px);
+
+}
+
+
+html[data-theme="dark"]
+.doctor-professional__header {
+
+  background:
+    rgba(9, 18, 37, 0.82);
+
+}
+
+
+.doctor-professional__back,
+.doctor-professional__theme {
+
+  width: 42px;
+
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 14px;
+
+  color: var(--text);
+
+  background: var(--surface);
+
+  box-shadow: var(--shadow-sm);
+
+}
+
+
+.doctor-professional__header-copy {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+}
+
+
+.doctor-professional__header-copy strong {
+
+  font-size: 14px;
+
+  font-weight: 900;
+
+}
+
+
+.doctor-professional__header-copy span {
+
+  margin-top: 1px;
+
+  color: var(--text-muted);
+
+  font-size: 9px;
+
+}
+
+
+/* CONTAINER */
+
+.doctor-professional__container {
+
+  width:
+    min(100%, 980px);
+
+  margin: 0 auto;
+
+  padding:
+    26px 18px 40px;
+
+}
+
+
+/* HERO */
+
+.doctor-professional__hero {
+
+  max-width: 680px;
+
+}
+
+
+.doctor-professional__hero > span {
+
+  color: var(--primary);
+
+  font-size: 9px;
+
+  font-weight: 850;
+
+}
+
+
+.doctor-professional__hero h1 {
+
+  margin:
+    5px 0 0;
+
+  font-size:
+    clamp(29px, 7vw, 42px);
+
+  font-weight: 900;
+
+}
+
+
+.doctor-professional__hero p {
+
+  margin:
+    8px 0 0;
+
+  color: var(--text-secondary);
+
+  font-size: 11px;
+
+  line-height: 1.8;
+
+}
+
+
+/* CARD */
+
+.doctor-professional-card {
+
+  margin-top: 15px;
+
+  padding: 17px;
+
+  border-radius: 23px;
+
+}
+
+
+.doctor-professional-card__heading {
+
+  margin-bottom: 15px;
+
+}
+
+
+.doctor-professional-card__heading--actions {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+}
+
+
+.doctor-professional-card__heading > div {
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+
+.doctor-professional-card__heading span {
+
+  color: var(--text-muted);
+
+  font-size: 8px;
+
+}
+
+
+.doctor-professional-card__heading h2 {
+
+  margin:
+    3px 0 0;
+
+  font-size: 16px;
+
+  font-weight: 900;
+
+}
+
+
+.doctor-professional-card__heading--actions > button {
+
+  min-height: 36px;
+
+  padding: 0 11px;
+
+  border-radius: 11px;
+
+  color: var(--primary);
+
+  background:
+    rgba(49, 87, 213, 0.08);
+
+  font-size: 8px;
+
+  font-weight: 900;
+
+}
+
+
+/* VISIBILITY */
+
+.doctor-professional-visibility {
+
+  min-height: 70px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 14px;
+
+}
+
+
+.doctor-professional-visibility > div {
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+
+.doctor-professional-visibility strong {
+
+  font-size: 11px;
+
+  font-weight: 900;
+
+}
+
+
+.doctor-professional-visibility small {
+
+  margin-top: 4px;
+
+  color: var(--text-muted);
+
+  font-size: 8px;
+
+  line-height: 1.5;
+
+}
+
+
+.doctor-professional-visibility input {
+
+  position: relative;
+
+  width: 46px;
+
+  height: 26px;
+
+  flex: 0 0 auto;
+
+  appearance: none;
+
+  -webkit-appearance: none;
+
+  border-radius: 999px;
+
+  background:
+    rgba(120, 130, 150, 0.18);
+
+}
+
+
+.doctor-professional-visibility input::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 4px;
+
+  right: 4px;
+
+  width: 18px;
+
+  height: 18px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  transition:
+    transform
+    var(--transition-fast);
+
+}
+
+
+.doctor-professional-visibility input:checked {
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary),
+      var(--accent)
+    );
+
+}
+
+
+.doctor-professional-visibility input:checked::before {
+
+  transform:
+    translateX(-20px);
+
+}
+
+
+/* GRID */
+
+.doctor-professional-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    1fr;
+
+  gap: 10px;
+
+}
+
+
+.doctor-professional-field {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+
+}
+
+
+.doctor-professional-field > span {
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+}
+
+
+.doctor-professional-field input,
+.doctor-professional-field textarea,
+.doctor-professional-service input,
+.doctor-professional-service select {
+
+  width: 100%;
+
+  border:
+    1px solid var(--border);
+
+  outline: 0;
+
+  border-radius: 15px;
+
+  color: var(--text);
+
+  background: var(--surface-solid);
+
+  font: inherit;
+
+}
+
+
+.doctor-professional-field input {
+
+  min-height: 50px;
+
+  padding: 0 12px;
+
+  font-size: 10px;
+
+}
+
+
+.doctor-professional-field textarea {
+
+  padding: 12px;
+
+  resize: vertical;
+
+  font-size: 10px;
+
+  line-height: 1.7;
+
+}
+
+
+.doctor-professional-field input[readonly] {
+
+  color: var(--text-muted);
+
+  background:
+    rgba(120, 130, 150, 0.05);
+
+}
+
+
+/* MONEY */
+
+.doctor-professional-money {
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 42px;
+
+  align-items: center;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 15px;
+
+  overflow: hidden;
+
+  background: var(--surface-solid);
+
+}
+
+
+.doctor-professional-money input {
+
+  min-height: 48px;
+
+  padding: 0 12px;
+
+  border: 0;
+
+  border-radius: 0;
+
+}
+
+
+.doctor-professional-money small {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  height: 100%;
+
+  color: var(--text-muted);
+
+  background:
+    rgba(49, 87, 213, 0.05);
+
+  font-size: 8px;
+
+}
+
+
+/* LANGUAGES */
+
+.doctor-professional-languages {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 8px;
+
+}
+
+
+.doctor-professional-languages label {
+
+  min-height: 50px;
+
+  padding: 0 10px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 14px;
+
+  background:
+    rgba(49, 87, 213, 0.025);
+
+}
+
+
+.doctor-professional-languages input {
+
+  accent-color:
+    var(--primary);
+
+}
+
+
+.doctor-professional-languages span {
+
+  font-size: 9px;
+
+  font-weight: 850;
+
+}
+
+
+/* SERVICES */
+
+.doctor-professional-services {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+}
+
+
+.doctor-professional-service {
+
+  padding: 12px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 18px;
+
+  background:
+    rgba(49, 87, 213, 0.025);
+
+}
+
+
+.doctor-professional-service__top {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+}
+
+
+.doctor-professional-service__top > div {
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+
+.doctor-professional-service__top span {
+
+  color: var(--text-muted);
+
+  font-size: 7px;
+
+}
+
+
+.doctor-professional-service__top strong {
+
+  margin-top: 2px;
+
+  font-size: 10px;
+
+}
+
+
+.doctor-professional-service__grid {
+
+  margin-top: 12px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr;
+
+  gap: 8px;
+
+}
+
+
+.doctor-professional-service__grid > label {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+}
+
+
+.doctor-professional-service__grid label > span {
+
+  color: var(--text-muted);
+
+  font-size: 7px;
+
+}
+
+
+.doctor-professional-service input,
+.doctor-professional-service select {
+
+  min-height: 44px;
+
+  padding: 0 10px;
+
+  font-size: 9px;
+
+}
+
+
+.doctor-professional-service__delete {
+
+  width: 100%;
+
+  min-height: 38px;
+
+  margin-top: 10px;
+
+  border-radius: 12px;
+
+  color: var(--danger);
+
+  background:
+    rgba(229, 72, 77, 0.07);
+
+  font-size: 8px;
+
+  font-weight: 900;
+
+}
+
+
+/* SWITCH */
+
+.doctor-professional-switch input {
+
+  position: absolute;
+
+  opacity: 0;
+
+}
+
+
+.doctor-professional-switch > span {
+
+  position: relative;
+
+  display: block;
+
+  width: 44px;
+
+  height: 24px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(120, 130, 150, 0.18);
+
+}
+
+
+.doctor-professional-switch > span::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 3px;
+
+  right: 3px;
+
+  width: 18px;
+
+  height: 18px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  transition:
+    transform
+    var(--transition-fast);
+
+}
+
+
+.doctor-professional-switch input:checked + span {
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary),
+      var(--accent)
+    );
+
+}
+
+
+.doctor-professional-switch input:checked + span::before {
+
+  transform:
+    translateX(-20px);
+
+}
+
+
+/* EMPTY */
+
+.doctor-professional-services__empty {
+
+  padding: 20px;
+
+  border-radius: 15px;
+
+  color: var(--text-muted);
+
+  background:
+    rgba(120, 130, 150, 0.05);
+
+  font-size: 9px;
+
+  text-align: center;
+
+}
+
+
+/* SAVE */
+
+.doctor-professional-save {
+
+  margin-top: 16px;
+
+  padding: 15px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+
+  border-radius: 22px;
+
+}
+
+
+.doctor-professional-save > div {
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+
+.doctor-professional-save span {
+
+  color: var(--primary);
+
+  font-size: 8px;
+
+  font-weight: 850;
+
+}
+
+
+.doctor-professional-save strong {
+
+  margin-top: 3px;
+
+  font-size: 10px;
+
+}
+
+
+.doctor-professional-save button {
+
+  min-height: 50px;
+
+  border-radius: 15px;
+
+}
+
+
+.doctor-professional-message {
+
+  min-height: 22px;
+
+  margin-top: 10px;
+
+  color: var(--success);
+
+  font-size: 9px;
+
+  font-weight: 850;
+
+  text-align: center;
+
+}
+
+
+/* MOBILE */
+
+@media (
+  max-width: 480px
+) {
+
+  .doctor-professional__container {
+
+    max-width: 390px;
+
+  }
+
+}
+
+
+/* SMALL */
+
+@media (
+  max-width: 359px
+) {
+
+  .doctor-professional__container {
+
+    padding-right: 14px;
+
+    padding-left: 14px;
+
+  }
+
+
+  .doctor-professional-languages {
+
+    grid-template-columns: 1fr;
+
+  }
+
+}
+
+
+/* TABLET */
+
+@media (
+  min-width: 768px
+)
+and
+(
+  max-width: 1023px
+) {
+
+  .doctor-professional__container {
+
+    padding:
+      40px 32px 60px;
+
+  }
+
+
+  .doctor-professional-grid {
+
+    grid-template-columns:
+      1fr 1fr;
+
+  }
+
+
+  .doctor-professional-field--full {
+
+    grid-column:
+      1 / -1;
+
+  }
+
+
+  .doctor-professional-service__grid {
+
+    grid-template-columns:
+      2fr 1fr 1fr;
+
+  }
+
+}
+
+
+/* DESKTOP */
+
+@media (
+  min-width: 1024px
+) {
+
+  .doctor-professional__header {
+
+    min-height: 82px;
+
+    padding:
+      16px 40px;
+
+  }
+
+
+  .doctor-professional__container {
+
+    padding:
+      48px 40px 80px;
+
+  }
+
+
+  .doctor-professional__hero h1 {
+
+    font-size: 46px;
+
+  }
+
+
+  .doctor-professional-grid {
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+  }
+
+
+  .doctor-professional-field--full {
+
+    grid-column:
+      1 / -1;
+
+  }
+
+
+  .doctor-professional-service__grid {
+
+    grid-template-columns:
+      2fr 1fr 1fr;
+
+  }
+
+
+  .doctor-professional-save {
+
+    flex-direction: row;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+  }
+
+
+  .doctor-professional-save button {
+
+    min-width: 210px;
+
+  }
+
+}

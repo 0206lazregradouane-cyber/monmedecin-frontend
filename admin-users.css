@@ -1,0 +1,965 @@
+/* =====================================================
+   MON MÉDECIN
+   ADMIN USERS - COMPLETE STYLE
+   ===================================================== */
+
+/* =====================================================
+   PAGE
+   ===================================================== */
+
+.admin-users {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  direction: rtl;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(66, 116, 217, 0.13),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(149, 204, 221, 0.18),
+      transparent 32%
+    ),
+    #f7f9fc;
+
+  color: #15263e;
+}
+
+/* =====================================================
+   ORBS
+   ===================================================== */
+
+.admin-users__orb {
+  position: fixed;
+  z-index: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(30px);
+  opacity: 0.5;
+}
+
+.admin-users__orb--blue {
+  width: 260px;
+  height: 260px;
+  top: -110px;
+  right: -100px;
+  background: rgba(66, 116, 217, 0.18);
+}
+
+.admin-users__orb--cyan {
+  width: 225px;
+  height: 225px;
+  left: -95px;
+  bottom: 60px;
+  background: rgba(149, 204, 221, 0.2);
+}
+
+/* =====================================================
+   GLASS
+   ===================================================== */
+
+.admin-users .glass {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.86);
+  box-shadow: 0 16px 42px rgba(27, 59, 99, 0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.admin-users__header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  gap: 12px;
+
+  min-height: 72px;
+  padding: 10px 16px;
+
+  background: rgba(255, 255, 255, 0.82);
+  border-bottom: 1px solid rgba(35, 66, 105, 0.06);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.admin-users__back,
+.admin-users__theme {
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+  place-items: center;
+  padding: 0;
+
+  border: 0;
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.9);
+  color: #3568ad;
+
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 900;
+
+  cursor: pointer;
+
+  box-shadow: 0 7px 20px rgba(22, 54, 91, 0.07);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.admin-users__back:hover,
+.admin-users__theme:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(22, 54, 91, 0.11);
+}
+
+.admin-users__back:active,
+.admin-users__theme:active {
+  transform: scale(0.96);
+}
+
+.admin-users__header-copy {
+  min-width: 0;
+}
+
+.admin-users__header-copy strong {
+  display: block;
+  overflow: hidden;
+  color: #172c48;
+  font-size: 14px;
+  font-weight: 950;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.admin-users__header-copy span {
+  display: block;
+  margin-top: 2px;
+  overflow: hidden;
+  color: #8996a6;
+  font-size: 9px;
+  font-weight: 750;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* =====================================================
+   CONTAINER
+   ===================================================== */
+
+.admin-users__container {
+  position: relative;
+  z-index: 1;
+
+  width: min(100%, 1180px);
+  margin: 0 auto;
+  padding: 22px 14px 70px;
+}
+
+/* =====================================================
+   HERO
+   ===================================================== */
+
+.admin-users__hero {
+  margin-bottom: 17px;
+}
+
+.admin-users__hero > span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 27px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: rgba(66, 116, 217, 0.09);
+  color: #3f70bd;
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.admin-users__hero h1 {
+  margin: 10px 0 6px;
+  color: #142a47;
+  font-size: clamp(24px, 6vw, 35px);
+  line-height: 1.2;
+  font-weight: 950;
+}
+
+.admin-users__hero p {
+  margin: 0;
+  color: #7c8a9c;
+  font-size: 10px;
+  line-height: 1.75;
+}
+
+/* =====================================================
+   STATS
+   ===================================================== */
+
+.admin-users-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.admin-users-stat {
+  padding: 14px;
+  border-radius: 18px;
+}
+
+.admin-users-stat span {
+  display: block;
+  color: #8492a3;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.admin-users-stat strong {
+  display: block;
+  margin-top: 5px;
+  color: #17304f;
+  font-size: 21px;
+  font-weight: 950;
+}
+
+.admin-users-stat.is-doctors strong {
+  color: #4274d9;
+}
+
+.admin-users-stat.is-patients strong {
+  color: #25815b;
+}
+
+.admin-users-stat.is-secretaries strong {
+  color: #7258ad;
+}
+
+.admin-users-stat.is-total strong {
+  color: #172b47;
+}
+
+/* =====================================================
+   TABS
+   ===================================================== */
+
+.admin-users-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 15px;
+  padding: 6px;
+  border-radius: 16px;
+  background: rgba(247, 250, 254, 0.8);
+  border: 1px solid rgba(38, 71, 114, 0.06);
+}
+
+.admin-users-tabs button {
+  flex: 1;
+  min-height: 40px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: #8492a3;
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 850;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-users-tabs button.is-active {
+  background: #ffffff;
+  color: #172b47;
+  box-shadow: 0 4px 12px rgba(20, 50, 90, 0.08);
+}
+
+.admin-users-tabs button:hover:not(.is-active) {
+  color: #4274d9;
+}
+
+.admin-users-tabs button .badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  margin-right: 4px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: rgba(66, 116, 217, 0.09);
+  color: #3f70bd;
+  font-size: 7px;
+  font-weight: 900;
+}
+
+/* =====================================================
+   SEARCH
+   ===================================================== */
+
+.admin-users-search {
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  border-radius: 18px;
+}
+
+.admin-users-search__main {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-users-search__main > span {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(66, 116, 217, 0.08);
+  color: #4274d9;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.admin-users-search__main input {
+  width: 100%;
+  min-height: 42px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #19314f;
+  font-family: inherit;
+  font-size: 10px;
+}
+
+.admin-users-search__main input::placeholder {
+  color: #98a4b3;
+}
+
+/* =====================================================
+   RESULTS HEAD
+   ===================================================== */
+
+.admin-users-results__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 18px 0 10px;
+}
+
+.admin-users-results__head span {
+  display: block;
+  color: #8996a6;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.admin-users-results__head h2 {
+  margin: 2px 0 0;
+  color: #172b47;
+  font-size: 18px;
+  font-weight: 950;
+}
+
+.admin-users-results__head > strong {
+  min-width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  padding: 0 8px;
+  border-radius: 13px;
+  background: rgba(66, 116, 217, 0.09);
+  color: #3c6fb9;
+  font-size: 11px;
+  font-weight: 950;
+}
+
+/* =====================================================
+   RESULTS
+   ===================================================== */
+
+.admin-users-results {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 11px;
+}
+
+/* =====================================================
+   USER CARD
+   ===================================================== */
+
+.admin-user-card {
+  padding: 14px;
+  border-radius: 21px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.admin-user-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 45px rgba(31, 61, 102, 0.11);
+}
+
+.admin-user-card.is-inactive {
+  opacity: 0.68;
+}
+
+/* =====================================================
+   CARD TOP
+   ===================================================== */
+
+.admin-user-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 11px;
+  margin-bottom: 10px;
+}
+
+.admin-user-card__identity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.admin-user-card__avatar {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  background:
+    linear-gradient(
+      140deg,
+      rgba(66, 116, 217, 0.15),
+      rgba(149, 204, 221, 0.23)
+    );
+  color: #3566aa;
+  font-size: 16px;
+  font-weight: 950;
+}
+
+.admin-user-card__identity > div:last-child {
+  min-width: 0;
+}
+
+.admin-user-card__identity .role-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 20px;
+  padding: 0 7px;
+  border-radius: 999px;
+  font-size: 6px;
+  font-weight: 900;
+}
+
+.admin-user-card__identity .role-badge.is-admin {
+  background: rgba(66, 116, 217, 0.1);
+  color: #3f70bd;
+}
+
+.admin-user-card__identity .role-badge.is-doctor {
+  background: rgba(37, 158, 106, 0.1);
+  color: #25815b;
+}
+
+.admin-user-card__identity .role-badge.is-secretary {
+  background: rgba(118, 89, 195, 0.1);
+  color: #6e58ac;
+}
+
+.admin-user-card__identity .role-badge.is-patient {
+  background: rgba(222, 166, 53, 0.1);
+  color: #9d7426;
+}
+
+.admin-user-card__identity h3 {
+  margin: 3px 0 0;
+  overflow: hidden;
+  color: #172d49;
+  font-size: 12px;
+  font-weight: 950;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.admin-user-card__identity small {
+  display: block;
+  margin-top: 3px;
+  overflow: hidden;
+  color: #8492a3;
+  font-size: 8px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* =====================================================
+   STATUS BADGE
+   ===================================================== */
+
+.admin-user-status {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 25px;
+  padding: 0 8px;
+  border-radius: 999px;
+  font-size: 7px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.admin-user-status.is-active {
+  background: rgba(37, 158, 106, 0.1);
+  color: #25815b;
+}
+
+.admin-user-status.is-inactive {
+  background: rgba(210, 72, 72, 0.09);
+  color: #b34d4d;
+}
+
+/* =====================================================
+   CARD META
+   ===================================================== */
+
+.admin-user-card__meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.admin-user-card__meta > div {
+  min-width: 0;
+  padding: 9px;
+  border-radius: 12px;
+  background: rgba(247, 250, 254, 0.84);
+}
+
+.admin-user-card__meta span {
+  display: block;
+  color: #8996a6;
+  font-size: 7px;
+  font-weight: 800;
+}
+
+.admin-user-card__meta strong {
+  display: block;
+  margin-top: 3px;
+  overflow: hidden;
+  color: #19314f;
+  font-size: 9px;
+  font-weight: 950;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* =====================================================
+   CARD ACTIONS
+   ===================================================== */
+
+.admin-user-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 11px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(36, 67, 105, 0.06);
+}
+
+.admin-user-card__actions button {
+  min-height: 35px;
+  padding: 0 10px;
+  border-radius: 11px;
+  font-family: inherit;
+  font-size: 7px;
+  font-weight: 900;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.admin-user-card__actions button:hover {
+  transform: translateY(-1px);
+}
+
+.admin-user-card__actions .is-view {
+  border: 1px solid rgba(66, 116, 217, 0.1);
+  background: rgba(66, 116, 217, 0.06);
+  color: #3f70b8;
+}
+
+.admin-user-card__actions .is-toggle {
+  border: 1px solid rgba(222, 166, 53, 0.12);
+  background: rgba(222, 166, 53, 0.06);
+  color: #9d7426;
+}
+
+.admin-user-card__actions .is-delete {
+  border: 1px solid rgba(210, 72, 72, 0.12);
+  background: rgba(210, 72, 72, 0.06);
+  color: #b34d4d;
+}
+
+/* =====================================================
+   EMPTY
+   ===================================================== */
+
+.admin-users-empty {
+  grid-column: 1 / -1;
+  padding: 34px 18px;
+  border-radius: 22px;
+  text-align: center;
+}
+
+.admin-users-empty > span {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 11px;
+  border-radius: 17px;
+  background: rgba(66, 116, 217, 0.09);
+  font-size: 22px;
+}
+
+.admin-users-empty h3 {
+  margin: 0;
+  color: #172c48;
+  font-size: 15px;
+  font-weight: 950;
+}
+
+.admin-users-empty p {
+  max-width: 360px;
+  margin: 6px auto 0;
+  color: #8492a4;
+  font-size: 9px;
+  line-height: 1.7;
+}
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 720px) {
+  .admin-users__container {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+
+  .admin-users__header {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+
+  .admin-users-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-users-results {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-users-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    gap: 4px;
+    padding: 4px;
+  }
+
+  .admin-users-tabs button {
+    flex: 0 0 auto;
+    min-width: 80px;
+    font-size: 8px;
+  }
+}
+
+/* =====================================================
+   SMALL PHONE
+   ===================================================== */
+
+@media (max-width: 430px) {
+  .admin-user-card__top {
+    flex-direction: column;
+  }
+
+  .admin-user-status {
+    align-self: flex-start;
+  }
+
+  .admin-user-card__meta {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-user-card__actions {
+    flex-direction: column;
+  }
+
+  .admin-user-card__actions button {
+    width: 100%;
+  }
+}
+
+/* =====================================================
+   VERY SMALL PHONE
+   ===================================================== */
+
+@media (max-width: 350px) {
+  .admin-users-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================================
+   DESKTOP
+   ===================================================== */
+
+@media (min-width: 760px) {
+  .admin-users__container {
+    padding: 30px 22px 60px;
+  }
+}
+
+@media (min-width: 1220px) {
+  .admin-users__header {
+    padding-right: max(24px, calc((100vw - 1180px) / 2));
+    padding-left: max(24px, calc((100vw - 1180px) / 2));
+  }
+}
+
+/* =====================================================
+   DARK MODE
+   ===================================================== */
+
+html[data-theme="dark"] .admin-users,
+body.dark .admin-users {
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(66, 116, 217, 0.14),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(149, 204, 221, 0.08),
+      transparent 32%
+    ),
+    #0b1321;
+
+  color: #edf3fc;
+}
+
+html[data-theme="dark"] .admin-users__header,
+body.dark .admin-users__header {
+  background: rgba(12, 21, 36, 0.87);
+  border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+html[data-theme="dark"] .admin-users .glass,
+body.dark .admin-users .glass {
+  background: rgba(18, 30, 49, 0.8);
+  border-color: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.19);
+}
+
+html[data-theme="dark"] .admin-users__back,
+html[data-theme="dark"] .admin-users__theme,
+body.dark .admin-users__back,
+body.dark .admin-users__theme {
+  background: rgba(22, 36, 57, 0.9);
+  color: #abc5f4;
+  box-shadow: none;
+}
+
+html[data-theme="dark"] .admin-users__header-copy strong,
+html[data-theme="dark"] .admin-users__hero h1,
+html[data-theme="dark"] .admin-users-stat strong,
+html[data-theme="dark"] .admin-users-results__head h2,
+html[data-theme="dark"] .admin-user-card__identity h3,
+html[data-theme="dark"] .admin-user-card__meta strong,
+html[data-theme="dark"] .admin-users-empty h3,
+body.dark .admin-users__header-copy strong,
+body.dark .admin-users__hero h1,
+body.dark .admin-users-stat strong,
+body.dark .admin-users-results__head h2,
+body.dark .admin-user-card__identity h3,
+body.dark .admin-user-card__meta strong,
+body.dark .admin-users-empty h3 {
+  color: #eef4fc;
+}
+
+html[data-theme="dark"] .admin-users-tabs,
+body.dark .admin-users-tabs {
+  background: rgba(10, 19, 32, 0.62);
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+html[data-theme="dark"] .admin-users-tabs button.is-active,
+body.dark .admin-users-tabs button.is-active {
+  background: rgba(18, 30, 49, 0.8);
+  color: #eef4fc;
+}
+
+html[data-theme="dark"] .admin-users-search__main input,
+body.dark .admin-users-search__main input {
+  color: #eef4fc;
+}
+
+html[data-theme="dark"] .admin-user-card__meta > div,
+body.dark .admin-user-card__meta > div {
+  background: rgba(10, 19, 32, 0.62);
+}
+
+html[data-theme="dark"] .admin-user-card__actions,
+body.dark .admin-user-card__actions {
+  border-top-color: rgba(255, 255, 255, 0.06);
+}
+
+/* =====================================================
+   ACCESSIBILITY
+   ===================================================== */
+
+.admin-users button:focus-visible,
+.admin-users input:focus-visible {
+  outline: 3px solid rgba(66, 116, 217, 0.2);
+  outline-offset: 2px;
+}
+
+/* =====================================================
+   REDUCED MOTION
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .admin-users *,
+  .admin-users *::before,
+  .admin-users *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =====================================================
+   MON MÉDECIN
+   ADMIN USERS - BOTTOM NAV STYLES
+   ===================================================== */
+
+/* =====================================================
+   MOBILE BOTTOM NAV
+   ===================================================== */
+
+.mobile-bottom-nav {
+  position: fixed;
+  z-index: 70;
+  right: 12px;
+  bottom: 10px;
+  left: 12px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  min-height: 66px;
+  padding: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 21px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 16px 38px rgba(20, 49, 87, 0.14);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.mobile-bottom-nav__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 0;
+  border-radius: 15px;
+  background: transparent;
+  color: #8895a6;
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.mobile-bottom-nav__icon {
+  font-size: 17px;
+  line-height: 1;
+}
+
+.mobile-bottom-nav__item.is-active {
+  background: rgba(66, 116, 217, 0.1);
+  color: #3d70bd;
+}
+
+.mobile-bottom-nav__item:active {
+  transform: scale(0.96);
+}
+
+/* =====================================================
+   HIDE BOTTOM NAV ON DESKTOP
+   ===================================================== */
+
+@media (min-width: 1025px) {
+  .mobile-bottom-nav {
+    display: none !important;
+  }
+  .mobile-app-page.has-bottom-nav {
+    padding-bottom: 0 !important;
+  }
+}
+
+/* =====================================================
+   SHOW BOTTOM NAV ON MOBILE/TABLET
+   ===================================================== */
+
+@media (max-width: 1024px) {
+  .mobile-bottom-nav {
+    display: grid !important;
+  }
+  .mobile-app-page.has-bottom-nav {
+    padding-bottom: 85px !important;
+  }
+}
+
+/* =====================================================
+   DESKTOP HEADER ADJUSTMENTS
+   ===================================================== */
+
+@media (min-width: 1025px) {
+  .admin-users__container {
+    padding-bottom: 60px !important;
+  }
+}
