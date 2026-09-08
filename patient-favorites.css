@@ -1,0 +1,796 @@
+/* =====================================================
+   MON MÉDECIN
+   PATIENT FAVORITES - WITH BOTTOM NAV
+   ===================================================== */
+
+/* =====================================================
+   PAGE
+   ===================================================== */
+
+.patient-favorites {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  direction: rtl;
+  background:
+    radial-gradient(circle at top right, rgba(66, 116, 217, 0.13), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(149, 204, 221, 0.18), transparent 32%),
+    #f7f9fc;
+  color: #15263e;
+}
+
+/* =====================================================
+   ORBS
+   ===================================================== */
+
+.patient-favorites__orb {
+  position: fixed;
+  z-index: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(30px);
+  opacity: 0.5;
+}
+
+.patient-favorites__orb--blue {
+  width: 245px;
+  height: 245px;
+  top: -95px;
+  right: -90px;
+  background: rgba(66, 116, 217, 0.18);
+}
+
+.patient-favorites__orb--cyan {
+  width: 215px;
+  height: 215px;
+  left: -90px;
+  bottom: 60px;
+  background: rgba(149, 204, 221, 0.2);
+}
+
+/* =====================================================
+   GLASS
+   ===================================================== */
+
+.patient-favorites .glass {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.86);
+  box-shadow: 0 16px 42px rgba(27, 59, 99, 0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.patient-favorites__header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  gap: 12px;
+  min-height: 72px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.82);
+  border-bottom: 1px solid rgba(35, 66, 105, 0.06);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.patient-favorites__back,
+.patient-favorites__theme {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #3568ad;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 7px 20px rgba(22, 54, 91, 0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.patient-favorites__back:hover,
+.patient-favorites__theme:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(22, 54, 91, 0.11);
+}
+
+.patient-favorites__back:active,
+.patient-favorites__theme:active {
+  transform: scale(0.96);
+}
+
+.patient-favorites__header-copy {
+  min-width: 0;
+}
+
+.patient-favorites__header-copy strong {
+  display: block;
+  overflow: hidden;
+  color: #172c48;
+  font-size: 14px;
+  font-weight: 950;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.patient-favorites__header-copy span {
+  display: block;
+  margin-top: 2px;
+  overflow: hidden;
+  color: #8996a6;
+  font-size: 9px;
+  font-weight: 750;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* =====================================================
+   CONTAINER
+   ===================================================== */
+
+.patient-favorites__container {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 1120px);
+  margin: 0 auto;
+  padding: 22px 14px 115px;
+}
+
+/* =====================================================
+   HERO
+   ===================================================== */
+
+.patient-favorites__hero {
+  margin-bottom: 17px;
+}
+
+.patient-favorites__hero > span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 27px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: rgba(66, 116, 217, 0.09);
+  color: #3f70bd;
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.patient-favorites__hero h1 {
+  margin: 10px 0 6px;
+  color: #142a47;
+  font-size: clamp(24px, 6vw, 35px);
+  line-height: 1.2;
+  font-weight: 950;
+}
+
+.patient-favorites__hero p {
+  margin: 0;
+  color: #7c8a9c;
+  font-size: 10px;
+  line-height: 1.75;
+}
+
+/* =====================================================
+   STATS
+   ===================================================== */
+
+.patient-favorites-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.patient-favorites-stat {
+  padding: 13px;
+  border-radius: 17px;
+}
+
+.patient-favorites-stat span {
+  display: block;
+  color: #8492a3;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.patient-favorites-stat strong {
+  display: block;
+  margin-top: 5px;
+  color: #17304f;
+  font-size: 18px;
+  font-weight: 950;
+}
+
+/* =====================================================
+   SEARCH
+   ===================================================== */
+
+.patient-favorites-search {
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  border-radius: 21px;
+}
+
+.patient-favorites-search__main {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  align-items: center;
+  gap: 8px;
+}
+
+.patient-favorites-search__main > span {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(66, 116, 217, 0.08);
+  color: #4274d9;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.patient-favorites-search__main input {
+  width: 100%;
+  min-height: 42px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #19314f;
+  font-family: inherit;
+  font-size: 10px;
+}
+
+.patient-favorites-search__main input::placeholder {
+  color: #98a4b3;
+}
+
+/* =====================================================
+   RESULTS HEAD
+   ===================================================== */
+
+.patient-favorites-results__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 18px 0 10px;
+}
+
+.patient-favorites-results__head span {
+  display: block;
+  color: #8996a6;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.patient-favorites-results__head h2 {
+  margin: 2px 0 0;
+  color: #172b47;
+  font-size: 18px;
+  font-weight: 950;
+}
+
+.patient-favorites-results__head > strong {
+  min-width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  padding: 0 8px;
+  border-radius: 13px;
+  background: rgba(66, 116, 217, 0.09);
+  color: #3c6fb9;
+  font-size: 11px;
+  font-weight: 950;
+}
+
+/* =====================================================
+   RESULTS
+   ===================================================== */
+
+.patient-favorites-results {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 11px;
+}
+
+/* =====================================================
+   FAVORITE CARD
+   ===================================================== */
+
+.patient-favorite-card {
+  padding: 14px;
+  border-radius: 21px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.patient-favorite-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 45px rgba(31, 61, 102, 0.11);
+}
+
+/* =====================================================
+   CARD TOP
+   ===================================================== */
+
+.patient-favorite-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 11px;
+  margin-bottom: 10px;
+}
+
+.patient-favorite-card__doctor {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.patient-favorite-card__avatar {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  background: linear-gradient(140deg, rgba(66, 116, 217, 0.15), rgba(149, 204, 221, 0.23));
+  color: #3566aa;
+  font-size: 16px;
+  font-weight: 950;
+}
+
+.patient-favorite-card__doctor > div:last-child {
+  min-width: 0;
+}
+
+.patient-favorite-card__doctor span {
+  display: block;
+  color: #4774ad;
+  font-size: 8px;
+  font-weight: 900;
+}
+
+.patient-favorite-card__doctor h3 {
+  margin: 3px 0 0;
+  overflow: hidden;
+  color: #172d49;
+  font-size: 12px;
+  font-weight: 950;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.patient-favorite-card__doctor small {
+  display: block;
+  margin-top: 3px;
+  overflow: hidden;
+  color: #8492a3;
+  font-size: 8px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* =====================================================
+   REMOVE BUTTON
+   ===================================================== */
+
+.patient-favorite-remove {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: rgba(210, 72, 72, 0.08);
+  color: #b34d4d;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.patient-favorite-remove:hover {
+  transform: scale(1.05);
+  background: rgba(210, 72, 72, 0.15);
+}
+
+.patient-favorite-remove:active {
+  transform: scale(0.92);
+}
+
+/* =====================================================
+   CARD META
+   ===================================================== */
+
+.patient-favorite-card__meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.patient-favorite-card__meta > div {
+  min-width: 0;
+  padding: 9px;
+  border-radius: 12px;
+  background: rgba(247, 250, 254, 0.84);
+}
+
+.patient-favorite-card__meta span {
+  display: block;
+  color: #8996a6;
+  font-size: 7px;
+  font-weight: 800;
+}
+
+.patient-favorite-card__meta strong {
+  display: block;
+  margin-top: 3px;
+  color: #19314f;
+  font-size: 9px;
+  font-weight: 950;
+}
+
+/* =====================================================
+   CARD ACTIONS
+   ===================================================== */
+
+.patient-favorite-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 11px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(36, 67, 105, 0.06);
+}
+
+.patient-favorite-card__actions button {
+  flex: 1;
+  min-height: 36px;
+  padding: 0 10px;
+  border-radius: 11px;
+  font-family: inherit;
+  font-size: 8px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.patient-favorite-card__actions button:hover {
+  transform: translateY(-1px);
+}
+
+.patient-favorite-card__actions .is-view {
+  border: 1px solid rgba(66, 116, 217, 0.1);
+  background: rgba(66, 116, 217, 0.06);
+  color: #3f70b8;
+}
+
+.patient-favorite-card__actions .is-book {
+  border: 0;
+  background: linear-gradient(135deg, #4274d9, #345fa9);
+  color: #ffffff;
+  box-shadow: 0 7px 17px rgba(66, 116, 217, 0.15);
+}
+
+/* =====================================================
+   EMPTY
+   ===================================================== */
+
+.patient-favorites-empty {
+  grid-column: 1 / -1;
+  padding: 34px 18px;
+  border-radius: 22px;
+  text-align: center;
+}
+
+.patient-favorites-empty > span {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 11px;
+  border-radius: 17px;
+  background: rgba(66, 116, 217, 0.09);
+  font-size: 22px;
+}
+
+.patient-favorites-empty h3 {
+  margin: 0;
+  color: #172c48;
+  font-size: 15px;
+  font-weight: 950;
+}
+
+.patient-favorites-empty p {
+  max-width: 360px;
+  margin: 6px auto 13px;
+  color: #8492a4;
+  font-size: 9px;
+  line-height: 1.7;
+}
+
+.patient-favorites-empty button {
+  min-height: 39px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 12px;
+  background: #4274d9;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 8px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+/* =====================================================
+   BOTTOM NAV
+   ===================================================== */
+
+.mobile-bottom-nav {
+  position: fixed;
+  z-index: 70;
+  right: 12px;
+  bottom: 10px;
+  left: 12px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  min-height: 66px;
+  padding: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 21px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 16px 38px rgba(20, 49, 87, 0.14);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.mobile-bottom-nav__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 0;
+  border-radius: 15px;
+  background: transparent;
+  color: #8895a6;
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.mobile-bottom-nav__icon {
+  font-size: 17px;
+  line-height: 1;
+}
+
+.mobile-bottom-nav__item.is-active {
+  background: rgba(66, 116, 217, 0.1);
+  color: #3d70bd;
+}
+
+.mobile-bottom-nav__item:active {
+  transform: scale(0.96);
+}
+
+/* =====================================================
+   HIDE BOTTOM NAV ON DESKTOP
+   ===================================================== */
+
+@media (min-width: 1025px) {
+  .mobile-bottom-nav {
+    display: none !important;
+  }
+  .mobile-app-page.has-bottom-nav {
+    padding-bottom: 0 !important;
+  }
+}
+
+/* =====================================================
+   SHOW BOTTOM NAV ON MOBILE/TABLET
+   ===================================================== */
+
+@media (max-width: 1024px) {
+  .mobile-bottom-nav {
+    display: grid !important;
+  }
+  .mobile-app-page.has-bottom-nav {
+    padding-bottom: 85px !important;
+  }
+}
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 650px) {
+  .patient-favorites__container {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+
+  .patient-favorites__header {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+
+  .patient-favorites-results {
+    grid-template-columns: 1fr;
+  }
+
+  .patient-favorites-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================================
+   SMALL PHONE
+   ===================================================== */
+
+@media (max-width: 430px) {
+  .patient-favorite-card__top {
+    flex-direction: column;
+  }
+
+  .patient-favorite-remove {
+    align-self: flex-start;
+  }
+
+  .patient-favorite-card__meta {
+    grid-template-columns: 1fr;
+  }
+
+  .patient-favorite-card__actions {
+    flex-direction: column;
+  }
+
+  .patient-favorite-card__actions button {
+    width: 100%;
+  }
+}
+
+/* =====================================================
+   VERY SMALL PHONE
+   ===================================================== */
+
+@media (max-width: 350px) {
+  .patient-favorites-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================================
+   DESKTOP
+   ===================================================== */
+
+@media (min-width: 760px) {
+  .patient-favorites__container {
+    padding: 30px 22px 60px;
+  }
+}
+
+@media (min-width: 1160px) {
+  .patient-favorites__header {
+    padding-right: max(24px, calc((100vw - 1120px) / 2));
+    padding-left: max(24px, calc((100vw - 1120px) / 2));
+  }
+}
+
+/* =====================================================
+   DARK MODE
+   ===================================================== */
+
+html[data-theme="dark"] .patient-favorites,
+body.dark .patient-favorites {
+  background: radial-gradient(circle at top right, rgba(66, 116, 217, 0.14), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(149, 204, 221, 0.08), transparent 32%),
+    #0b1321;
+  color: #edf3fc;
+}
+
+html[data-theme="dark"] .patient-favorites__header,
+body.dark .patient-favorites__header {
+  background: rgba(12, 21, 36, 0.87);
+  border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+html[data-theme="dark"] .patient-favorites .glass,
+body.dark .patient-favorites .glass {
+  background: rgba(18, 30, 49, 0.8);
+  border-color: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.19);
+}
+
+html[data-theme="dark"] .patient-favorites__back,
+html[data-theme="dark"] .patient-favorites__theme,
+body.dark .patient-favorites__back,
+body.dark .patient-favorites__theme {
+  background: rgba(22, 36, 57, 0.9);
+  color: #abc5f4;
+  box-shadow: none;
+}
+
+html[data-theme="dark"] .patient-favorites__header-copy strong,
+html[data-theme="dark"] .patient-favorites__hero h1,
+html[data-theme="dark"] .patient-favorites-stat strong,
+html[data-theme="dark"] .patient-favorites-results__head h2,
+html[data-theme="dark"] .patient-favorite-card__doctor h3,
+html[data-theme="dark"] .patient-favorite-card__meta strong,
+html[data-theme="dark"] .patient-favorites-empty h3,
+body.dark .patient-favorites__header-copy strong,
+body.dark .patient-favorites__hero h1,
+body.dark .patient-favorites-stat strong,
+body.dark .patient-favorites-results__head h2,
+body.dark .patient-favorite-card__doctor h3,
+body.dark .patient-favorite-card__meta strong,
+body.dark .patient-favorites-empty h3 {
+  color: #eef4fc;
+}
+
+html[data-theme="dark"] .patient-favorites-search__main input,
+body.dark .patient-favorites-search__main input {
+  color: #eef4fc;
+}
+
+html[data-theme="dark"] .patient-favorite-card__meta > div,
+body.dark .patient-favorite-card__meta > div {
+  background: rgba(10, 19, 32, 0.62);
+}
+
+html[data-theme="dark"] .patient-favorite-remove,
+body.dark .patient-favorite-remove {
+  background: rgba(210, 72, 72, 0.12);
+}
+
+html[data-theme="dark"] .patient-favorite-card__actions,
+body.dark .patient-favorite-card__actions {
+  border-top-color: rgba(255, 255, 255, 0.06);
+}
+
+html[data-theme="dark"] .mobile-bottom-nav,
+body.dark .mobile-bottom-nav {
+  background: rgba(14, 24, 40, 0.93);
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+/* =====================================================
+   ACCESSIBILITY
+   ===================================================== */
+
+.patient-favorites button:focus-visible,
+.patient-favorites input:focus-visible {
+  outline: 3px solid rgba(66, 116, 217, 0.2);
+  outline-offset: 2px;
+}
+
+/* =====================================================
+   REDUCED MOTION
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .patient-favorites *,
+  .patient-favorites *::before,
+  .patient-favorites *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

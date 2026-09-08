@@ -1,0 +1,489 @@
+/* =====================================================
+   MON MÉDECIN
+   DOCTOR NOTIFICATIONS CSS
+   ===================================================== */
+
+.doctor-notifications {
+  min-height: 100vh;
+  background: var(--bg-primary, #f7f9fc);
+  padding: 0 20px 20px;
+  position: relative;
+  direction: rtl;
+}
+
+.doctor-notifications__orb {
+  position: fixed;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.doctor-notifications__orb--blue {
+  top: -80px;
+  right: -80px;
+  background: #4274d9;
+}
+
+.doctor-notifications__orb--cyan {
+  bottom: -80px;
+  left: -80px;
+  background: #5ac8fa;
+}
+
+.doctor-notifications__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.doctor-notifications__back {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 12px;
+  background: rgba(66, 116, 217, 0.08);
+  color: #4274d9;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.doctor-notifications__header-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.doctor-notifications__header-copy strong {
+  font-size: 14px;
+  color: #172b47;
+}
+
+.doctor-notifications__header-copy span {
+  font-size: 9px;
+  color: #8492a3;
+}
+
+.doctor-notifications__theme {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 12px;
+  background: rgba(66, 116, 217, 0.08);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.doctor-notifications__container {
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.doctor-notifications__hero {
+  margin: 12px 0 20px;
+}
+
+.doctor-notifications__hero span {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: rgba(66, 116, 217, 0.1);
+  color: #4274d9;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+.doctor-notifications__hero h1 {
+  font-size: 22px;
+  color: #172b47;
+  margin: 8px 0 4px;
+}
+
+.doctor-notifications__hero p {
+  color: #8492a3;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.doctor-notifications-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.doctor-notifications-stat {
+  padding: 14px 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 12px rgba(20, 50, 90, 0.06);
+  text-align: center;
+}
+
+.doctor-notifications-stat span {
+  display: block;
+  color: #8492a3;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.doctor-notifications-stat strong {
+  display: block;
+  font-size: 20px;
+  color: #172b47;
+  margin-top: 2px;
+}
+
+.doctor-notifications-stat.is-total strong {
+  color: #4274d9;
+}
+.doctor-notifications-stat.is-unread strong {
+  color: #b34d4d;
+}
+.doctor-notifications-stat.is-appointment strong {
+  color: #3f70bd;
+}
+.doctor-notifications-stat.is-system strong {
+  color: #6c7480;
+}
+
+.doctor-notifications-tabs {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 4px 0 12px;
+  margin-bottom: 10px;
+  scrollbar-width: none;
+}
+
+.doctor-notifications-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.doctor-notifications-tab {
+  flex: 0 0 auto;
+  padding: 8px 14px;
+  border: 1px solid rgba(36, 67, 105, 0.08);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.5);
+  font-size: 10px;
+  font-weight: 800;
+  color: #6c7480;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.doctor-notifications-tab.is-active {
+  background: #4274d9;
+  color: #fff;
+  border-color: #4274d9;
+}
+
+.doctor-notifications-tab .badge {
+  display: inline-block;
+  margin-right: 4px;
+  padding: 0 6px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.06);
+  font-size: 8px;
+}
+
+.doctor-notifications-tab.is-active .badge {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.doctor-notifications-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.7);
+  margin-bottom: 16px;
+}
+
+.doctor-notifications-search {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 160px;
+}
+
+.doctor-notifications-search input {
+  flex: 1;
+  border: 0;
+  background: transparent;
+  font-size: 10px;
+  color: #172b47;
+  outline: none;
+}
+
+.doctor-notifications-search input::placeholder {
+  color: #a7b5c5;
+}
+
+.doctor-notifications-toolbar button {
+  padding: 6px 12px;
+  border: 0;
+  border-radius: 10px;
+  background: rgba(66, 116, 217, 0.06);
+  color: #4274d9;
+  font-size: 8px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.doctor-notifications-message {
+  padding: 12px 14px;
+  border-radius: 14px;
+  font-size: 10px;
+  font-weight: 850;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.doctor-notifications-message.is-success {
+  background: rgba(37, 158, 106, 0.08);
+  color: #25815b;
+}
+
+.doctor-notifications-message.is-error {
+  background: rgba(210, 72, 72, 0.08);
+  color: #b34d4d;
+}
+
+.doctor-notifications-message.is-info {
+  background: rgba(66, 116, 217, 0.08);
+  color: #4274d9;
+}
+
+.doctor-notifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.doctor-notification-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 12px rgba(20, 50, 90, 0.04);
+  cursor: pointer;
+}
+
+.doctor-notification-item.is-read {
+  opacity: 0.7;
+}
+
+.doctor-notification-item__icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(66, 116, 217, 0.06);
+  font-size: 20px;
+}
+
+.doctor-notification-item__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.doctor-notification-item__top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.doctor-notification-item__top strong {
+  font-size: 12px;
+  color: #172b47;
+}
+
+.type-badge {
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 7px;
+  font-weight: 900;
+}
+
+.type-badge.is-appointment {
+  background: rgba(66, 116, 217, 0.1);
+  color: #4274d9;
+}
+
+.type-badge.is-system {
+  background: rgba(108, 116, 128, 0.1);
+  color: #6c7480;
+}
+
+.type-badge.is-complaint {
+  background: rgba(210, 72, 72, 0.1);
+  color: #b34d4d;
+}
+
+.doctor-notification-item__content p {
+  font-size: 10px;
+  color: #4a5a72;
+  margin: 4px 0;
+}
+
+.doctor-notification-item__meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 8px;
+  color: #8492a3;
+}
+
+.unread-dot {
+  color: #b34d4d;
+}
+
+.action-hint {
+  color: #4274d9;
+}
+
+.doctor-notification-item__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.doctor-notification-item__actions button {
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.is-mark-read {
+  background: rgba(37, 158, 106, 0.08);
+  color: #25815b;
+}
+
+.is-delete {
+  background: rgba(210, 72, 72, 0.08);
+  color: #b34d4d;
+}
+
+.doctor-notifications-empty {
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.doctor-notifications-empty span {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.doctor-notifications-empty h3 {
+  font-size: 16px;
+  color: #172b47;
+}
+
+.doctor-notifications-empty p {
+  font-size: 10px;
+  color: #8492a3;
+}
+
+/* Dark theme */
+html[data-theme="dark"] .doctor-notifications {
+  background: #0b1321;
+}
+
+html[data-theme="dark"] .doctor-notifications__header-copy strong {
+  color: #edf3fc;
+}
+
+html[data-theme="dark"] .doctor-notifications__hero h1 {
+  color: #edf3fc;
+}
+
+html[data-theme="dark"] .doctor-notifications-stat {
+  background: rgba(18, 30, 49, 0.8);
+}
+
+html[data-theme="dark"] .doctor-notifications-stat strong {
+  color: #edf3fc;
+}
+
+html[data-theme="dark"] .doctor-notifications-tab {
+  background: rgba(18, 30, 49, 0.5);
+  color: #8895a6;
+}
+
+html[data-theme="dark"] .doctor-notifications-tab.is-active {
+  background: #4274d9;
+  color: #fff;
+}
+
+html[data-theme="dark"] .doctor-notifications-toolbar {
+  background: rgba(18, 30, 49, 0.8);
+}
+
+html[data-theme="dark"] .doctor-notifications-search input {
+  color: #edf3fc;
+}
+
+html[data-theme="dark"] .doctor-notification-item {
+  background: rgba(18, 30, 49, 0.8);
+}
+
+html[data-theme="dark"] .doctor-notification-item__top strong {
+  color: #edf3fc;
+}
+
+html[data-theme="dark"] .doctor-notification-item__content p {
+  color: #a7b5c5;
+}
+
+html[data-theme="dark"] .doctor-notifications-empty {
+  background: rgba(18, 30, 49, 0.8);
+}
+
+html[data-theme="dark"] .doctor-notifications-empty h3 {
+  color: #edf3fc;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .doctor-notifications {
+    padding: 0 12px 12px;
+  }
+  
+  .doctor-notifications-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .doctor-notifications-toolbar {
+    flex-direction: column;
+  }
+  
+  .doctor-notifications-toolbar button {
+    padding: 8px 14px;
+    font-size: 9px;
+  }
+}

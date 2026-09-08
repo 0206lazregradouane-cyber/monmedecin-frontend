@@ -1,0 +1,1449 @@
+/* =====================================================
+   MON MÉDECIN
+   DOCTOR PATIENT DETAILS
+
+   COMPLETE STYLE
+   - Mobile first
+   - Responsive
+   - Glassmorphism
+   - Dark mode
+   ===================================================== */
+
+
+/* =====================================================
+   PAGE
+   ===================================================== */
+
+.doctor-patient {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  direction: rtl;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(66, 116, 217, 0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(139, 99, 155, 0.12),
+      transparent 30%
+    ),
+    #f7f9fc;
+
+  color: #15263e;
+}
+
+
+/* =====================================================
+   ORBS
+   ===================================================== */
+
+.doctor-patient__orb {
+  position: fixed;
+  z-index: 0;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(24px);
+
+  opacity: 0.5;
+}
+
+
+.doctor-patient__orb--blue {
+  width: 230px;
+  height: 230px;
+
+  top: -85px;
+  right: -90px;
+
+  background:
+    rgba(66, 116, 217, 0.18);
+}
+
+
+.doctor-patient__orb--purple {
+  width: 190px;
+  height: 190px;
+
+  left: -75px;
+  bottom: 80px;
+
+  background:
+    rgba(139, 99, 155, 0.13);
+}
+
+
+/* =====================================================
+   GLASS
+   ===================================================== */
+
+.doctor-patient .glass {
+  background:
+    rgba(255, 255, 255, 0.8);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.84);
+
+  box-shadow:
+    0 16px 40px rgba(28, 58, 97, 0.08);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.doctor-patient__header {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 40;
+
+  display: grid;
+
+  grid-template-columns:
+    44px
+    1fr
+    44px;
+
+  align-items: center;
+
+  gap: 12px;
+
+  min-height: 72px;
+
+  padding:
+    10px
+    16px;
+
+  background:
+    rgba(255, 255, 255, 0.8);
+
+  border-bottom:
+    1px solid rgba(35, 66, 105, 0.06);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+
+.doctor-patient__back,
+.doctor-patient__theme {
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+  place-items: center;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 14px;
+
+  background:
+    rgba(255, 255, 255, 0.88);
+
+  color: #3568ad;
+
+  font-family: inherit;
+
+  font-size: 18px;
+
+  font-weight: 900;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 7px 20px rgba(22, 54, 91, 0.07);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.doctor-patient__back:hover,
+.doctor-patient__theme:hover {
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 10px 24px rgba(22, 54, 91, 0.11);
+}
+
+
+.doctor-patient__back:active,
+.doctor-patient__theme:active {
+  transform:
+    scale(0.96);
+}
+
+
+.doctor-patient__header-copy {
+  min-width: 0;
+}
+
+
+.doctor-patient__header-copy strong {
+  display: block;
+
+  color: #172c48;
+
+  font-size: 14px;
+
+  font-weight: 950;
+}
+
+
+.doctor-patient__header-copy span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #8996a6;
+
+  font-size: 10px;
+
+  font-weight: 750;
+}
+
+
+/* =====================================================
+   CONTAINER
+   ===================================================== */
+
+.doctor-patient__container {
+  position: relative;
+  z-index: 1;
+
+  width:
+    min(
+      100%,
+      980px
+    );
+
+  margin:
+    0 auto;
+
+  padding:
+    20px
+    14px
+    115px;
+}
+
+
+/* =====================================================
+   PATIENT PROFILE
+   ===================================================== */
+
+.doctor-patient-profile {
+  display: grid;
+
+  grid-template-columns:
+    72px
+    1fr;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 16px;
+
+  border-radius: 22px;
+
+  margin-bottom: 14px;
+}
+
+
+.doctor-patient-profile__avatar {
+  width: 70px;
+  height: 70px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      140deg,
+      rgba(66, 116, 217, 0.16),
+      rgba(149, 204, 221, 0.24)
+    );
+
+  color: #3566aa;
+
+  font-size: 24px;
+
+  font-weight: 950;
+}
+
+
+.doctor-patient-profile__identity {
+  min-width: 0;
+}
+
+
+.doctor-patient-profile__identity > span {
+  display: block;
+
+  color: #8895a5;
+
+  font-size: 9px;
+
+  font-weight: 800;
+}
+
+
+.doctor-patient-profile__identity h1 {
+  margin:
+    3px
+    0
+    4px;
+
+  color: #172b47;
+
+  font-size: 20px;
+
+  font-weight: 950;
+}
+
+
+.doctor-patient-profile__identity a {
+  display: block;
+
+  color: #4274d9;
+
+  font-size: 11px;
+
+  font-weight: 850;
+
+  text-decoration: none;
+}
+
+
+.doctor-patient-profile__identity small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #8290a1;
+
+  font-size: 9px;
+}
+
+
+/* =====================================================
+   STATS
+   ===================================================== */
+
+.doctor-patient-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(0, 1fr)
+    );
+
+  gap: 10px;
+
+  margin-bottom: 14px;
+}
+
+
+.doctor-patient-stat {
+  padding: 13px;
+
+  border-radius: 17px;
+}
+
+
+.doctor-patient-stat span {
+  display: block;
+
+  color: #8492a3;
+
+  font-size: 8px;
+
+  font-weight: 800;
+}
+
+
+.doctor-patient-stat strong {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #17304f;
+
+  font-size: 17px;
+
+  font-weight: 950;
+}
+
+
+/* =====================================================
+   SUMMARY
+   ===================================================== */
+
+.doctor-patient-summary {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap: 10px;
+
+  padding: 15px;
+
+  border-radius: 20px;
+
+  margin-bottom: 14px;
+}
+
+
+.doctor-patient-summary > div {
+  min-width: 0;
+}
+
+
+.doctor-patient-summary span {
+  display: block;
+
+  color: #8794a4;
+
+  font-size: 8px;
+
+  font-weight: 800;
+}
+
+
+.doctor-patient-summary strong {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #19314f;
+
+  font-size: 11px;
+
+  font-weight: 950;
+}
+
+
+/* =====================================================
+   PRIVACY
+   ===================================================== */
+
+.doctor-patient-privacy {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 11px;
+
+  margin-bottom: 18px;
+
+  padding: 14px;
+
+  border-radius: 19px;
+}
+
+
+.doctor-patient-privacy > span {
+  flex-shrink: 0;
+
+  width: 36px;
+  height: 36px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 12px;
+
+  background:
+    rgba(66, 116, 217, 0.08);
+
+  font-size: 16px;
+}
+
+
+.doctor-patient-privacy strong {
+  display: block;
+
+  color: #1b3150;
+
+  font-size: 11px;
+
+  font-weight: 900;
+}
+
+
+.doctor-patient-privacy p {
+  margin:
+    4px
+    0
+    0;
+
+  color: #8492a3;
+
+  font-size: 9px;
+
+  line-height: 1.65;
+}
+
+
+/* =====================================================
+   SECTION
+   ===================================================== */
+
+.doctor-patient__section {
+  margin-top: 6px;
+}
+
+
+.doctor-patient__section-head {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-bottom: 11px;
+}
+
+
+.doctor-patient__section-head span {
+  display: block;
+
+  color: #8b98a8;
+
+  font-size: 9px;
+
+  font-weight: 800;
+}
+
+
+.doctor-patient__section-head h2 {
+  margin:
+    2px
+    0
+    0;
+
+  color: #172b47;
+
+  font-size: 18px;
+
+  font-weight: 950;
+}
+
+
+.doctor-patient__section-head > strong {
+  min-width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  padding: 0 8px;
+
+  border-radius: 13px;
+
+  background:
+    rgba(66, 116, 217, 0.09);
+
+  color: #3c6fb9;
+
+  font-size: 11px;
+
+  font-weight: 900;
+}
+
+
+/* =====================================================
+   HISTORY
+   ===================================================== */
+
+.doctor-patient-history {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 11px;
+}
+
+
+/* =====================================================
+   APPOINTMENT CARD
+   ===================================================== */
+
+.doctor-patient-appointment {
+  padding: 15px;
+
+  border-radius: 21px;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.doctor-patient-appointment:hover {
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 20px 44px rgba(31, 61, 102, 0.11);
+}
+
+
+.doctor-patient-appointment__top {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 12px;
+}
+
+
+.doctor-patient-appointment__top > div {
+  min-width: 0;
+}
+
+
+.doctor-patient-appointment__top span {
+  display: block;
+
+  color: #6f8197;
+
+  font-size: 9px;
+
+  font-weight: 850;
+}
+
+
+.doctor-patient-appointment__top strong {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #182e4b;
+
+  font-size: 13px;
+
+  font-weight: 950;
+}
+
+
+/* =====================================================
+   STATUS
+   ===================================================== */
+
+.doctor-patient-appointment__status {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 27px;
+
+  padding:
+    0 9px;
+
+  border-radius: 999px;
+
+  font-size: 8px;
+
+  font-weight: 900;
+
+  white-space: nowrap;
+}
+
+
+.doctor-patient-appointment__status.is-pending {
+  background:
+    rgba(216, 150, 40, 0.1);
+
+  color: #aa721e;
+}
+
+
+.doctor-patient-appointment__status.is-confirmed {
+  background:
+    rgba(66, 116, 217, 0.1);
+
+  color: #3d6fb8;
+}
+
+
+.doctor-patient-appointment__status.is-progress {
+  background:
+    rgba(123, 93, 196, 0.1);
+
+  color: #7156ad;
+}
+
+
+.doctor-patient-appointment__status.is-completed {
+  background:
+    rgba(38, 158, 106, 0.1);
+
+  color: #26835d;
+}
+
+
+.doctor-patient-appointment__status.is-cancelled {
+  background:
+    rgba(210, 72, 72, 0.09);
+
+  color: #b34d4d;
+}
+
+
+.doctor-patient-appointment__status.is-noshow {
+  background:
+    rgba(93, 104, 120, 0.11);
+
+  color: #647083;
+}
+
+
+/* =====================================================
+   APPOINTMENT GRID
+   ===================================================== */
+
+.doctor-patient-appointment__grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap: 9px;
+
+  margin-bottom: 11px;
+}
+
+
+.doctor-patient-appointment__grid > div {
+  padding: 10px;
+
+  border-radius: 13px;
+
+  background:
+    rgba(247, 250, 254, 0.84);
+}
+
+
+.doctor-patient-appointment__grid span {
+  display: block;
+
+  color: #8a97a7;
+
+  font-size: 8px;
+
+  font-weight: 800;
+}
+
+
+.doctor-patient-appointment__grid strong {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #1c3453;
+
+  font-size: 10px;
+
+  font-weight: 900;
+}
+
+
+/* =====================================================
+   NOTES
+   ===================================================== */
+
+.doctor-patient-appointment__note {
+  margin-top: 9px;
+
+  padding:
+    10px
+    11px;
+
+  border-radius: 13px;
+
+  background:
+    rgba(247, 250, 254, 0.8);
+}
+
+
+.doctor-patient-appointment__note span {
+  display: block;
+
+  color: #8290a1;
+
+  font-size: 8px;
+
+  font-weight: 850;
+}
+
+
+.doctor-patient-appointment__note p {
+  margin:
+    4px
+    0
+    0;
+
+  color: #50627a;
+
+  font-size: 9px;
+
+  line-height: 1.65;
+}
+
+
+/* =====================================================
+   ARRIVAL
+   ===================================================== */
+
+.doctor-patient-appointment__arrived {
+  margin-top: 9px;
+
+  padding:
+    9px
+    10px;
+
+  border-radius: 12px;
+
+  background:
+    rgba(37, 158, 106, 0.09);
+
+  color: #25815b;
+
+  font-size: 9px;
+
+  font-weight: 900;
+}
+
+
+/* =====================================================
+   REFERENCE
+   ===================================================== */
+
+.doctor-patient-appointment__reference {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-top: 11px;
+
+  padding-top: 10px;
+
+  border-top:
+    1px solid rgba(36, 67, 105, 0.06);
+}
+
+
+.doctor-patient-appointment__reference span {
+  color: #8a97a7;
+
+  font-size: 8px;
+
+  font-weight: 800;
+}
+
+
+.doctor-patient-appointment__reference strong {
+  overflow: hidden;
+
+  color: #49617e;
+
+  font-size: 8px;
+
+  font-weight: 850;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+   EMPTY
+   ===================================================== */
+
+.doctor-patient-empty {
+  padding:
+    30px
+    18px;
+
+  border-radius: 21px;
+
+  text-align: center;
+}
+
+
+.doctor-patient-empty > span {
+  width: 52px;
+  height: 52px;
+
+  display: grid;
+  place-items: center;
+
+  margin:
+    0 auto
+    11px;
+
+  border-radius: 17px;
+
+  background:
+    rgba(66, 116, 217, 0.09);
+
+  color: #4274d9;
+
+  font-size: 21px;
+}
+
+
+.doctor-patient-empty h1,
+.doctor-patient-empty h3 {
+  margin: 0;
+
+  color: #172c48;
+
+  font-size: 15px;
+
+  font-weight: 950;
+}
+
+
+.doctor-patient-empty p {
+  margin:
+    6px
+    0
+    0;
+
+  color: #8492a4;
+
+  font-size: 10px;
+
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   BOTTOM NAV
+   ===================================================== */
+
+.doctor-patient .mobile-bottom-nav {
+  position: fixed;
+
+  z-index: 70;
+
+  right: 12px;
+  bottom: 10px;
+  left: 12px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      1fr
+    );
+
+  gap: 4px;
+
+  min-height: 66px;
+
+  padding: 7px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.82);
+
+  border-radius: 21px;
+
+  background:
+    rgba(255, 255, 255, 0.92);
+
+  box-shadow:
+    0 16px 38px rgba(20, 49, 87, 0.14);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+
+.doctor-patient .mobile-bottom-nav__item {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 4px;
+
+  border: 0;
+
+  border-radius: 15px;
+
+  background: transparent;
+
+  color: #8895a6;
+
+  font-family: inherit;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.doctor-patient .mobile-bottom-nav__icon {
+  font-size: 17px;
+
+  line-height: 1;
+}
+
+
+.doctor-patient .mobile-bottom-nav__item.is-active {
+  background:
+    rgba(66, 116, 217, 0.1);
+
+  color: #3d70bd;
+}
+
+
+.doctor-patient .mobile-bottom-nav__item:active {
+  transform:
+    scale(0.96);
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 560px) {
+
+  .doctor-patient__container {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+
+
+  .doctor-patient__header {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+
+
+  .doctor-patient-stats {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+
+  .doctor-patient-summary {
+    grid-template-columns: 1fr;
+  }
+
+
+  .doctor-patient-appointment__grid {
+    grid-template-columns:
+      repeat(
+        3,
+        minmax(0, 1fr)
+      );
+  }
+
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+   ===================================================== */
+
+@media (max-width: 350px) {
+
+  .doctor-patient-profile {
+    grid-template-columns:
+      58px
+      1fr;
+  }
+
+
+  .doctor-patient-profile__avatar {
+    width: 56px;
+    height: 56px;
+
+    border-radius: 18px;
+
+    font-size: 20px;
+  }
+
+
+  .doctor-patient-appointment__grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =====================================================
+   TABLET / DESKTOP
+   ===================================================== */
+
+@media (min-width: 720px) {
+
+  .doctor-patient__container {
+    padding:
+      28px
+      22px
+      55px;
+  }
+
+
+  .doctor-patient-history {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+}
+
+
+@media (min-width: 1030px) {
+
+  .doctor-patient__header {
+    padding-right:
+      max(
+        24px,
+        calc(
+          (100vw - 980px) / 2
+        )
+      );
+
+    padding-left:
+      max(
+        24px,
+        calc(
+          (100vw - 980px) / 2
+        )
+      );
+  }
+
+}
+
+
+/* =====================================================
+   DARK MODE
+   ===================================================== */
+
+html[data-theme="dark"]
+.doctor-patient,
+body.dark
+.doctor-patient {
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(66, 116, 217, 0.14),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(139, 99, 155, 0.11),
+      transparent 30%
+    ),
+    #0b1321;
+
+  color: #edf3fc;
+}
+
+
+html[data-theme="dark"]
+.doctor-patient__header,
+body.dark
+.doctor-patient__header {
+  background:
+    rgba(12, 21, 36, 0.86);
+
+  border-bottom-color:
+    rgba(255, 255, 255, 0.05);
+}
+
+
+html[data-theme="dark"]
+.doctor-patient .glass,
+body.dark
+.doctor-patient .glass {
+  background:
+    rgba(18, 30, 49, 0.78);
+
+  border-color:
+    rgba(255, 255, 255, 0.06);
+
+  box-shadow:
+    0 16px 42px rgba(0, 0, 0, 0.19);
+}
+
+
+html[data-theme="dark"]
+.doctor-patient__back,
+html[data-theme="dark"]
+.doctor-patient__theme,
+body.dark
+.doctor-patient__back,
+body.dark
+.doctor-patient__theme {
+  background:
+    rgba(22, 36, 57, 0.9);
+
+  color: #abc5f4;
+
+  box-shadow: none;
+}
+
+
+html[data-theme="dark"]
+.doctor-patient__header-copy strong,
+html[data-theme="dark"]
+.doctor-patient-profile__identity h1,
+html[data-theme="dark"]
+.doctor-patient-stat strong,
+html[data-theme="dark"]
+.doctor-patient-summary strong,
+html[data-theme="dark"]
+.doctor-patient-privacy strong,
+html[data-theme="dark"]
+.doctor-patient__section-head h2,
+html[data-theme="dark"]
+.doctor-patient-appointment__top strong,
+html[data-theme="dark"]
+.doctor-patient-appointment__grid strong,
+html[data-theme="dark"]
+.doctor-patient-empty h1,
+html[data-theme="dark"]
+.doctor-patient-empty h3,
+body.dark
+.doctor-patient__header-copy strong,
+body.dark
+.doctor-patient-profile__identity h1,
+body.dark
+.doctor-patient-stat strong,
+body.dark
+.doctor-patient-summary strong,
+body.dark
+.doctor-patient-privacy strong,
+body.dark
+.doctor-patient__section-head h2,
+body.dark
+.doctor-patient-appointment__top strong,
+body.dark
+.doctor-patient-appointment__grid strong,
+body.dark
+.doctor-patient-empty h1,
+body.dark
+.doctor-patient-empty h3 {
+  color: #eef4fc;
+}
+
+
+html[data-theme="dark"]
+.doctor-patient-appointment__grid > div,
+html[data-theme="dark"]
+.doctor-patient-appointment__note,
+body.dark
+.doctor-patient-appointment__grid > div,
+body.dark
+.doctor-patient-appointment__note {
+  background:
+    rgba(10, 19, 32, 0.72);
+}
+
+
+html[data-theme="dark"]
+.doctor-patient .mobile-bottom-nav,
+body.dark
+.doctor-patient .mobile-bottom-nav {
+  background:
+    rgba(14, 24, 40, 0.93);
+
+  border-color:
+    rgba(255, 255, 255, 0.06);
+}
+
+
+/* =====================================================
+   ACCESSIBILITY
+   ===================================================== */
+
+.doctor-patient button:focus-visible,
+.doctor-patient a:focus-visible {
+  outline:
+    3px solid rgba(66, 116, 217, 0.2);
+
+  outline-offset: 2px;
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .doctor-patient *,
+  .doctor-patient *::before,
+  .doctor-patient *::after {
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+
+}
+
+/* =====================================================
+   MON MÉDECIN
+   DOCTOR PATIENT DETAILS - BOTTOM NAV STYLES
+   ===================================================== */
+
+/* =====================================================
+   MOBILE BOTTOM NAV
+   ===================================================== */
+
+.mobile-bottom-nav {
+  position: fixed;
+  z-index: 70;
+  right: 12px;
+  bottom: 10px;
+  left: 12px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  min-height: 66px;
+  padding: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 21px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 16px 38px rgba(20, 49, 87, 0.14);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.mobile-bottom-nav__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 0;
+  border-radius: 15px;
+  background: transparent;
+  color: #8895a6;
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.mobile-bottom-nav__icon {
+  font-size: 17px;
+  line-height: 1;
+}
+
+.mobile-bottom-nav__item.is-active {
+  background: rgba(66, 116, 217, 0.1);
+  color: #3d70bd;
+}
+
+.mobile-bottom-nav__item:active {
+  transform: scale(0.96);
+}
+
+/* =====================================================
+   HIDE BOTTOM NAV ON DESKTOP
+   ===================================================== */
+
+@media (min-width: 1025px) {
+  .mobile-bottom-nav {
+    display: none !important;
+  }
+  .mobile-app-page.has-bottom-nav {
+    padding-bottom: 0 !important;
+  }
+}
+
+/* =====================================================
+   SHOW BOTTOM NAV ON MOBILE/TABLET
+   ===================================================== */
+
+@media (max-width: 1024px) {
+  .mobile-bottom-nav {
+    display: grid !important;
+  }
+  .mobile-app-page.has-bottom-nav {
+    padding-bottom: 85px !important;
+  }
+}
+
+/* =====================================================
+   DESKTOP HEADER ADJUSTMENTS
+   ===================================================== */
+
+@media (min-width: 1025px) {
+  .doctor-patient__container {
+    padding-bottom: 60px !important;
+  }
+}

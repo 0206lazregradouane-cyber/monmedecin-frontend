@@ -1,0 +1,1014 @@
+/* =====================================================
+   MON MÉDECIN
+   PATIENT BOOKING SUCCESS - COMPLETE STYLES
+   ===================================================== */
+
+/* =====================================================
+   PAGE
+   ===================================================== */
+
+.patient-booking-success {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  isolation: isolate;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at top right, rgba(66, 116, 217, 0.13), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(149, 204, 221, 0.18), transparent 32%),
+    #f7f9fc;
+  color: #15263e;
+}
+
+/* =====================================================
+   BACKGROUND
+   ===================================================== */
+
+.patient-booking-success__orb {
+  position: fixed;
+  z-index: -2;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.patient-booking-success__orb--blue {
+  width: 420px;
+  height: 420px;
+  top: -220px;
+  right: -220px;
+  background: radial-gradient(circle, rgba(66, 116, 217, 0.15), transparent 72%);
+}
+
+.patient-booking-success__orb--green {
+  width: 430px;
+  height: 430px;
+  left: -230px;
+  bottom: -220px;
+  background: radial-gradient(circle, rgba(37, 158, 106, 0.10), transparent 74%);
+}
+
+/* =====================================================
+   GLASS
+   ===================================================== */
+
+.patient-booking-success .glass {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.86);
+  box-shadow: 0 16px 42px rgba(27, 59, 99, 0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+[data-theme="dark"] .patient-booking-success .glass {
+  background: rgba(18, 30, 49, 0.8);
+  border-color: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.19);
+}
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.patient-booking-success__header {
+  position: sticky;
+  z-index: 40;
+  top: 0;
+  min-height: 72px;
+  padding: max(13px, env(safe-area-inset-top)) 18px 11px;
+  display: grid;
+  grid-template-columns: 42px 1fr 42px;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid rgba(35, 66, 105, 0.06);
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+}
+
+[data-theme="dark"] .patient-booking-success__header {
+  background: rgba(12, 21, 36, 0.87);
+  border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+.patient-booking-success__header-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.patient-booking-success__header-copy strong {
+  font-size: 14px;
+  font-weight: 900;
+  color: #172c48;
+}
+
+[data-theme="dark"] .patient-booking-success__header-copy strong {
+  color: #eef4fc;
+}
+
+.patient-booking-success__header-copy span {
+  margin-top: 1px;
+  color: #8996a6;
+  font-size: 9px;
+}
+
+.patient-booking-success__theme,
+.patient-booking-success__back {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  color: #3568ad;
+  border: 1px solid rgba(255, 255, 255, 0.86);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 7px 20px rgba(22, 54, 91, 0.07);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 900;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+[data-theme="dark"] .patient-booking-success__theme,
+[data-theme="dark"] .patient-booking-success__back {
+  background: rgba(22, 36, 57, 0.9);
+  color: #abc5f4;
+  box-shadow: none;
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+.patient-booking-success__theme:hover,
+.patient-booking-success__back:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(22, 54, 91, 0.11);
+}
+
+.patient-booking-success__theme:active,
+.patient-booking-success__back:active {
+  transform: scale(0.96);
+}
+
+/* =====================================================
+   CONTAINER
+   ===================================================== */
+
+.patient-booking-success__container {
+  width: min(100%, 760px);
+  margin: 0 auto;
+  padding: 34px 18px 40px;
+}
+
+/* =====================================================
+   HERO
+   ===================================================== */
+
+.patient-booking-success-hero {
+  text-align: center;
+  padding: 24px 16px;
+  border-radius: 23px;
+}
+
+.patient-booking-success-hero__icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 16px;
+  display: grid;
+  place-items: center;
+  border-radius: 22px;
+  background: rgba(37, 158, 106, 0.1);
+  color: #25815b;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+[data-theme="dark"] .patient-booking-success-hero__icon {
+  background: rgba(37, 158, 106, 0.12);
+}
+
+.patient-booking-success-hero > span {
+  display: block;
+  color: #25815b;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+[data-theme="dark"] .patient-booking-success-hero > span {
+  color: #6fcf97;
+}
+
+.patient-booking-success-hero h1 {
+  margin: 6px 0 0;
+  color: #172c48;
+  font-size: clamp(24px, 6vw, 32px);
+  font-weight: 950;
+}
+
+[data-theme="dark"] .patient-booking-success-hero h1 {
+  color: #eef4fc;
+}
+
+.patient-booking-success-hero p {
+  max-width: 430px;
+  margin: 10px auto 0;
+  color: #7c8a9c;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+[data-theme="dark"] .patient-booking-success-hero p {
+  color: #96a8bb;
+}
+
+.patient-booking-success-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: 0 14px;
+  margin-top: 16px;
+  border-radius: 999px;
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.patient-booking-success-status.is-pending {
+  background: rgba(222, 166, 53, 0.1);
+  color: #9d7426;
+}
+
+[data-theme="dark"] .patient-booking-success-status.is-pending {
+  background: rgba(222, 166, 53, 0.15);
+  color: #d4a02a;
+}
+
+.patient-booking-success-status.is-confirmed {
+  background: rgba(66, 116, 217, 0.1);
+  color: #3f70bd;
+}
+
+[data-theme="dark"] .patient-booking-success-status.is-confirmed {
+  background: rgba(66, 116, 217, 0.15);
+  color: #5a8ad9;
+}
+
+.patient-booking-success-status.is-completed {
+  background: rgba(37, 158, 106, 0.1);
+  color: #25815b;
+}
+
+[data-theme="dark"] .patient-booking-success-status.is-completed {
+  background: rgba(37, 158, 106, 0.15);
+  color: #6fcf97;
+}
+
+.patient-booking-success-status.is-cancelled {
+  background: rgba(210, 72, 72, 0.09);
+  color: #b34d4d;
+}
+
+[data-theme="dark"] .patient-booking-success-status.is-cancelled {
+  background: rgba(210, 72, 72, 0.15);
+  color: #e57373;
+}
+
+.patient-booking-success-status.is-no-show {
+  background: rgba(99, 105, 116, 0.1);
+  color: #68717d;
+}
+
+[data-theme="dark"] .patient-booking-success-status.is-no-show {
+  background: rgba(99, 105, 116, 0.15);
+  color: #9aaac0;
+}
+
+/* =====================================================
+   BOOKING NUMBER CARD - 🔑 رقم الحجز
+   ===================================================== */
+
+.patient-booking-success-code {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
+  padding: 16px 18px;
+  border-radius: 19px;
+  background: linear-gradient(135deg, rgba(66, 116, 217, 0.08), rgba(66, 116, 217, 0.02));
+  border: 2px solid rgba(66, 116, 217, 0.12);
+}
+
+[data-theme="dark"] .patient-booking-success-code {
+  background: rgba(66, 116, 217, 0.06);
+  border-color: rgba(66, 116, 217, 0.2);
+}
+
+.patient-booking-success-code span {
+  color: #8996a6;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+[data-theme="dark"] .patient-booking-success-code span {
+  color: #8495a9;
+}
+
+.patient-booking-success-code strong {
+  color: #172c48;
+  font-size: 18px;
+  font-weight: 950;
+  letter-spacing: 0.5px;
+  font-family: 'Courier New', monospace;
+}
+
+[data-theme="dark"] .patient-booking-success-code strong {
+  color: #eef4fc;
+}
+
+/* =====================================================
+   COPY BUTTON
+   ===================================================== */
+
+#patientBookingSuccessCopyId {
+  min-height: 32px;
+  padding: 0 12px;
+  border: 1px solid rgba(66, 116, 217, 0.12);
+  border-radius: 9px;
+  background: rgba(66, 116, 217, 0.06);
+  color: #4274d9;
+  font-family: inherit;
+  font-size: 7px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+[data-theme="dark"] #patientBookingSuccessCopyId {
+  border-color: rgba(66, 116, 217, 0.2);
+  color: #5a8ad9;
+}
+
+#patientBookingSuccessCopyId:hover {
+  background: rgba(66, 116, 217, 0.12);
+  transform: translateY(-1px);
+}
+
+#patientBookingSuccessCopyId:active {
+  transform: scale(0.95);
+}
+
+/* =====================================================
+   QUEUE POSITION
+   ===================================================== */
+
+.patient-booking-success-queue {
+  animation: queuePulse 2s ease-in-out infinite;
+}
+
+@keyframes queuePulse {
+  0%, 100% {
+    border-color: rgba(66, 116, 217, 0.1);
+  }
+  50% {
+    border-color: rgba(66, 116, 217, 0.3);
+  }
+}
+
+/* =====================================================
+   CARDS
+   ===================================================== */
+
+.patient-booking-success-card {
+  margin-top: 13px;
+  padding: 15px;
+  border-radius: 21px;
+}
+
+.patient-booking-success-card__heading {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.patient-booking-success-card__heading > span {
+  color: #8996a6;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+[data-theme="dark"] .patient-booking-success-card__heading > span {
+  color: #8495a9;
+}
+
+.patient-booking-success-card__heading strong {
+  color: #172b47;
+  font-size: 12px;
+  font-weight: 950;
+}
+
+[data-theme="dark"] .patient-booking-success-card__heading strong {
+  color: #eef4fc;
+}
+
+/* =====================================================
+   GRID
+   ===================================================== */
+
+.patient-booking-success-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.patient-booking-success-grid > div {
+  padding: 10px 12px;
+  border-radius: 13px;
+  background: rgba(247, 250, 254, 0.7);
+}
+
+[data-theme="dark"] .patient-booking-success-grid > div {
+  background: rgba(10, 19, 32, 0.62);
+}
+
+.patient-booking-success-grid span {
+  display: block;
+  color: #8996a6;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+[data-theme="dark"] .patient-booking-success-grid span {
+  color: #8495a9;
+}
+
+.patient-booking-success-grid strong {
+  display: block;
+  margin-top: 3px;
+  color: #19314f;
+  font-size: 10px;
+  font-weight: 950;
+}
+
+[data-theme="dark"] .patient-booking-success-grid strong {
+  color: #eef4fc;
+}
+
+/* =====================================================
+   LINE
+   ===================================================== */
+
+.patient-booking-success-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 13px;
+  background: rgba(247, 250, 254, 0.7);
+}
+
+[data-theme="dark"] .patient-booking-success-line {
+  background: rgba(10, 19, 32, 0.62);
+}
+
+.patient-booking-success-line span {
+  color: #8996a6;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+[data-theme="dark"] .patient-booking-success-line span {
+  color: #8495a9;
+}
+
+.patient-booking-success-line strong {
+  color: #19314f;
+  font-size: 10px;
+  font-weight: 950;
+}
+
+[data-theme="dark"] .patient-booking-success-line strong {
+  color: #eef4fc;
+}
+
+/* =====================================================
+   NOTES
+   ===================================================== */
+
+.patient-booking-success-note {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 13px;
+  background: rgba(247, 250, 254, 0.7);
+}
+
+[data-theme="dark"] .patient-booking-success-note {
+  background: rgba(10, 19, 32, 0.62);
+}
+
+.patient-booking-success-note span {
+  display: block;
+  color: #8996a6;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+[data-theme="dark"] .patient-booking-success-note span {
+  color: #8495a9;
+}
+
+.patient-booking-success-note p {
+  margin: 5px 0 0;
+  color: #50627a;
+  font-size: 9px;
+  line-height: 1.7;
+}
+
+[data-theme="dark"] .patient-booking-success-note p {
+  color: #9aaac0;
+}
+
+/* =====================================================
+   MESSAGE
+   ===================================================== */
+
+.patient-booking-success-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 19px;
+}
+
+.patient-booking-success-message__icon {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: rgba(66, 116, 217, 0.08);
+  color: #4274d9;
+  font-size: 14px;
+  font-weight: 950;
+}
+
+[data-theme="dark"] .patient-booking-success-message__icon {
+  background: rgba(66, 116, 217, 0.12);
+  color: #5a8ad9;
+}
+
+.patient-booking-success-message strong {
+  display: block;
+  color: #19314f;
+  font-size: 11px;
+  font-weight: 950;
+}
+
+[data-theme="dark"] .patient-booking-success-message strong {
+  color: #eef4fc;
+}
+
+.patient-booking-success-message p {
+  margin: 4px 0 0;
+  color: #8492a3;
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+[data-theme="dark"] .patient-booking-success-message p {
+  color: #96a8bb;
+}
+
+/* =====================================================
+   ACTIONS
+   ===================================================== */
+
+.patient-booking-success-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.patient-booking-success-actions__primary {
+  min-height: 48px;
+  border: 0;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #4274d9, #345fa9);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 950;
+  cursor: pointer;
+  box-shadow: 0 8px 19px rgba(66, 116, 217, 0.17);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+[data-theme="dark"] .patient-booking-success-actions__primary {
+  background: linear-gradient(135deg, #4274d9, #345fa9);
+  box-shadow: 0 8px 19px rgba(66, 116, 217, 0.1);
+}
+
+.patient-booking-success-actions__primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 11px 24px rgba(66, 116, 217, 0.22);
+}
+
+.patient-booking-success-actions__secondary {
+  min-height: 44px;
+  border: 1px solid rgba(66, 116, 217, 0.1);
+  border-radius: 14px;
+  background: rgba(66, 116, 217, 0.05);
+  color: #3f70bd;
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+[data-theme="dark"] .patient-booking-success-actions__secondary {
+  border-color: rgba(66, 116, 217, 0.2);
+  background: rgba(66, 116, 217, 0.08);
+  color: #5a8ad9;
+}
+
+.patient-booking-success-actions__secondary:hover {
+  transform: translateY(-1px);
+  background: rgba(66, 116, 217, 0.1);
+}
+
+[data-theme="dark"] .patient-booking-success-actions__secondary:hover {
+  background: rgba(66, 116, 217, 0.15);
+}
+
+/* =====================================================
+   EMPTY
+   ===================================================== */
+
+.patient-booking-success-empty {
+  width: min(calc(100% - 36px), 390px);
+  margin: 100px auto;
+  padding: 30px 20px;
+  border-radius: 24px;
+  text-align: center;
+}
+
+.patient-booking-success-empty__icon {
+  width: 54px;
+  height: 54px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  color: #b34d4d;
+  background: rgba(210, 72, 72, 0.08);
+  font-size: 22px;
+  font-weight: 900;
+}
+
+[data-theme="dark"] .patient-booking-success-empty__icon {
+  background: rgba(210, 72, 72, 0.12);
+  color: #e57373;
+}
+
+.patient-booking-success-empty h1 {
+  margin: 15px 0 0;
+  color: #172c48;
+  font-size: 21px;
+  font-weight: 950;
+}
+
+[data-theme="dark"] .patient-booking-success-empty h1 {
+  color: #eef4fc;
+}
+
+.patient-booking-success-empty p {
+  margin: 8px 0 20px;
+  color: #7c8a9c;
+  font-size: 11px;
+}
+
+[data-theme="dark"] .patient-booking-success-empty p {
+  color: #96a8bb;
+}
+
+.patient-booking-success-empty button {
+  min-height: 42px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 12px;
+  background: #4274d9;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 8px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+[data-theme="dark"] .patient-booking-success-empty button {
+  background: #345fa9;
+}
+
+.patient-booking-success-empty button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 19px rgba(66, 116, 217, 0.17);
+}
+
+/* =====================================================
+   BOTTOM NAV
+   ===================================================== */
+
+.mobile-bottom-nav {
+  position: fixed;
+  z-index: 70;
+  right: 12px;
+  bottom: 10px;
+  left: 12px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  min-height: 66px;
+  padding: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 21px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 16px 38px rgba(20, 49, 87, 0.14);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+[data-theme="dark"] .mobile-bottom-nav {
+  background: rgba(14, 24, 40, 0.93);
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+.mobile-bottom-nav__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 0;
+  border-radius: 15px;
+  background: transparent;
+  color: #8895a6;
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.mobile-bottom-nav__item.is-active {
+  background: rgba(66, 116, 217, 0.1);
+  color: #3d70bd;
+}
+
+.mobile-bottom-nav__icon {
+  font-size: 17px;
+  line-height: 1;
+}
+
+.mobile-bottom-nav__item:active {
+  transform: scale(0.96);
+}
+
+/* =====================================================
+   HIDE BOTTOM NAV ON DESKTOP
+   ===================================================== */
+
+@media (min-width: 1025px) {
+  .mobile-bottom-nav {
+    display: none !important;
+  }
+  .mobile-app-page.has-bottom-nav {
+    padding-bottom: 0 !important;
+  }
+}
+
+/* =====================================================
+   SHOW BOTTOM NAV ON MOBILE/TABLET
+   ===================================================== */
+
+@media (max-width: 1024px) {
+  .mobile-bottom-nav {
+    display: grid !important;
+  }
+  .mobile-app-page.has-bottom-nav {
+    padding-bottom: 85px !important;
+  }
+}
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 480px) {
+  .patient-booking-success__container {
+    max-width: 390px;
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+
+  .patient-booking-success__header {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+
+  .patient-booking-success-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .patient-booking-success-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .patient-booking-success-hero h1 {
+    font-size: 22px;
+  }
+
+  .patient-booking-success-code {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .patient-booking-success-code strong {
+    font-size: 15px;
+  }
+}
+
+/* =====================================================
+   VERY SMALL PHONE
+   ===================================================== */
+
+@media (max-width: 350px) {
+  .patient-booking-success__container {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .patient-booking-success-hero {
+    padding: 18px 12px;
+  }
+
+  .patient-booking-success-hero__icon {
+    width: 60px;
+    height: 60px;
+    font-size: 26px;
+  }
+
+  .patient-booking-success-card {
+    padding: 12px;
+  }
+
+  .patient-booking-success-code {
+    padding: 12px;
+  }
+
+  .patient-booking-success-code strong {
+    font-size: 13px;
+  }
+}
+
+/* =====================================================
+   TABLET
+   ===================================================== */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .patient-booking-success__container {
+    padding: 46px 32px 60px;
+  }
+
+  .patient-booking-success-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* =====================================================
+   DESKTOP
+   ===================================================== */
+
+@media (min-width: 1024px) {
+  .patient-booking-success__header {
+    min-height: 82px;
+    padding: 16px 40px;
+  }
+
+  .patient-booking-success__container {
+    padding: 56px 40px 80px;
+  }
+
+  .patient-booking-success-hero h1 {
+    font-size: 38px;
+  }
+
+  .patient-booking-success-hero p {
+    font-size: 13px;
+  }
+
+  .patient-booking-success-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 800px) {
+  .patient-booking-success__header {
+    padding-right: max(24px, calc((100vw - 760px) / 2));
+    padding-left: max(24px, calc((100vw - 760px) / 2));
+  }
+}
+
+/* =====================================================
+   MESSAGE TOAST
+   ===================================================== */
+
+.booking-success-message {
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  font-size: 10px;
+  font-weight: 850;
+  line-height: 1.6;
+  animation: bookingMessageIn 0.2s ease;
+}
+
+@keyframes bookingMessageIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.booking-success-message.is-success {
+  background: rgba(35, 157, 104, 0.1);
+  border: 1px solid rgba(35, 157, 104, 0.12);
+  color: #25815b;
+}
+
+[data-theme="dark"] .booking-success-message.is-success {
+  background: rgba(37, 158, 106, 0.15);
+  border-color: rgba(37, 158, 106, 0.2);
+  color: #6fcf97;
+}
+
+.booking-success-message.is-error {
+  background: rgba(209, 67, 67, 0.08);
+  border: 1px solid rgba(209, 67, 67, 0.12);
+  color: #ad4949;
+}
+
+[data-theme="dark"] .booking-success-message.is-error {
+  background: rgba(210, 72, 72, 0.15);
+  border-color: rgba(210, 72, 72, 0.2);
+  color: #e57373;
+}
+
+.booking-success-message.is-info {
+  background: rgba(66, 116, 217, 0.08);
+  border: 1px solid rgba(66, 116, 217, 0.1);
+  color: #3f70bd;
+}
+
+[data-theme="dark"] .booking-success-message.is-info {
+  background: rgba(66, 116, 217, 0.15);
+  border-color: rgba(66, 116, 217, 0.2);
+  color: #5a8ad9;
+}
+
+/* =====================================================
+   ACCESSIBILITY
+   ===================================================== */
+
+.patient-booking-success button:focus-visible,
+.patient-booking-success input:focus-visible {
+  outline: 3px solid rgba(66, 116, 217, 0.2);
+  outline-offset: 2px;
+}
+
+/* =====================================================
+   REDUCED MOTION
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .patient-booking-success *,
+  .patient-booking-success *::before,
+  .patient-booking-success *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

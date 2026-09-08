@@ -1,0 +1,1848 @@
+/* =====================================================
+   MON MÉDECIN
+   DOCTOR SERVICES
+
+   COMPLETE STYLE
+   -----------------------------------------------------
+   - Medical blue identity
+   - Glassmorphism
+   - Mobile first
+   - Responsive
+   - Dark mode
+   - Service cards
+   - Add/edit modal
+   - Active/disabled states
+   ===================================================== */
+
+
+/* =====================================================
+   PAGE
+   ===================================================== */
+
+.doctor-services {
+  position: relative;
+
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
+  direction: rtl;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(66, 116, 217, 0.13),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(149, 204, 221, 0.18),
+      transparent 34%
+    ),
+    #f7f9fc;
+
+  color: #15263e;
+}
+
+
+/* =====================================================
+   ORBS
+   ===================================================== */
+
+.doctor-services__orb {
+  position: fixed;
+
+  z-index: 0;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(32px);
+
+  opacity: 0.5;
+}
+
+
+.doctor-services__orb--blue {
+  width: 260px;
+  height: 260px;
+
+  top: -110px;
+  right: -100px;
+
+  background:
+    rgba(66, 116, 217, 0.18);
+}
+
+
+.doctor-services__orb--cyan {
+  width: 225px;
+  height: 225px;
+
+  left: -95px;
+  bottom: 55px;
+
+  background:
+    rgba(149, 204, 221, 0.2);
+}
+
+
+/* =====================================================
+   GLASS
+   ===================================================== */
+
+.doctor-services .glass {
+  background:
+    rgba(255, 255, 255, 0.82);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.86);
+
+  box-shadow:
+    0 16px 42px rgba(27, 59, 99, 0.08);
+
+  backdrop-filter: blur(18px);
+
+  -webkit-backdrop-filter: blur(18px);
+}
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.doctor-services__header {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 40;
+
+  display: grid;
+
+  grid-template-columns:
+    44px
+    minmax(0, 1fr)
+    44px;
+
+  align-items: center;
+
+  gap: 12px;
+
+  min-height: 72px;
+
+  padding:
+    10px
+    16px;
+
+  background:
+    rgba(255, 255, 255, 0.84);
+
+  border-bottom:
+    1px solid rgba(35, 66, 105, 0.06);
+
+  backdrop-filter: blur(18px);
+
+  -webkit-backdrop-filter: blur(18px);
+}
+
+
+.doctor-services__back,
+.doctor-services__theme {
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+
+  place-items: center;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 14px;
+
+  background:
+    rgba(255, 255, 255, 0.92);
+
+  color: #3568ad;
+
+  font-family: inherit;
+
+  font-size: 18px;
+
+  font-weight: 900;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 7px 20px rgba(22, 54, 91, 0.07);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.doctor-services__back:hover,
+.doctor-services__theme:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 10px 24px rgba(22, 54, 91, 0.11);
+}
+
+
+.doctor-services__back:active,
+.doctor-services__theme:active {
+  transform: scale(0.96);
+}
+
+
+.doctor-services__header-copy {
+  min-width: 0;
+}
+
+
+.doctor-services__header-copy strong {
+  display: block;
+
+  overflow: hidden;
+
+  color: #172c48;
+
+  font-size: 14px;
+
+  font-weight: 950;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+
+.doctor-services__header-copy span {
+  display: block;
+
+  margin-top: 2px;
+
+  overflow: hidden;
+
+  color: #8996a6;
+
+  font-size: 9px;
+
+  font-weight: 750;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+   CONTAINER
+   ===================================================== */
+
+.doctor-services__container {
+  position: relative;
+
+  z-index: 1;
+
+  width:
+    min(
+      100%,
+      980px
+    );
+
+  margin:
+    0 auto;
+
+  padding:
+    22px
+    14px
+    76px;
+}
+
+
+/* =====================================================
+   HERO
+   ===================================================== */
+
+.doctor-services__hero {
+  margin-bottom: 15px;
+}
+
+
+.doctor-services__hero > span {
+  display: inline-flex;
+
+  align-items: center;
+
+  min-height: 27px;
+
+  padding:
+    0
+    10px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(66, 116, 217, 0.09);
+
+  color: #3f70bd;
+
+  font-size: 9px;
+
+  font-weight: 900;
+}
+
+
+.doctor-services__hero h1 {
+  margin:
+    10px
+    0
+    6px;
+
+  color: #142a47;
+
+  font-size:
+    clamp(
+      25px,
+      6vw,
+      35px
+    );
+
+  line-height: 1.2;
+
+  font-weight: 950;
+}
+
+
+.doctor-services__hero p {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: #7c8a9c;
+
+  font-size: 10px;
+
+  line-height: 1.75;
+}
+
+
+/* =====================================================
+   MESSAGE
+   ===================================================== */
+
+.doctor-services-message {
+  margin-bottom: 14px;
+
+  padding:
+    11px
+    13px;
+
+  border-radius: 13px;
+
+  font-size: 9px;
+
+  font-weight: 850;
+
+  line-height: 1.6;
+
+  animation:
+    doctorServicesMessageIn
+    0.2s ease;
+}
+
+
+@keyframes doctorServicesMessageIn {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+
+.doctor-services-message.is-success {
+  background:
+    rgba(35, 157, 104, 0.1);
+
+  border:
+    1px solid rgba(35, 157, 104, 0.12);
+
+  color: #25815b;
+}
+
+
+.doctor-services-message.is-error {
+  background:
+    rgba(209, 67, 67, 0.08);
+
+  border:
+    1px solid rgba(209, 67, 67, 0.12);
+
+  color: #ad4949;
+}
+
+
+.doctor-services-message.is-info {
+  background:
+    rgba(66, 116, 217, 0.08);
+
+  border:
+    1px solid rgba(66, 116, 217, 0.1);
+
+  color: #3f70bd;
+}
+
+
+/* =====================================================
+   STATS
+   ===================================================== */
+
+.doctor-services-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap: 10px;
+
+  margin-bottom: 13px;
+}
+
+
+.doctor-services-stat {
+  padding: 14px;
+
+  border-radius: 18px;
+}
+
+
+.doctor-services-stat span {
+  display: block;
+
+  color: #8492a3;
+
+  font-size: 8px;
+
+  font-weight: 800;
+}
+
+
+.doctor-services-stat strong {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #17304f;
+
+  font-size: 21px;
+
+  font-weight: 950;
+}
+
+
+.doctor-services-stat.is-active strong {
+  color: #25815b;
+}
+
+
+.doctor-services-stat.is-disabled strong {
+  color: #a56a6a;
+}
+
+
+/* =====================================================
+   TOOLBAR
+   ===================================================== */
+
+.doctor-services-toolbar {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 14px;
+
+  margin-bottom: 13px;
+
+  padding: 14px;
+
+  border-radius: 20px;
+}
+
+
+.doctor-services-toolbar > div {
+  min-width: 0;
+}
+
+
+.doctor-services-toolbar span {
+  display: block;
+
+  color: #8996a6;
+
+  font-size: 8px;
+
+  font-weight: 800;
+}
+
+
+.doctor-services-toolbar strong {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #19314f;
+
+  font-size: 11px;
+
+  font-weight: 950;
+}
+
+
+.doctor-services-toolbar > button {
+  flex-shrink: 0;
+
+  min-height: 41px;
+
+  padding:
+    0
+    15px;
+
+  border: 0;
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #4274d9,
+      #345fa9
+    );
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 8px;
+
+  font-weight: 950;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 20px rgba(66, 116, 217, 0.18);
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+
+.doctor-services-toolbar > button:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 11px 25px rgba(66, 116, 217, 0.23);
+}
+
+
+.doctor-services-toolbar > button:active {
+  transform: scale(0.98);
+}
+
+
+/* =====================================================
+   LIST
+   ===================================================== */
+
+.doctor-services-list {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 11px;
+}
+
+
+/* =====================================================
+   SERVICE CARD
+   ===================================================== */
+
+.doctor-service-card {
+  padding: 14px;
+
+  border-radius: 21px;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.doctor-service-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 20px 45px rgba(31, 61, 102, 0.11);
+}
+
+
+.doctor-service-card.is-disabled {
+  opacity: 0.68;
+}
+
+
+/* =====================================================
+   CARD TOP
+   ===================================================== */
+
+.doctor-service-card__top {
+  display: grid;
+
+  grid-template-columns:
+    46px
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 10px;
+}
+
+
+.doctor-service-card__icon {
+  width: 46px;
+  height: 46px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      140deg,
+      rgba(66, 116, 217, 0.14),
+      rgba(149, 204, 221, 0.23)
+    );
+
+  color: #3566aa;
+
+  font-size: 15px;
+
+  font-weight: 950;
+}
+
+
+.doctor-service-card__copy {
+  min-width: 0;
+}
+
+
+.doctor-service-card__copy > span {
+  display: block;
+
+  color: #4774ad;
+
+  font-size: 7px;
+
+  font-weight: 900;
+}
+
+
+.doctor-service-card__copy h3 {
+  margin:
+    3px
+    0
+    0;
+
+  overflow: hidden;
+
+  color: #172d49;
+
+  font-size: 12px;
+
+  font-weight: 950;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+   STATUS
+   ===================================================== */
+
+.doctor-service-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 25px;
+
+  padding:
+    0
+    8px;
+
+  border-radius: 999px;
+
+  font-size: 7px;
+
+  font-weight: 950;
+
+  white-space: nowrap;
+}
+
+
+.doctor-service-status.is-active {
+  background:
+    rgba(35, 157, 104, 0.1);
+
+  color: #25815b;
+}
+
+
+.doctor-service-status.is-disabled {
+  background:
+    rgba(110, 119, 133, 0.1);
+
+  color: #6c7480;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+   ===================================================== */
+
+.doctor-service-card__description {
+  min-height: 34px;
+
+  margin:
+    0
+    0
+    10px;
+
+  color: #7d8b9e;
+
+  font-size: 8px;
+
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   INFO
+   ===================================================== */
+
+.doctor-service-card__info {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 7px;
+}
+
+
+.doctor-service-card__info > div {
+  min-width: 0;
+
+  padding: 9px;
+
+  border-radius: 12px;
+
+  background:
+    rgba(247, 250, 254, 0.84);
+}
+
+
+.doctor-service-card__info span {
+  display: block;
+
+  color: #8996a6;
+
+  font-size: 7px;
+
+  font-weight: 800;
+}
+
+
+.doctor-service-card__info strong {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #19314f;
+
+  font-size: 9px;
+
+  font-weight: 950;
+}
+
+
+/* =====================================================
+   ACTIONS
+   ===================================================== */
+
+.doctor-service-card__actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 6px;
+
+  margin-top: 11px;
+
+  padding-top: 10px;
+
+  border-top:
+    1px solid rgba(36, 67, 105, 0.06);
+}
+
+
+.doctor-service-action {
+  min-height: 35px;
+
+  padding:
+    0
+    10px;
+
+  border-radius: 11px;
+
+  font-family: inherit;
+
+  font-size: 7px;
+
+  font-weight: 900;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease;
+}
+
+
+.doctor-service-action:hover {
+  transform: translateY(-1px);
+}
+
+
+.doctor-service-action:active {
+  transform: scale(0.97);
+}
+
+
+.doctor-service-action.is-edit {
+  border:
+    1px solid rgba(66, 116, 217, 0.11);
+
+  background:
+    rgba(66, 116, 217, 0.06);
+
+  color: #3f70bd;
+}
+
+
+.doctor-service-action.is-toggle {
+  border:
+    1px solid rgba(222, 166, 53, 0.12);
+
+  background:
+    rgba(222, 166, 53, 0.06);
+
+  color: #9d7426;
+}
+
+
+.doctor-service-action.is-delete {
+  border:
+    1px solid rgba(210, 72, 72, 0.12);
+
+  background:
+    rgba(210, 72, 72, 0.06);
+
+  color: #b34d4d;
+}
+
+
+/* =====================================================
+   EMPTY
+   ===================================================== */
+
+.doctor-services-empty {
+  grid-column:
+    1 / -1;
+
+  padding:
+    34px
+    18px;
+
+  border-radius: 22px;
+
+  text-align: center;
+}
+
+
+.doctor-services-empty > span {
+  width: 56px;
+  height: 56px;
+
+  display: grid;
+
+  place-items: center;
+
+  margin:
+    0 auto
+    11px;
+
+  border-radius: 17px;
+
+  background:
+    rgba(66, 116, 217, 0.09);
+
+  color: #4274d9;
+
+  font-size: 20px;
+}
+
+
+.doctor-services-empty h3 {
+  margin: 0;
+
+  color: #172c48;
+
+  font-size: 15px;
+
+  font-weight: 950;
+}
+
+
+.doctor-services-empty p {
+  max-width: 360px;
+
+  margin:
+    6px
+    auto
+    13px;
+
+  color: #8492a4;
+
+  font-size: 9px;
+
+  line-height: 1.7;
+}
+
+
+.doctor-services-empty button {
+  min-height: 40px;
+
+  padding:
+    0
+    14px;
+
+  border: 0;
+
+  border-radius: 12px;
+
+  background: #4274d9;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 8px;
+
+  font-weight: 900;
+
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   MODAL OVERLAY
+   ===================================================== */
+
+.doctor-service-modal-overlay {
+  position: fixed;
+
+  z-index: 100;
+
+  inset: 0;
+
+  display: grid;
+
+  align-items: end;
+
+  padding:
+    20px
+    12px;
+
+  background:
+    rgba(7, 17, 30, 0.44);
+
+  backdrop-filter: blur(7px);
+
+  -webkit-backdrop-filter: blur(7px);
+
+  animation:
+    doctorServiceOverlayIn
+    0.18s ease;
+}
+
+
+@keyframes doctorServiceOverlayIn {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+
+/* =====================================================
+   MODAL
+   ===================================================== */
+
+.doctor-service-modal {
+  width:
+    min(
+      100%,
+      620px
+    );
+
+  max-height:
+    min(
+      90vh,
+      820px
+    );
+
+  margin:
+    0 auto;
+
+  padding: 16px;
+
+  overflow-y: auto;
+
+  border-radius: 24px;
+
+  animation:
+    doctorServiceModalIn
+    0.22s ease;
+}
+
+
+@keyframes doctorServiceModalIn {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* =====================================================
+   MODAL HEADER
+   ===================================================== */
+
+.doctor-service-modal__header {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 13px;
+}
+
+
+.doctor-service-modal__header > div {
+  min-width: 0;
+}
+
+
+.doctor-service-modal__header span {
+  display: block;
+
+  color: #8996a6;
+
+  font-size: 8px;
+
+  font-weight: 800;
+}
+
+
+.doctor-service-modal__header h2 {
+  margin:
+    3px
+    0
+    0;
+
+  color: #172b47;
+
+  font-size: 18px;
+
+  font-weight: 950;
+}
+
+
+.doctor-service-modal__header > button {
+  flex-shrink: 0;
+
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+
+  place-items: center;
+
+  border: 0;
+
+  border-radius: 12px;
+
+  background:
+    rgba(66, 116, 217, 0.07);
+
+  color: #4872a6;
+
+  font-size: 22px;
+
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   FORM
+   ===================================================== */
+
+.doctor-service-form {
+  width: 100%;
+}
+
+
+.doctor-service-field {
+  display: block;
+
+  margin-top: 10px;
+}
+
+
+.doctor-service-field > span {
+  display: block;
+
+  margin:
+    0
+    2px
+    6px;
+
+  color: #708197;
+
+  font-size: 8px;
+
+  font-weight: 850;
+}
+
+
+.doctor-service-field input,
+.doctor-service-field textarea,
+.doctor-service-field select {
+  width: 100%;
+
+  border:
+    1px solid rgba(38, 71, 114, 0.09);
+
+  border-radius: 13px;
+
+  outline: 0;
+
+  background:
+    rgba(248, 251, 255, 0.96);
+
+  color: #19314f;
+
+  font-family: inherit;
+
+  font-size: 9px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.doctor-service-field input,
+.doctor-service-field select {
+  min-height: 44px;
+
+  padding:
+    0
+    11px;
+}
+
+
+.doctor-service-field textarea {
+  min-height: 95px;
+
+  padding:
+    10px
+    11px;
+
+  resize: vertical;
+
+  line-height: 1.6;
+}
+
+
+.doctor-service-field input:focus,
+.doctor-service-field textarea:focus,
+.doctor-service-field select:focus {
+  background: #ffffff;
+
+  border-color:
+    rgba(66, 116, 217, 0.3);
+
+  box-shadow:
+    0 0 0 4px rgba(66, 116, 217, 0.06);
+}
+
+
+.doctor-service-form__grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 9px;
+}
+
+
+/* =====================================================
+   ACTIVE CONTROL
+   ===================================================== */
+
+.doctor-service-active {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-top: 13px;
+
+  padding:
+    11px
+    12px;
+
+  border:
+    1px solid rgba(38, 71, 114, 0.07);
+
+  border-radius: 14px;
+
+  background:
+    rgba(247, 250, 254, 0.78);
+}
+
+
+.doctor-service-active > div {
+  min-width: 0;
+}
+
+
+.doctor-service-active strong {
+  display: block;
+
+  color: #19314f;
+
+  font-size: 9px;
+
+  font-weight: 950;
+}
+
+
+.doctor-service-active span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #8996a6;
+
+  font-size: 7px;
+
+  line-height: 1.5;
+}
+
+
+.doctor-service-active input {
+  flex-shrink: 0;
+
+  width: 18px;
+  height: 18px;
+
+  accent-color: #4274d9;
+
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   SAVE
+   ===================================================== */
+
+.doctor-service-save {
+  width: 100%;
+
+  min-height: 44px;
+
+  margin-top: 14px;
+
+  border: 0;
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #4274d9,
+      #345fa9
+    );
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 9px;
+
+  font-weight: 950;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 20px rgba(66, 116, 217, 0.18);
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+
+.doctor-service-save:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 11px 25px rgba(66, 116, 217, 0.23);
+}
+
+
+.doctor-service-save:active {
+  transform: scale(0.99);
+}
+
+
+/* =====================================================
+   TABLET
+   ===================================================== */
+
+@media (max-width: 760px) {
+
+  .doctor-services__container {
+    padding-right: 13px;
+
+    padding-left: 13px;
+  }
+
+
+  .doctor-services__header {
+    padding-right: 13px;
+
+    padding-left: 13px;
+  }
+
+}
+
+
+/* =====================================================
+   PHONE
+   ===================================================== */
+
+@media (max-width: 650px) {
+
+  .doctor-services-list {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL PHONE
+   ===================================================== */
+
+@media (max-width: 470px) {
+
+  .doctor-services-stats {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+
+  .doctor-services-toolbar {
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+
+  .doctor-services-toolbar > button {
+    width: 100%;
+  }
+
+
+  .doctor-service-card__top {
+    grid-template-columns:
+      46px
+      minmax(0, 1fr);
+  }
+
+
+  .doctor-service-status {
+    grid-column:
+      1 / -1;
+
+    justify-self: start;
+  }
+
+
+  .doctor-service-form__grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =====================================================
+   VERY SMALL PHONE
+   ===================================================== */
+
+@media (max-width: 340px) {
+
+  .doctor-services-stats {
+    grid-template-columns: 1fr;
+  }
+
+
+  .doctor-service-card__info {
+    grid-template-columns: 1fr;
+  }
+
+
+  .doctor-service-card__actions {
+    flex-direction: column;
+  }
+
+
+  .doctor-service-action {
+    width: 100%;
+  }
+
+}
+
+
+/* =====================================================
+   DESKTOP
+   ===================================================== */
+
+@media (min-width: 760px) {
+
+  .doctor-services__container {
+    padding:
+      30px
+      22px
+      65px;
+  }
+
+
+  .doctor-service-modal-overlay {
+    align-items: center;
+  }
+
+}
+
+
+@media (min-width: 1020px) {
+
+  .doctor-services__header {
+    padding-right:
+      max(
+        24px,
+        calc(
+          (100vw - 980px) / 2
+        )
+      );
+
+    padding-left:
+      max(
+        24px,
+        calc(
+          (100vw - 980px) / 2
+        )
+      );
+  }
+
+}
+
+
+/* =====================================================
+   DARK MODE
+   ===================================================== */
+
+html[data-theme="dark"]
+.doctor-services,
+body.dark
+.doctor-services {
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(66, 116, 217, 0.14),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(149, 204, 221, 0.08),
+      transparent 32%
+    ),
+    #0b1321;
+
+  color: #edf3fc;
+}
+
+
+html[data-theme="dark"]
+.doctor-services__header,
+body.dark
+.doctor-services__header {
+  background:
+    rgba(12, 21, 36, 0.87);
+
+  border-bottom-color:
+    rgba(255, 255, 255, 0.05);
+}
+
+
+html[data-theme="dark"]
+.doctor-services .glass,
+body.dark
+.doctor-services .glass {
+  background:
+    rgba(18, 30, 49, 0.8);
+
+  border-color:
+    rgba(255, 255, 255, 0.06);
+
+  box-shadow:
+    0 16px 42px rgba(0, 0, 0, 0.19);
+}
+
+
+html[data-theme="dark"]
+.doctor-services__back,
+html[data-theme="dark"]
+.doctor-services__theme,
+body.dark
+.doctor-services__back,
+body.dark
+.doctor-services__theme {
+  background:
+    rgba(22, 36, 57, 0.9);
+
+  color: #abc5f4;
+
+  box-shadow: none;
+}
+
+
+html[data-theme="dark"]
+.doctor-services__header-copy strong,
+html[data-theme="dark"]
+.doctor-services__hero h1,
+html[data-theme="dark"]
+.doctor-services-stat strong,
+html[data-theme="dark"]
+.doctor-services-toolbar strong,
+html[data-theme="dark"]
+.doctor-service-card__copy h3,
+html[data-theme="dark"]
+.doctor-service-card__info strong,
+html[data-theme="dark"]
+.doctor-services-empty h3,
+html[data-theme="dark"]
+.doctor-service-modal__header h2,
+html[data-theme="dark"]
+.doctor-service-active strong,
+body.dark
+.doctor-services__header-copy strong,
+body.dark
+.doctor-services__hero h1,
+body.dark
+.doctor-services-stat strong,
+body.dark
+.doctor-services-toolbar strong,
+body.dark
+.doctor-service-card__copy h3,
+body.dark
+.doctor-service-card__info strong,
+body.dark
+.doctor-services-empty h3,
+body.dark
+.doctor-service-modal__header h2,
+body.dark
+.doctor-service-active strong {
+  color: #eef4fc;
+}
+
+
+html[data-theme="dark"]
+.doctor-service-card__info > div,
+html[data-theme="dark"]
+.doctor-service-active,
+body.dark
+.doctor-service-card__info > div,
+body.dark
+.doctor-service-active {
+  background:
+    rgba(10, 19, 32, 0.62);
+}
+
+
+html[data-theme="dark"]
+.doctor-service-field input,
+html[data-theme="dark"]
+.doctor-service-field textarea,
+html[data-theme="dark"]
+.doctor-service-field select,
+body.dark
+.doctor-service-field input,
+body.dark
+.doctor-service-field textarea,
+body.dark
+.doctor-service-field select {
+  background:
+    rgba(10, 19, 32, 0.78);
+
+  border-color:
+    rgba(255, 255, 255, 0.07);
+
+  color: #eef4fc;
+}
+
+
+html[data-theme="dark"]
+.doctor-service-field select option,
+body.dark
+.doctor-service-field select option {
+  background: #101b2c;
+
+  color: #eef4fc;
+}
+
+
+html[data-theme="dark"]
+.doctor-service-card__actions,
+body.dark
+.doctor-service-card__actions {
+  border-top-color:
+    rgba(255, 255, 255, 0.06);
+}
+
+
+/* =====================================================
+   ACCESSIBILITY
+   ===================================================== */
+
+.doctor-services button:focus-visible,
+.doctor-services input:focus-visible,
+.doctor-services textarea:focus-visible,
+.doctor-services select:focus-visible {
+  outline:
+    3px solid rgba(66, 116, 217, 0.2);
+
+  outline-offset: 2px;
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .doctor-services *,
+  .doctor-services *::before,
+  .doctor-services *::after {
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+
+}
+
+/* =====================================================
+   MON MÉDECIN
+   DOCTOR SERVICES - BOTTOM NAV STYLES
+   ===================================================== */
+
+/* =====================================================
+   MOBILE BOTTOM NAV
+   ===================================================== */
+
+.mobile-bottom-nav {
+  position: fixed;
+  z-index: 70;
+  right: 12px;
+  bottom: 10px;
+  left: 12px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  min-height: 66px;
+  padding: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 21px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 16px 38px rgba(20, 49, 87, 0.14);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.mobile-bottom-nav__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 0;
+  border-radius: 15px;
+  background: transparent;
+  color: #8895a6;
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.mobile-bottom-nav__icon {
+  font-size: 17px;
+  line-height: 1;
+}
+
+.mobile-bottom-nav__item.is-active {
+  background: rgba(66, 116, 217, 0.1);
+  color: #3d70bd;
+}
+
+.mobile-bottom-nav__item:active {
+  transform: scale(0.96);
+}
+
+/* =====================================================
+   HIDE BOTTOM NAV ON DESKTOP
+   ===================================================== */
+
+@media (min-width: 1025px) {
+  .mobile-bottom-nav {
+    display: none !important;
+  }
+  .mobile-app-page.has-bottom-nav {
+    padding-bottom: 0 !important;
+  }
+}
+
+/* =====================================================
+   SHOW BOTTOM NAV ON MOBILE/TABLET
+   ===================================================== */
+
+@media (max-width: 1024px) {
+  .mobile-bottom-nav {
+    display: grid !important;
+  }
+  .mobile-app-page.has-bottom-nav {
+    padding-bottom: 85px !important;
+  }
+}
+
+/* =====================================================
+   DESKTOP HEADER ADJUSTMENTS
+   ===================================================== */
+
+@media (min-width: 1025px) {
+  .doctor-services__container {
+    padding-bottom: 60px !important;
+  }
+}

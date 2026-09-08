@@ -1,0 +1,667 @@
+/* =====================================================
+   MON MÉDECIN
+   PATIENT BOOKING CONFIRM - WITH BOTTOM NAV
+   ===================================================== */
+
+/* =====================================================
+   PAGE
+   ===================================================== */
+
+.patient-booking-confirm {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  isolation: isolate;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at top right, rgba(66, 116, 217, 0.13), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(149, 204, 221, 0.18), transparent 32%),
+    #f7f9fc;
+  color: #15263e;
+}
+
+/* =====================================================
+   BACKGROUND
+   ===================================================== */
+
+.patient-booking-confirm__orb {
+  position: fixed;
+  z-index: -2;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.patient-booking-confirm__orb--blue {
+  width: 430px;
+  height: 430px;
+  top: -230px;
+  right: -220px;
+  background: radial-gradient(circle, rgba(66, 116, 217, 0.15), transparent 72%);
+}
+
+.patient-booking-confirm__orb--purple {
+  width: 470px;
+  height: 470px;
+  left: -250px;
+  bottom: -250px;
+  background: radial-gradient(circle, rgba(149, 204, 221, 0.12), transparent 74%);
+}
+
+/* =====================================================
+   GLASS
+   ===================================================== */
+
+.patient-booking-confirm .glass {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.86);
+  box-shadow: 0 16px 42px rgba(27, 59, 99, 0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.patient-booking-confirm__header {
+  position: sticky;
+  z-index: 40;
+  top: 0;
+  min-height: 72px;
+  padding: max(13px, env(safe-area-inset-top)) 18px 11px;
+  display: grid;
+  grid-template-columns: 42px 1fr 42px;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid rgba(35, 66, 105, 0.06);
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+}
+
+html[data-theme="dark"] .patient-booking-confirm__header {
+  background: rgba(12, 21, 36, 0.87);
+}
+
+.patient-booking-confirm__back,
+.patient-booking-confirm__theme {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  color: #3568ad;
+  border: 1px solid rgba(255, 255, 255, 0.86);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 7px 20px rgba(22, 54, 91, 0.07);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 900;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.patient-booking-confirm__back:hover,
+.patient-booking-confirm__theme:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(22, 54, 91, 0.11);
+}
+
+.patient-booking-confirm__back:active,
+.patient-booking-confirm__theme:active {
+  transform: scale(0.96);
+}
+
+.patient-booking-confirm__header-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+}
+
+.patient-booking-confirm__header-copy strong {
+  font-size: 14px;
+  font-weight: 900;
+  color: #172c48;
+}
+
+.patient-booking-confirm__header-copy span {
+  color: #8996a6;
+  font-size: 9px;
+}
+
+/* =====================================================
+   CONTAINER
+   ===================================================== */
+
+.patient-booking-confirm__container {
+  width: min(100%, 920px);
+  margin: 0 auto;
+  padding: 24px 18px 36px;
+}
+
+/* =====================================================
+   HERO
+   ===================================================== */
+
+.patient-booking-confirm__hero {
+  margin-bottom: 17px;
+}
+
+.patient-booking-confirm__hero > span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 27px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: rgba(66, 116, 217, 0.09);
+  color: #3f70bd;
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.patient-booking-confirm__hero h1 {
+  margin: 10px 0 6px;
+  color: #142a47;
+  font-size: clamp(24px, 6vw, 35px);
+  line-height: 1.2;
+  font-weight: 950;
+}
+
+.patient-booking-confirm__hero p {
+  margin: 0;
+  color: #7c8a9c;
+  font-size: 10px;
+  line-height: 1.75;
+}
+
+/* =====================================================
+   CARDS
+   ===================================================== */
+
+.patient-booking-confirm-card {
+  margin-top: 14px;
+  padding: 17px;
+  border-radius: 23px;
+}
+
+.patient-booking-confirm-card__title {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.patient-booking-confirm-card__title > span {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 13px;
+  color: #4274d9;
+  background: rgba(66, 116, 217, 0.08);
+}
+
+.patient-booking-confirm-card__title div {
+  display: flex;
+  flex-direction: column;
+}
+
+.patient-booking-confirm-card__title small {
+  color: #8996a6;
+  font-size: 8px;
+}
+
+.patient-booking-confirm-card__title h2 {
+  margin: 2px 0 0;
+  font-size: 14px;
+  font-weight: 900;
+  color: #172c48;
+}
+
+/* =====================================================
+   GRID
+   ===================================================== */
+
+.patient-booking-confirm-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.patient-booking-confirm-grid > div {
+  padding: 10px 12px;
+  border-radius: 13px;
+  background: rgba(247, 250, 254, 0.7);
+}
+
+.patient-booking-confirm-grid span {
+  display: block;
+  color: #8996a6;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.patient-booking-confirm-grid strong {
+  display: block;
+  margin-top: 3px;
+  color: #19314f;
+  font-size: 11px;
+  font-weight: 950;
+}
+
+.patient-booking-confirm-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 13px;
+  background: rgba(247, 250, 254, 0.7);
+}
+
+.patient-booking-confirm-line span {
+  color: #8996a6;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.patient-booking-confirm-line strong {
+  color: #19314f;
+  font-size: 11px;
+  font-weight: 950;
+}
+
+/* =====================================================
+   NOTES
+   ===================================================== */
+
+.patient-booking-confirm-note {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 13px;
+  background: rgba(247, 250, 254, 0.7);
+}
+
+.patient-booking-confirm-note span {
+  display: block;
+  color: #8996a6;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.patient-booking-confirm-note p {
+  margin: 5px 0 0;
+  color: #50627a;
+  font-size: 9px;
+  line-height: 1.7;
+}
+
+/* =====================================================
+   STATUS
+   ===================================================== */
+
+.patient-booking-confirm-status {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 19px;
+}
+
+.patient-booking-confirm-status__icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: rgba(37, 158, 106, 0.1);
+  color: #25815b;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.patient-booking-confirm-status strong {
+  display: block;
+  color: #19314f;
+  font-size: 11px;
+  font-weight: 950;
+}
+
+.patient-booking-confirm-status p {
+  margin: 4px 0 0;
+  color: #8492a3;
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   ERROR
+   ===================================================== */
+
+.patient-booking-confirm-error {
+  min-height: 18px;
+  margin-top: 10px;
+  color: #b34d4d;
+  font-size: 9px;
+  font-weight: 750;
+}
+
+/* =====================================================
+   ACTIONS
+   ===================================================== */
+
+.patient-booking-confirm-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.patient-booking-confirm-actions__secondary {
+  min-height: 48px;
+  border: 1px solid rgba(66, 116, 217, 0.1);
+  border-radius: 14px;
+  background: rgba(66, 116, 217, 0.05);
+  color: #3f70bd;
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.patient-booking-confirm-actions__secondary:hover {
+  transform: translateY(-1px);
+  background: rgba(66, 116, 217, 0.1);
+}
+
+.patient-booking-confirm-actions__primary {
+  min-height: 48px;
+  border: 0;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #4274d9, #345fa9);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 950;
+  cursor: pointer;
+  box-shadow: 0 8px 19px rgba(66, 116, 217, 0.17);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.patient-booking-confirm-actions__primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 11px 24px rgba(66, 116, 217, 0.22);
+}
+
+.patient-booking-confirm-actions__primary:active {
+  transform: scale(0.99);
+}
+
+/* =====================================================
+   EMPTY
+   ===================================================== */
+
+.patient-booking-confirm-empty {
+  padding: 34px 18px;
+  border-radius: 22px;
+  text-align: center;
+}
+
+.patient-booking-confirm-empty h1 {
+  margin: 0;
+  color: #172c48;
+  font-size: 17px;
+  font-weight: 950;
+}
+
+.patient-booking-confirm-empty p {
+  margin: 8px 0 0;
+  color: #8492a3;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+/* =====================================================
+   BOTTOM NAV
+   ===================================================== */
+
+.mobile-bottom-nav {
+  position: fixed;
+  z-index: 70;
+  right: 12px;
+  bottom: 10px;
+  left: 12px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  min-height: 66px;
+  padding: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 21px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 16px 38px rgba(20, 49, 87, 0.14);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.mobile-bottom-nav__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 0;
+  border-radius: 15px;
+  background: transparent;
+  color: #8895a6;
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.mobile-bottom-nav__icon {
+  font-size: 17px;
+  line-height: 1;
+}
+
+.mobile-bottom-nav__item.is-active {
+  background: rgba(66, 116, 217, 0.1);
+  color: #3d70bd;
+}
+
+.mobile-bottom-nav__item:active {
+  transform: scale(0.96);
+}
+
+/* =====================================================
+   HIDE BOTTOM NAV ON DESKTOP
+   ===================================================== */
+
+@media (min-width: 1025px) {
+  .mobile-bottom-nav {
+    display: none !important;
+  }
+  .mobile-app-page.has-bottom-nav {
+    padding-bottom: 0 !important;
+  }
+}
+
+/* =====================================================
+   SHOW BOTTOM NAV ON MOBILE/TABLET
+   ===================================================== */
+
+@media (max-width: 1024px) {
+  .mobile-bottom-nav {
+    display: grid !important;
+  }
+  .mobile-app-page.has-bottom-nav {
+    padding-bottom: 85px !important;
+  }
+}
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 480px) {
+  .patient-booking-confirm__container {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+
+  .patient-booking-confirm__header {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+
+  .patient-booking-confirm-card {
+    padding: 14px;
+    border-radius: 19px;
+  }
+
+  .patient-booking-confirm-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .patient-booking-confirm-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================================
+   VERY SMALL PHONE
+   ===================================================== */
+
+@media (max-width: 350px) {
+  .patient-booking-confirm-card {
+    padding: 12px;
+  }
+
+  .patient-booking-confirm-card__title > span {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+
+  .patient-booking-confirm__hero h1 {
+    font-size: 20px;
+  }
+}
+
+/* =====================================================
+   DESKTOP
+   ===================================================== */
+
+@media (min-width: 760px) {
+  .patient-booking-confirm__container {
+    padding: 30px 22px 60px;
+  }
+}
+
+@media (min-width: 960px) {
+  .patient-booking-confirm__header {
+    padding-right: max(24px, calc((100vw - 920px) / 2));
+    padding-left: max(24px, calc((100vw - 920px) / 2));
+  }
+}
+
+/* =====================================================
+   DARK MODE
+   ===================================================== */
+
+html[data-theme="dark"] .patient-booking-confirm,
+body.dark .patient-booking-confirm {
+  background:
+    radial-gradient(circle at top right, rgba(66, 116, 217, 0.14), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(149, 204, 221, 0.08), transparent 32%),
+    #0b1321;
+  color: #edf3fc;
+}
+
+html[data-theme="dark"] .patient-booking-confirm__header,
+body.dark .patient-booking-confirm__header {
+  background: rgba(12, 21, 36, 0.87);
+  border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+html[data-theme="dark"] .patient-booking-confirm .glass,
+body.dark .patient-booking-confirm .glass {
+  background: rgba(18, 30, 49, 0.8);
+  border-color: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.19);
+}
+
+html[data-theme="dark"] .patient-booking-confirm__back,
+html[data-theme="dark"] .patient-booking-confirm__theme,
+body.dark .patient-booking-confirm__back,
+body.dark .patient-booking-confirm__theme {
+  background: rgba(22, 36, 57, 0.9);
+  color: #abc5f4;
+  box-shadow: none;
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+html[data-theme="dark"] .patient-booking-confirm__header-copy strong,
+html[data-theme="dark"] .patient-booking-confirm__hero h1,
+html[data-theme="dark"] .patient-booking-confirm-card__title h2,
+html[data-theme="dark"] .patient-booking-confirm-grid strong,
+html[data-theme="dark"] .patient-booking-confirm-status strong,
+html[data-theme="dark"] .patient-booking-confirm-empty h1,
+body.dark .patient-booking-confirm__header-copy strong,
+body.dark .patient-booking-confirm__hero h1,
+body.dark .patient-booking-confirm-card__title h2,
+body.dark .patient-booking-confirm-grid strong,
+body.dark .patient-booking-confirm-status strong,
+body.dark .patient-booking-confirm-empty h1 {
+  color: #eef4fc;
+}
+
+html[data-theme="dark"] .patient-booking-confirm-grid > div,
+html[data-theme="dark"] .patient-booking-confirm-line,
+html[data-theme="dark"] .patient-booking-confirm-note,
+body.dark .patient-booking-confirm-grid > div,
+body.dark .patient-booking-confirm-line,
+body.dark .patient-booking-confirm-note {
+  background: rgba(10, 19, 32, 0.62);
+}
+
+html[data-theme="dark"] .mobile-bottom-nav,
+body.dark .mobile-bottom-nav {
+  background: rgba(14, 24, 40, 0.93);
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+/* =====================================================
+   ACCESSIBILITY
+   ===================================================== */
+
+.patient-booking-confirm button:focus-visible,
+.patient-booking-confirm input:focus-visible,
+.patient-booking-confirm select:focus-visible,
+.patient-booking-confirm textarea:focus-visible {
+  outline: 3px solid rgba(66, 116, 217, 0.2);
+  outline-offset: 2px;
+}
+
+/* =====================================================
+   REDUCED MOTION
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .patient-booking-confirm *,
+  .patient-booking-confirm *::before,
+  .patient-booking-confirm *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

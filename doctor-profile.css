@@ -1,0 +1,1583 @@
+/* =====================================================
+   MON MÉDECIN
+   PUBLIC DOCTOR PROFILE
+
+   COMPLETE STYLE
+   - Mobile first
+   - Glassmorphism
+   - Medical blue
+   - Responsive
+   - Dark mode
+   ===================================================== */
+
+
+/* =====================================================
+   PAGE
+   ===================================================== */
+
+.doctor-public-profile {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  direction: rtl;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(66, 116, 217, 0.13),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(149, 204, 221, 0.18),
+      transparent 32%
+    ),
+    #f7f9fc;
+
+  color: #15263e;
+}
+
+
+/* =====================================================
+   ORBS
+   ===================================================== */
+
+.doctor-public-profile__orb {
+  position: fixed;
+  z-index: 0;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(28px);
+
+  opacity: 0.5;
+}
+
+
+.doctor-public-profile__orb--blue {
+  width: 240px;
+  height: 240px;
+
+  top: -95px;
+  right: -90px;
+
+  background:
+    rgba(66, 116, 217, 0.17);
+}
+
+
+.doctor-public-profile__orb--cyan {
+  width: 210px;
+  height: 210px;
+
+  left: -90px;
+  bottom: 60px;
+
+  background:
+    rgba(149, 204, 221, 0.2);
+}
+
+
+/* =====================================================
+   GLASS
+   ===================================================== */
+
+.doctor-public-profile .glass {
+  background:
+    rgba(255, 255, 255, 0.82);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.86);
+
+  box-shadow:
+    0 16px 42px rgba(27, 59, 99, 0.08);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.doctor-public-profile__header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+
+  display: grid;
+
+  grid-template-columns:
+    44px
+    1fr
+    44px;
+
+  align-items: center;
+
+  gap: 12px;
+
+  min-height: 72px;
+
+  padding:
+    10px
+    16px;
+
+  background:
+    rgba(255, 255, 255, 0.82);
+
+  border-bottom:
+    1px solid rgba(35, 66, 105, 0.06);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+
+.doctor-public-profile__back,
+.doctor-public-profile__favorite {
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+  place-items: center;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 14px;
+
+  background:
+    rgba(255, 255, 255, 0.9);
+
+  color: #3568ad;
+
+  font-family: inherit;
+
+  font-size: 18px;
+  font-weight: 900;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 7px 20px rgba(22, 54, 91, 0.07);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+
+.doctor-public-profile__back:hover,
+.doctor-public-profile__favorite:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 10px 24px rgba(22, 54, 91, 0.11);
+}
+
+
+.doctor-public-profile__back:active,
+.doctor-public-profile__favorite:active {
+  transform: scale(0.96);
+}
+
+
+.doctor-public-profile__favorite.is-active {
+  background:
+    rgba(210, 72, 96, 0.1);
+
+  color: #ca4861;
+}
+
+
+.doctor-public-profile__header-copy {
+  min-width: 0;
+}
+
+
+.doctor-public-profile__header-copy strong {
+  display: block;
+
+  color: #172c48;
+
+  font-size: 14px;
+  font-weight: 950;
+}
+
+
+.doctor-public-profile__header-copy span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #8996a6;
+
+  font-size: 10px;
+  font-weight: 750;
+}
+
+
+/* =====================================================
+   CONTAINER
+   ===================================================== */
+
+.doctor-public-profile__container {
+  position: relative;
+  z-index: 1;
+
+  width:
+    min(
+      100%,
+      980px
+    );
+
+  margin:
+    0 auto;
+
+  padding:
+    20px
+    14px
+    115px;
+}
+
+
+/* =====================================================
+   MAIN CARD
+   ===================================================== */
+
+.doctor-public-card {
+  padding: 16px;
+
+  border-radius: 23px;
+
+  margin-bottom: 13px;
+}
+
+
+.doctor-public-card__top {
+  display: grid;
+
+  grid-template-columns:
+    64px
+    1fr
+    auto;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+.doctor-public-card__avatar {
+  width: 62px;
+  height: 62px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      140deg,
+      rgba(66, 116, 217, 0.16),
+      rgba(149, 204, 221, 0.24)
+    );
+
+  color: #3566aa;
+
+  font-size: 22px;
+  font-weight: 950;
+}
+
+
+.doctor-public-card__identity {
+  min-width: 0;
+}
+
+
+.doctor-public-card__identity > span {
+  display: block;
+
+  overflow: hidden;
+
+  color: #4274d9;
+
+  font-size: 9px;
+  font-weight: 900;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+
+.doctor-public-card__identity h1 {
+  margin:
+    4px
+    0
+    3px;
+
+  overflow: hidden;
+
+  color: #172d49;
+
+  font-size: 19px;
+  font-weight: 950;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+
+.doctor-public-card__identity small {
+  display: block;
+
+  overflow: hidden;
+
+  color: #8492a3;
+
+  font-size: 9px;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+
+.doctor-public-card__availability {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 28px;
+
+  padding:
+    0
+    9px;
+
+  border-radius: 999px;
+
+  font-size: 8px;
+  font-weight: 900;
+
+  white-space: nowrap;
+}
+
+
+.doctor-public-card__availability.is-available {
+  background:
+    rgba(37, 158, 106, 0.1);
+
+  color: #25815b;
+}
+
+
+.doctor-public-card__availability.is-unavailable {
+  background:
+    rgba(210, 72, 72, 0.09);
+
+  color: #b34d4d;
+}
+
+
+/* =====================================================
+   RATING
+   ===================================================== */
+
+.doctor-public-card__rating {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 14px;
+
+  padding-top: 12px;
+
+  border-top:
+    1px solid rgba(36, 67, 105, 0.06);
+}
+
+
+.doctor-public-stars {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 2px;
+}
+
+
+.doctor-public-star {
+  color: #d5dce6;
+
+  font-size: 14px;
+
+  line-height: 1;
+}
+
+
+.doctor-public-star.is-active {
+  color: #e9b341;
+}
+
+
+.doctor-public-card__rating > strong {
+  color: #1c3553;
+
+  font-size: 11px;
+  font-weight: 950;
+}
+
+
+.doctor-public-card__rating > span {
+  color: #8a97a7;
+
+  font-size: 8px;
+}
+
+
+/* =====================================================
+   STATS
+   ===================================================== */
+
+.doctor-public-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap: 9px;
+
+  margin-bottom: 13px;
+}
+
+
+.doctor-public-stat {
+  padding: 12px;
+
+  border-radius: 17px;
+}
+
+
+.doctor-public-stat > span {
+  display: block;
+
+  color: #8794a5;
+
+  font-size: 8px;
+  font-weight: 800;
+}
+
+
+.doctor-public-stat > strong {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #17304f;
+
+  font-size: 17px;
+  font-weight: 950;
+}
+
+
+.doctor-public-stat > small {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #8c99a9;
+
+  font-size: 7px;
+}
+
+
+/* =====================================================
+   GENERIC SECTION
+   ===================================================== */
+
+.doctor-public-section {
+  margin-bottom: 13px;
+
+  padding: 15px;
+
+  border-radius: 21px;
+}
+
+
+.doctor-public-profile__section {
+  margin-top: 18px;
+
+  margin-bottom: 14px;
+}
+
+
+.doctor-public-section__heading {
+  margin-bottom: 13px;
+}
+
+
+.doctor-public-section__heading > span {
+  display: block;
+
+  color: #8996a6;
+
+  font-size: 8px;
+  font-weight: 850;
+}
+
+
+.doctor-public-section__heading h2 {
+  margin:
+    3px
+    0
+    0;
+
+  color: #172b47;
+
+  font-size: 18px;
+  font-weight: 950;
+}
+
+
+.doctor-public-section__heading p {
+  margin:
+    5px
+    0
+    0;
+
+  color: #8391a2;
+
+  font-size: 9px;
+
+  line-height: 1.65;
+}
+
+
+/* =====================================================
+   INFO ROW
+   ===================================================== */
+
+.doctor-public-info-row {
+  display: grid;
+
+  grid-template-columns:
+    38px
+    1fr;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding:
+    10px
+    0;
+}
+
+
+.doctor-public-info-row + .doctor-public-info-row {
+  border-top:
+    1px solid rgba(36, 67, 105, 0.06);
+}
+
+
+.doctor-public-info-row > span {
+  width: 36px;
+  height: 36px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 12px;
+
+  background:
+    rgba(66, 116, 217, 0.07);
+
+  font-size: 14px;
+}
+
+
+.doctor-public-info-row > div {
+  min-width: 0;
+}
+
+
+.doctor-public-info-row small {
+  display: block;
+
+  color: #8996a6;
+
+  font-size: 8px;
+}
+
+
+.doctor-public-info-row strong {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #19314f;
+
+  font-size: 10px;
+  font-weight: 900;
+
+  line-height: 1.55;
+}
+
+
+/* =====================================================
+   BIO
+   ===================================================== */
+
+.doctor-public-bio {
+  margin: 0;
+
+  color: #687b92;
+
+  font-size: 10px;
+
+  line-height: 1.9;
+}
+
+
+/* =====================================================
+   LANGUAGES
+   ===================================================== */
+
+.doctor-public-languages {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+}
+
+
+.doctor-public-languages > span {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 30px;
+
+  padding:
+    0
+    10px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(66, 116, 217, 0.07);
+
+  color: #4e729e;
+
+  font-size: 8px;
+  font-weight: 850;
+}
+
+
+/* =====================================================
+   SERVICES
+   ===================================================== */
+
+.doctor-public-services {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 9px;
+}
+
+
+/* =====================================================
+   SERVICE
+   ===================================================== */
+
+.doctor-public-service {
+  display: grid;
+
+  grid-template-columns:
+    30px
+    1fr;
+
+  align-items: flex-start;
+
+  gap: 10px;
+
+  width: 100%;
+
+  padding: 13px;
+
+  border: 0;
+
+  border-radius: 18px;
+
+  color: inherit;
+
+  font-family: inherit;
+
+  text-align: right;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.doctor-public-service:hover {
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 18px 40px rgba(31, 61, 102, 0.1);
+}
+
+
+.doctor-public-service.is-selected {
+  border-color:
+    rgba(66, 116, 217, 0.28);
+
+  background:
+    rgba(239, 245, 255, 0.92);
+
+  box-shadow:
+    0 15px 38px rgba(66, 116, 217, 0.11);
+}
+
+
+.doctor-public-service__radio {
+  width: 28px;
+  height: 28px;
+
+  display: grid;
+  place-items: center;
+
+  border:
+    2px solid rgba(66, 116, 217, 0.2);
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.65);
+}
+
+
+.doctor-public-service__radio > span {
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.doctor-public-service.is-selected
+.doctor-public-service__radio {
+  border-color: #4274d9;
+}
+
+
+.doctor-public-service.is-selected
+.doctor-public-service__radio > span {
+  background: #4274d9;
+
+  transform:
+    scale(1);
+}
+
+
+.doctor-public-service__content {
+  min-width: 0;
+}
+
+
+.doctor-public-service__content > strong {
+  display: block;
+
+  color: #19314f;
+
+  font-size: 11px;
+  font-weight: 950;
+}
+
+
+.doctor-public-service__content > p {
+  margin:
+    4px
+    0
+    0;
+
+  color: #8593a4;
+
+  font-size: 8px;
+
+  line-height: 1.6;
+}
+
+
+.doctor-public-service__meta {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-top: 8px;
+}
+
+
+.doctor-public-service__meta > span {
+  display: inline-flex;
+
+  align-items: center;
+
+  min-height: 26px;
+
+  padding:
+    0
+    8px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(66, 116, 217, 0.06);
+
+  color: #52739c;
+
+  font-size: 8px;
+  font-weight: 850;
+}
+
+
+/* =====================================================
+   EMPTY
+   ===================================================== */
+
+.doctor-public-empty {
+  padding:
+    28px
+    18px;
+
+  border-radius: 20px;
+
+  text-align: center;
+}
+
+
+.doctor-public-empty > span {
+  width: 50px;
+  height: 50px;
+
+  display: grid;
+  place-items: center;
+
+  margin:
+    0 auto
+    10px;
+
+  border-radius: 16px;
+
+  background:
+    rgba(66, 116, 217, 0.08);
+
+  font-size: 20px;
+}
+
+
+.doctor-public-empty > strong {
+  display: block;
+
+  color: #18304e;
+
+  font-size: 12px;
+  font-weight: 950;
+}
+
+
+.doctor-public-empty > p {
+  margin:
+    5px
+    0
+    0;
+
+  color: #8593a4;
+
+  font-size: 9px;
+
+  line-height: 1.65;
+}
+
+
+/* =====================================================
+   BOOKING INFO
+   ===================================================== */
+
+.doctor-public-booking-info {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 10px;
+
+  margin-top: 15px;
+
+  padding: 14px;
+
+  border-radius: 19px;
+}
+
+
+.doctor-public-booking-info > span {
+  flex-shrink: 0;
+
+  width: 36px;
+  height: 36px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 12px;
+
+  background:
+    rgba(66, 116, 217, 0.08);
+
+  color: #4274d9;
+
+  font-size: 13px;
+  font-weight: 950;
+}
+
+
+.doctor-public-booking-info > div {
+  min-width: 0;
+}
+
+
+.doctor-public-booking-info strong {
+  display: block;
+
+  color: #19314f;
+
+  font-size: 10px;
+  font-weight: 900;
+}
+
+
+.doctor-public-booking-info p {
+  margin:
+    4px
+    0
+    0;
+
+  color: #8492a3;
+
+  font-size: 8px;
+
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   ACTIONS
+   ===================================================== */
+
+.doctor-public-actions {
+  margin-top: 15px;
+}
+
+
+.doctor-public-actions__book {
+  width: 100%;
+
+  min-height: 50px;
+
+  border: 0;
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #4274d9,
+      #345fa9
+    );
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 10px;
+  font-weight: 950;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 24px rgba(66, 116, 217, 0.22);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+
+.doctor-public-actions__book:hover:not(:disabled) {
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 13px 28px rgba(66, 116, 217, 0.27);
+}
+
+
+.doctor-public-actions__book:active:not(:disabled) {
+  transform:
+    scale(0.985);
+}
+
+
+.doctor-public-actions__book:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+
+  box-shadow: none;
+}
+
+
+/* =====================================================
+   BOTTOM NAV
+   ===================================================== */
+
+.doctor-public-profile .mobile-bottom-nav {
+  position: fixed;
+
+  z-index: 70;
+
+  right: 12px;
+  bottom: 10px;
+  left: 12px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      1fr
+    );
+
+  gap: 4px;
+
+  min-height: 66px;
+
+  padding: 7px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.82);
+
+  border-radius: 21px;
+
+  background:
+    rgba(255, 255, 255, 0.92);
+
+  box-shadow:
+    0 16px 38px rgba(20, 49, 87, 0.14);
+
+  backdrop-filter: blur(20px);
+
+  -webkit-backdrop-filter: blur(20px);
+}
+
+
+.doctor-public-profile
+.mobile-bottom-nav__item {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+
+  border: 0;
+
+  border-radius: 15px;
+
+  background: transparent;
+
+  color: #8895a6;
+
+  font-family: inherit;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.doctor-public-profile
+.mobile-bottom-nav__icon {
+  font-size: 17px;
+
+  line-height: 1;
+}
+
+
+.doctor-public-profile
+.mobile-bottom-nav__item.is-active {
+  background:
+    rgba(66, 116, 217, 0.1);
+
+  color: #3d70bd;
+}
+
+
+.doctor-public-profile
+.mobile-bottom-nav__item:active {
+  transform:
+    scale(0.96);
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 560px) {
+
+  .doctor-public-profile__container {
+    padding-right: 13px;
+
+    padding-left: 13px;
+  }
+
+
+  .doctor-public-profile__header {
+    padding-right: 13px;
+
+    padding-left: 13px;
+  }
+
+
+  .doctor-public-card__top {
+    grid-template-columns:
+      58px
+      1fr;
+  }
+
+
+  .doctor-public-card__avatar {
+    width: 56px;
+    height: 56px;
+
+    border-radius: 18px;
+
+    font-size: 20px;
+  }
+
+
+  .doctor-public-card__availability {
+    grid-column:
+      1 / -1;
+
+    justify-self: start;
+  }
+
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+   ===================================================== */
+
+@media (max-width: 350px) {
+
+  .doctor-public-stats {
+    grid-template-columns: 1fr;
+  }
+
+
+  .doctor-public-card__rating {
+    flex-wrap: wrap;
+  }
+
+}
+
+
+/* =====================================================
+   DESKTOP
+   ===================================================== */
+
+@media (min-width: 760px) {
+
+  .doctor-public-profile__container {
+    padding:
+      28px
+      22px
+      55px;
+  }
+
+
+  .doctor-public-services {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+}
+
+
+@media (min-width: 1030px) {
+
+  .doctor-public-profile__header {
+    padding-right:
+      max(
+        24px,
+        calc(
+          (100vw - 980px) / 2
+        )
+      );
+
+    padding-left:
+      max(
+        24px,
+        calc(
+          (100vw - 980px) / 2
+        )
+      );
+  }
+
+}
+
+
+/* =====================================================
+   DARK MODE
+   ===================================================== */
+
+html[data-theme="dark"]
+.doctor-public-profile,
+body.dark
+.doctor-public-profile {
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(66, 116, 217, 0.14),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(149, 204, 221, 0.08),
+      transparent 32%
+    ),
+    #0b1321;
+
+  color: #edf3fc;
+}
+
+
+html[data-theme="dark"]
+.doctor-public-profile__header,
+body.dark
+.doctor-public-profile__header {
+  background:
+    rgba(12, 21, 36, 0.86);
+
+  border-bottom-color:
+    rgba(255, 255, 255, 0.05);
+}
+
+
+html[data-theme="dark"]
+.doctor-public-profile .glass,
+body.dark
+.doctor-public-profile .glass {
+  background:
+    rgba(18, 30, 49, 0.8);
+
+  border-color:
+    rgba(255, 255, 255, 0.06);
+
+  box-shadow:
+    0 16px 42px rgba(0, 0, 0, 0.19);
+}
+
+
+html[data-theme="dark"]
+.doctor-public-profile__back,
+html[data-theme="dark"]
+.doctor-public-profile__favorite,
+body.dark
+.doctor-public-profile__back,
+body.dark
+.doctor-public-profile__favorite {
+  background:
+    rgba(22, 36, 57, 0.9);
+
+  color: #abc5f4;
+
+  box-shadow: none;
+}
+
+
+html[data-theme="dark"]
+.doctor-public-profile__favorite.is-active,
+body.dark
+.doctor-public-profile__favorite.is-active {
+  background:
+    rgba(210, 72, 96, 0.12);
+
+  color: #ef7690;
+}
+
+
+html[data-theme="dark"]
+.doctor-public-profile__header-copy strong,
+html[data-theme="dark"]
+.doctor-public-card__identity h1,
+html[data-theme="dark"]
+.doctor-public-card__rating > strong,
+html[data-theme="dark"]
+.doctor-public-stat > strong,
+html[data-theme="dark"]
+.doctor-public-section__heading h2,
+html[data-theme="dark"]
+.doctor-public-info-row strong,
+html[data-theme="dark"]
+.doctor-public-service__content > strong,
+html[data-theme="dark"]
+.doctor-public-empty > strong,
+html[data-theme="dark"]
+.doctor-public-booking-info strong,
+body.dark
+.doctor-public-profile__header-copy strong,
+body.dark
+.doctor-public-card__identity h1,
+body.dark
+.doctor-public-card__rating > strong,
+body.dark
+.doctor-public-stat > strong,
+body.dark
+.doctor-public-section__heading h2,
+body.dark
+.doctor-public-info-row strong,
+body.dark
+.doctor-public-service__content > strong,
+body.dark
+.doctor-public-empty > strong,
+body.dark
+.doctor-public-booking-info strong {
+  color: #eef4fc;
+}
+
+
+html[data-theme="dark"]
+.doctor-public-service.is-selected,
+body.dark
+.doctor-public-service.is-selected {
+  background:
+    rgba(66, 116, 217, 0.11);
+
+  border-color:
+    rgba(95, 143, 232, 0.25);
+}
+
+
+html[data-theme="dark"]
+.doctor-public-service__radio,
+body.dark
+.doctor-public-service__radio {
+  background:
+    rgba(10, 19, 32, 0.7);
+}
+
+
+html[data-theme="dark"]
+.doctor-public-info-row + .doctor-public-info-row,
+html[data-theme="dark"]
+.doctor-public-card__rating,
+body.dark
+.doctor-public-info-row + .doctor-public-info-row,
+body.dark
+.doctor-public-card__rating {
+  border-color:
+    rgba(255, 255, 255, 0.06);
+}
+
+
+html[data-theme="dark"]
+.doctor-public-profile .mobile-bottom-nav,
+body.dark
+.doctor-public-profile .mobile-bottom-nav {
+  background:
+    rgba(14, 24, 40, 0.93);
+
+  border-color:
+    rgba(255, 255, 255, 0.06);
+}
+
+
+/* =====================================================
+   ACCESSIBILITY
+   ===================================================== */
+
+.doctor-public-profile button:focus-visible {
+  outline:
+    3px solid rgba(66, 116, 217, 0.2);
+
+  outline-offset: 2px;
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .doctor-public-profile *,
+  .doctor-public-profile *::before,
+  .doctor-public-profile *::after {
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+
+}
+
+/* =====================================================
+   MON MÉDECIN
+   PUBLIC DOCTOR PROFILE - BOTTOM NAV STYLES
+   ===================================================== */
+
+/* =====================================================
+   MOBILE BOTTOM NAV
+   ===================================================== */
+
+.mobile-bottom-nav {
+  position: fixed;
+  z-index: 70;
+  right: 12px;
+  bottom: 10px;
+  left: 12px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  min-height: 66px;
+  padding: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 21px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 16px 38px rgba(20, 49, 87, 0.14);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.mobile-bottom-nav__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 0;
+  border-radius: 15px;
+  background: transparent;
+  color: #8895a6;
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.mobile-bottom-nav__icon {
+  font-size: 17px;
+  line-height: 1;
+}
+
+.mobile-bottom-nav__item.is-active {
+  background: rgba(66, 116, 217, 0.1);
+  color: #3d70bd;
+}
+
+.mobile-bottom-nav__item:active {
+  transform: scale(0.96);
+}
+
+/* =====================================================
+   HIDE BOTTOM NAV ON DESKTOP
+   ===================================================== */
+
+@media (min-width: 1025px) {
+  .mobile-bottom-nav {
+    display: none !important;
+  }
+  .mobile-app-page.has-bottom-nav {
+    padding-bottom: 0 !important;
+  }
+}
+
+/* =====================================================
+   SHOW BOTTOM NAV ON MOBILE/TABLET
+   ===================================================== */
+
+@media (max-width: 1024px) {
+  .mobile-bottom-nav {
+    display: grid !important;
+  }
+  .mobile-app-page.has-bottom-nav {
+    padding-bottom: 85px !important;
+  }
+}
+
+/* =====================================================
+   DESKTOP HEADER ADJUSTMENTS
+   ===================================================== */
+
+@media (min-width: 1025px) {
+  .doctor-public-profile__container {
+    padding-bottom: 60px !important;
+  }
+}

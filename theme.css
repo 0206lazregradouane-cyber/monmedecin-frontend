@@ -1,0 +1,404 @@
+/* =====================================================
+   MON MÉDECIN
+   THEME - المظهر الداكن الموحد
+   ===================================================== */
+
+/* =====================================================
+   CSS VARIABLES - الوضع الفاتح (Light Mode)
+   ===================================================== */
+
+:root {
+  /* ===== الألوان الأساسية ===== */
+  --color-primary: #4274d9;
+  --color-primary-dark: #345fa9;
+  --color-primary-light: #5a8ad9;
+  --color-primary-rgb: 66, 116, 217;
+
+  --color-secondary: #5f8ec7;
+  --color-secondary-rgb: 95, 142, 199;
+
+  --color-accent: #95ccdd;
+  --color-accent-rgb: 149, 204, 221;
+
+  /* ===== ألوان الخلفية ===== */
+  --color-bg: #f7f9fc;
+  --color-bg-body: #f7f9fc;
+  --color-bg-card: rgba(255, 255, 255, 0.82);
+  --color-bg-surface: rgba(255, 255, 255, 0.96);
+  --color-bg-glass: rgba(255, 255, 255, 0.82);
+  --color-bg-input: rgba(248, 251, 255, 0.96);
+
+  /* ===== ألوان النصوص ===== */
+  --color-text: #15263e;
+  --color-text-primary: #15263e;
+  --color-text-secondary: #172c48;
+  --color-text-muted: #7c8a9c;
+  --color-text-light: #8996a6;
+
+  /* ===== ألوان الحدود ===== */
+  --color-border: rgba(35, 66, 105, 0.06);
+  --color-border-strong: rgba(35, 66, 105, 0.12);
+  --color-border-input: rgba(38, 71, 114, 0.09);
+
+  /* ===== ألوان الحالات ===== */
+  --color-success: #25815b;
+  --color-success-rgb: 37, 129, 91;
+  --color-success-bg: rgba(37, 158, 106, 0.1);
+  
+  --color-error: #b34d4d;
+  --color-error-rgb: 179, 77, 77;
+  --color-error-bg: rgba(210, 72, 72, 0.08);
+  
+  --color-warning: #9d7426;
+  --color-warning-rgb: 157, 116, 38;
+  --color-warning-bg: rgba(222, 166, 53, 0.1);
+  
+  --color-info: #4274d9;
+  --color-info-rgb: 66, 116, 217;
+  --color-info-bg: rgba(66, 116, 217, 0.08);
+
+  /* ===== الظلال ===== */
+  --shadow-sm: 0 7px 20px rgba(22, 54, 91, 0.07);
+  --shadow-md: 0 16px 42px rgba(27, 59, 99, 0.08);
+  --shadow-lg: 0 20px 45px rgba(31, 61, 102, 0.11);
+  --shadow-xl: 0 28px 65px rgba(30, 72, 114, 0.1);
+
+  /* ===== الانتقالات ===== */
+  --transition-fast: 0.15s ease;
+  --transition-med: 0.25s ease;
+  --transition-slow: 0.4s ease;
+
+  /* ===== الزوايا ===== */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 28px;
+  --radius-full: 999px;
+
+  /* ===== الخلفية المتدرجة ===== */
+  --bg-gradient: 
+    radial-gradient(circle at top right, rgba(66, 116, 217, 0.13), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(149, 204, 221, 0.18), transparent 32%),
+    var(--color-bg);
+}
+
+/* =====================================================
+   CSS VARIABLES - الوضع الداكن (Dark Mode)
+   ===================================================== */
+
+[data-theme="dark"],
+body.dark {
+  /* ===== الألوان الأساسية ===== */
+  --color-primary: #5a8ad9;
+  --color-primary-dark: #4274d9;
+  --color-primary-light: #7aa3e6;
+  --color-primary-rgb: 90, 138, 217;
+
+  --color-secondary: #6f9ad1;
+  --color-secondary-rgb: 111, 154, 209;
+
+  --color-accent: #5a9bb0;
+  --color-accent-rgb: 90, 155, 176;
+
+  /* ===== ألوان الخلفية ===== */
+  --color-bg: #0b1321;
+  --color-bg-body: #0b1321;
+  --color-bg-card: rgba(18, 30, 49, 0.8);
+  --color-bg-surface: rgba(18, 30, 49, 0.92);
+  --color-bg-glass: rgba(18, 30, 49, 0.8);
+  --color-bg-input: rgba(10, 19, 32, 0.78);
+
+  /* ===== ألوان النصوص ===== */
+  --color-text: #edf3fc;
+  --color-text-primary: #edf3fc;
+  --color-text-secondary: #eef4fc;
+  --color-text-muted: #96a8bb;
+  --color-text-light: #8495a9;
+
+  /* ===== ألوان الحدود ===== */
+  --color-border: rgba(255, 255, 255, 0.06);
+  --color-border-strong: rgba(255, 255, 255, 0.12);
+  --color-border-input: rgba(255, 255, 255, 0.07);
+
+  /* ===== ألوان الحالات ===== */
+  --color-success: #6fcf97;
+  --color-success-rgb: 111, 207, 151;
+  --color-success-bg: rgba(37, 158, 106, 0.15);
+
+  --color-error: #e57373;
+  --color-error-rgb: 229, 115, 115;
+  --color-error-bg: rgba(210, 72, 72, 0.15);
+
+  --color-warning: #d4a02a;
+  --color-warning-rgb: 212, 160, 42;
+  --color-warning-bg: rgba(222, 166, 53, 0.15);
+
+  --color-info: #5a8ad9;
+  --color-info-rgb: 90, 138, 217;
+  --color-info-bg: rgba(66, 116, 217, 0.15);
+
+  /* ===== الظلال ===== */
+  --shadow-sm: 0 7px 20px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 16px 42px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 20px 45px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 28px 65px rgba(0, 0, 0, 0.35);
+
+  /* ===== الخلفية المتدرجة ===== */
+  --bg-gradient: 
+    radial-gradient(circle at top right, rgba(66, 116, 217, 0.14), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(149, 204, 221, 0.08), transparent 32%),
+    var(--color-bg);
+}
+
+/* =====================================================
+   GLASS EFFECT - موحد
+   ===================================================== */
+
+.glass {
+  background: var(--color-bg-glass);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.86);
+}
+
+[data-theme="dark"] .glass-light,
+body.dark .glass-light {
+  background: rgba(18, 30, 49, 0.92);
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+/* =====================================================
+   BUTTONS - موحدة
+   ===================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: #ffffff;
+  box-shadow: 0 8px 19px rgba(var(--color-primary-rgb), 0.17);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 11px 24px rgba(var(--color-primary-rgb), 0.22);
+}
+
+.btn-secondary {
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-bg-surface);
+  color: var(--color-text-secondary);
+}
+
+.btn-success {
+  background: var(--color-success);
+  color: #ffffff;
+}
+
+.btn-danger {
+  border: 1px solid rgba(var(--color-error-rgb), 0.12);
+  background: rgba(var(--color-error-rgb), 0.06);
+  color: var(--color-error);
+}
+
+.btn-danger:hover {
+  background: rgba(var(--color-error-rgb), 0.12);
+}
+
+/* =====================================================
+   THEME TOGGLE - أزرار المظهر
+   ===================================================== */
+
+.theme-toggle,
+[data-theme-toggle] {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-surface);
+  color: var(--color-text-secondary);
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+}
+
+.theme-toggle:hover,
+[data-theme-toggle]:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.theme-toggle:active,
+[data-theme-toggle]:active {
+  transform: scale(0.96);
+}
+
+/* =====================================================
+   BACK BUTTON - أزرار الرجوع
+   ===================================================== */
+
+.back-button,
+[data-back] {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-surface);
+  color: var(--color-text-secondary);
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+}
+
+.back-button:hover,
+[data-back]:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.back-button:active,
+[data-back]:active {
+  transform: scale(0.96);
+}
+
+/* =====================================================
+   BADGES
+   ===================================================== */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: var(--radius-full);
+  font-size: 8px;
+  font-weight: 900;
+  color: #ffffff;
+  background: var(--color-primary);
+}
+
+.badge-success {
+  background: var(--color-success);
+}
+
+.badge-error {
+  background: var(--color-error);
+}
+
+.badge-warning {
+  background: var(--color-warning);
+}
+
+.badge-secondary {
+  background: var(--color-text-muted);
+}
+
+/* =====================================================
+   TRANSITIONS - انتقالات سلسة
+   ===================================================== */
+
+* {
+  transition: 
+    background-color var(--transition-med),
+    border-color var(--transition-med),
+    color var(--transition-med),
+    box-shadow var(--transition-med),
+    opacity var(--transition-med);
+}
+
+/* =====================================================
+   SCROLLBAR - للوضع الداكن
+   ===================================================== */
+
+[data-theme="dark"] ::-webkit-scrollbar,
+body.dark ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background: var(--color-bg);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track,
+body.dark ::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb,
+body.dark ::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: var(--radius-full);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover,
+body.dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* =====================================================
+   SELECTION
+   ===================================================== */
+
+::selection {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+[data-theme="dark"] ::selection,
+body.dark ::selection {
+  background: var(--color-primary-light);
+  color: #0b1321;
+}
+
+/* =====================================================
+   REDUCED MOTION
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

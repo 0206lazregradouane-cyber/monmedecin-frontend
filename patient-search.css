@@ -1,0 +1,907 @@
+/* =====================================================
+   MON MÉDECIN
+   PATIENT SEARCH - WITH BOTTOM NAV
+   ===================================================== */
+
+/* =====================================================
+   PAGE
+   ===================================================== */
+
+.patient-search {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  direction: rtl;
+  background:
+    radial-gradient(circle at top right, rgba(66, 116, 217, 0.13), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(149, 204, 221, 0.18), transparent 32%),
+    #f7f9fc;
+  color: #15263e;
+}
+
+/* =====================================================
+   ORBS
+   ===================================================== */
+
+.patient-search__orb {
+  position: fixed;
+  z-index: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(28px);
+  opacity: 0.5;
+}
+
+.patient-search__orb--blue {
+  width: 240px;
+  height: 240px;
+  top: -95px;
+  right: -90px;
+  background: rgba(66, 116, 217, 0.17);
+}
+
+.patient-search__orb--cyan {
+  width: 210px;
+  height: 210px;
+  bottom: 60px;
+  left: -90px;
+  background: rgba(149, 204, 221, 0.2);
+}
+
+/* =====================================================
+   GLASS
+   ===================================================== */
+
+.patient-search .glass {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.86);
+  box-shadow: 0 16px 42px rgba(27, 59, 99, 0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.patient-search__header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  gap: 12px;
+  min-height: 72px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.82);
+  border-bottom: 1px solid rgba(35, 66, 105, 0.06);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.patient-search__back,
+.patient-search__theme {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #3568ad;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 7px 20px rgba(22, 54, 91, 0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.patient-search__back:hover,
+.patient-search__theme:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(22, 54, 91, 0.11);
+}
+
+.patient-search__back:active,
+.patient-search__theme:active {
+  transform: scale(0.96);
+}
+
+.patient-search__header-copy {
+  min-width: 0;
+}
+
+.patient-search__header-copy strong {
+  display: block;
+  color: #172c48;
+  font-size: 14px;
+  font-weight: 950;
+}
+
+.patient-search__header-copy span {
+  display: block;
+  margin-top: 2px;
+  color: #8996a6;
+  font-size: 10px;
+  font-weight: 750;
+}
+
+/* =====================================================
+   CONTAINER
+   ===================================================== */
+
+.patient-search__container {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 1040px);
+  margin: 0 auto;
+  padding: 20px 14px 115px;
+}
+
+/* =====================================================
+   MAIN SEARCH BAR
+   ===================================================== */
+
+.patient-search-main {
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 12px;
+  padding: 8px 9px;
+  border-radius: 20px;
+}
+
+.patient-search-main__icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(66, 116, 217, 0.08);
+  color: #4274d9;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.patient-search-main input {
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  padding: 0 4px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #19314f;
+  font-family: inherit;
+  font-size: 11px;
+}
+
+.patient-search-main input::placeholder {
+  color: #98a4b3;
+}
+
+.patient-search-main__filter {
+  position: relative;
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid rgba(66, 116, 217, 0.1);
+  border-radius: 12px;
+  background: rgba(66, 116, 217, 0.06);
+  color: #3d6fb9;
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.patient-search-main__filter:hover {
+  transform: translateY(-1px);
+  background: rgba(66, 116, 217, 0.1);
+}
+
+.patient-search-main__filter > span {
+  min-width: 18px;
+  height: 18px;
+  display: inline-grid;
+  place-items: center;
+  margin-right: 4px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: #4274d9;
+  color: #ffffff;
+  font-size: 7px;
+  font-weight: 950;
+}
+
+/* =====================================================
+   FILTERS
+   ===================================================== */
+
+.patient-search-filters {
+  display: none;
+  margin-bottom: 16px;
+  padding: 15px;
+  border-radius: 21px;
+}
+
+.patient-search-filters.is-open {
+  display: block;
+  animation: patientSearchFiltersIn 0.22s ease;
+}
+
+@keyframes patientSearchFiltersIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.patient-search-filters__heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 13px;
+}
+
+.patient-search-filters__heading > div {
+  min-width: 0;
+}
+
+.patient-search-filters__heading span {
+  display: block;
+  color: #8996a6;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.patient-search-filters__heading h2 {
+  margin: 3px 0 0;
+  color: #172c48;
+  font-size: 17px;
+  font-weight: 950;
+}
+
+.patient-search-filters__heading > button {
+  min-height: 34px;
+  padding: 0 11px;
+  border: 1px solid rgba(205, 73, 73, 0.11);
+  border-radius: 11px;
+  background: rgba(205, 73, 73, 0.05);
+  color: #ac4c4c;
+  font-family: inherit;
+  font-size: 8px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+/* =====================================================
+   FILTER GRID
+   ===================================================== */
+
+.patient-search-filters__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.patient-search-field {
+  min-width: 0;
+}
+
+.patient-search-field > span {
+  display: block;
+  margin: 0 2px 6px;
+  color: #6f8197;
+  font-size: 9px;
+  font-weight: 850;
+}
+
+.patient-search-field select {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 10px;
+  border: 1px solid rgba(38, 71, 114, 0.09);
+  border-radius: 13px;
+  outline: 0;
+  background: rgba(248, 251, 255, 0.96);
+  color: #19314f;
+  font-family: inherit;
+  font-size: 10px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.patient-search-field select:focus {
+  background: #ffffff;
+  border-color: rgba(66, 116, 217, 0.35);
+  box-shadow: 0 0 0 4px rgba(66, 116, 217, 0.07);
+}
+
+.patient-search-field select:disabled {
+  opacity: 0.48;
+  cursor: not-allowed;
+}
+
+/* =====================================================
+   RESULTS HEAD
+   ===================================================== */
+
+.patient-search-results__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 18px 0 11px;
+}
+
+.patient-search-results__head span {
+  display: block;
+  color: #8b98a8;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.patient-search-results__head h2 {
+  margin: 2px 0 0;
+  color: #172b47;
+  font-size: 18px;
+  font-weight: 950;
+}
+
+.patient-search-results__head > strong {
+  min-width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  padding: 0 8px;
+  border-radius: 13px;
+  background: rgba(66, 116, 217, 0.09);
+  color: #3c6fb9;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+/* =====================================================
+   RESULTS
+   ===================================================== */
+
+.patient-search-results {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 11px;
+}
+
+/* =====================================================
+   DOCTOR CARD
+   ===================================================== */
+
+.patient-search-doctor {
+  padding: 15px;
+  border-radius: 21px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.patient-search-doctor:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 45px rgba(31, 61, 102, 0.11);
+}
+
+.patient-search-doctor__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.patient-search-doctor__identity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.patient-search-doctor__avatar {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  background: linear-gradient(140deg, rgba(66, 116, 217, 0.15), rgba(149, 204, 221, 0.24));
+  color: #3566aa;
+  font-size: 17px;
+  font-weight: 950;
+}
+
+.patient-search-doctor__identity > div:last-child {
+  min-width: 0;
+}
+
+.patient-search-doctor__identity span {
+  display: block;
+  overflow: hidden;
+  color: #4774ad;
+  font-size: 8px;
+  font-weight: 900;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.patient-search-doctor__identity h3 {
+  margin: 3px 0 0;
+  overflow: hidden;
+  color: #172d49;
+  font-size: 13px;
+  font-weight: 950;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.patient-search-doctor__identity small {
+  display: block;
+  margin-top: 3px;
+  overflow: hidden;
+  color: #8492a3;
+  font-size: 8px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.patient-search-doctor__availability {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0 8px;
+  border-radius: 999px;
+  font-size: 7px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.patient-search-doctor__availability.is-available {
+  background: rgba(37, 158, 106, 0.09);
+  color: #25815b;
+}
+
+.patient-search-doctor__availability.is-unavailable {
+  background: rgba(210, 72, 72, 0.08);
+  color: #b34d4d;
+}
+
+.patient-search-doctor__meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.patient-search-doctor__meta > div {
+  min-width: 0;
+  padding: 9px;
+  border-radius: 13px;
+  background: rgba(247, 250, 254, 0.84);
+}
+
+.patient-search-doctor__meta span {
+  display: block;
+  color: #8996a6;
+  font-size: 7px;
+  font-weight: 800;
+}
+
+.patient-search-doctor__meta strong {
+  display: block;
+  margin-top: 3px;
+  overflow: hidden;
+  color: #19314f;
+  font-size: 10px;
+  font-weight: 950;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.patient-search-doctor__meta small {
+  display: block;
+  margin-top: 2px;
+  color: #8a97a7;
+  font-size: 7px;
+}
+
+.patient-search-doctor__clinic {
+  margin-top: 9px;
+  padding: 10px;
+  border-radius: 13px;
+  background: rgba(66, 116, 217, 0.05);
+}
+
+.patient-search-doctor__clinic span {
+  display: block;
+  color: #7990b0;
+  font-size: 7px;
+  font-weight: 800;
+}
+
+.patient-search-doctor__clinic strong {
+  display: block;
+  margin-top: 3px;
+  color: #355d93;
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.patient-search-doctor__services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.patient-search-doctor__services > span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: rgba(66, 116, 217, 0.06);
+  color: #55759f;
+  font-size: 7px;
+  font-weight: 850;
+}
+
+.patient-search-doctor__open {
+  width: 100%;
+  min-height: 42px;
+  margin-top: 12px;
+  border: 0;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #4274d9, #345fa9);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 950;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(66, 116, 217, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.patient-search-doctor__open:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 11px 25px rgba(66, 116, 217, 0.23);
+}
+
+.patient-search-doctor__open:active {
+  transform: scale(0.985);
+}
+
+/* =====================================================
+   EMPTY
+   ===================================================== */
+
+.patient-search-empty {
+  padding: 31px 18px;
+  border-radius: 22px;
+  text-align: center;
+}
+
+.patient-search-empty > span {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 11px;
+  border-radius: 17px;
+  background: rgba(66, 116, 217, 0.09);
+  color: #4274d9;
+  font-size: 22px;
+}
+
+.patient-search-empty h3 {
+  margin: 0;
+  color: #172c48;
+  font-size: 15px;
+  font-weight: 950;
+}
+
+.patient-search-empty p {
+  max-width: 370px;
+  margin: 6px auto 13px;
+  color: #8492a4;
+  font-size: 9px;
+  line-height: 1.7;
+}
+
+.patient-search-empty button {
+  min-height: 38px;
+  padding: 0 13px;
+  border: 1px solid rgba(66, 116, 217, 0.1);
+  border-radius: 12px;
+  background: rgba(66, 116, 217, 0.07);
+  color: #3d70bc;
+  font-family: inherit;
+  font-size: 8px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+/* =====================================================
+   BOTTOM NAV
+   ===================================================== */
+
+.mobile-bottom-nav {
+  position: fixed;
+  z-index: 70;
+  right: 12px;
+  bottom: 10px;
+  left: 12px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  min-height: 66px;
+  padding: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 21px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 16px 38px rgba(20, 49, 87, 0.14);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.mobile-bottom-nav__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 0;
+  border-radius: 15px;
+  background: transparent;
+  color: #8895a6;
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.mobile-bottom-nav__icon {
+  font-size: 17px;
+  line-height: 1;
+}
+
+.mobile-bottom-nav__item.is-active {
+  background: rgba(66, 116, 217, 0.1);
+  color: #3d70bd;
+}
+
+.mobile-bottom-nav__item:active {
+  transform: scale(0.96);
+}
+
+/* =====================================================
+   HIDE BOTTOM NAV ON DESKTOP
+   ===================================================== */
+
+@media (min-width: 1025px) {
+  .mobile-bottom-nav {
+    display: none !important;
+  }
+  .mobile-app-page.has-bottom-nav {
+    padding-bottom: 0 !important;
+  }
+}
+
+/* =====================================================
+   SHOW BOTTOM NAV ON MOBILE/TABLET
+   ===================================================== */
+
+@media (max-width: 1024px) {
+  .mobile-bottom-nav {
+    display: grid !important;
+  }
+  .mobile-app-page.has-bottom-nav {
+    padding-bottom: 85px !important;
+  }
+}
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 620px) {
+  .patient-search__container {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+  .patient-search__header {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+  .patient-search-filters__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =====================================================
+   SMALL PHONES
+   ===================================================== */
+
+@media (max-width: 420px) {
+  .patient-search-main {
+    grid-template-columns: 36px 1fr auto;
+    gap: 6px;
+  }
+  .patient-search-main__icon {
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+  }
+  .patient-search-main__filter {
+    padding: 0 9px;
+    font-size: 8px;
+  }
+  .patient-search-filters__grid {
+    grid-template-columns: 1fr;
+  }
+  .patient-search-doctor__meta {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* =====================================================
+   VERY SMALL
+   ===================================================== */
+
+@media (max-width: 350px) {
+  .patient-search-main {
+    grid-template-columns: 34px 1fr;
+    align-items: center;
+  }
+  .patient-search-main__filter {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+  .patient-search-doctor__top {
+    flex-direction: column;
+  }
+  .patient-search-doctor__availability {
+    align-self: flex-start;
+  }
+  .patient-search-doctor__meta {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================================
+   DESKTOP / WIDE
+   ===================================================== */
+
+@media (min-width: 760px) {
+  .patient-search__container {
+    padding: 28px 22px 55px;
+  }
+  .patient-search-results {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .patient-search__header {
+    padding-right: max(24px, calc((100vw - 1040px) / 2));
+    padding-left: max(24px, calc((100vw - 1040px) / 2));
+  }
+}
+
+/* =====================================================
+   DARK MODE
+   ===================================================== */
+
+html[data-theme="dark"] .patient-search,
+body.dark .patient-search {
+  background:
+    radial-gradient(circle at top right, rgba(66, 116, 217, 0.14), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(149, 204, 221, 0.08), transparent 32%),
+    #0b1321;
+  color: #edf3fc;
+}
+
+html[data-theme="dark"] .patient-search__header,
+body.dark .patient-search__header {
+  background: rgba(12, 21, 36, 0.86);
+  border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+html[data-theme="dark"] .patient-search .glass,
+body.dark .patient-search .glass {
+  background: rgba(18, 30, 49, 0.8);
+  border-color: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.19);
+}
+
+html[data-theme="dark"] .patient-search__back,
+html[data-theme="dark"] .patient-search__theme,
+body.dark .patient-search__back,
+body.dark .patient-search__theme {
+  background: rgba(22, 36, 57, 0.9);
+  color: #abc5f4;
+  box-shadow: none;
+}
+
+html[data-theme="dark"] .patient-search__header-copy strong,
+html[data-theme="dark"] .patient-search-filters__heading h2,
+html[data-theme="dark"] .patient-search-results__head h2,
+html[data-theme="dark"] .patient-search-doctor__identity h3,
+html[data-theme="dark"] .patient-search-doctor__meta strong,
+html[data-theme="dark"] .patient-search-empty h3,
+body.dark .patient-search__header-copy strong,
+body.dark .patient-search-filters__heading h2,
+body.dark .patient-search-results__head h2,
+body.dark .patient-search-doctor__identity h3,
+body.dark .patient-search-doctor__meta strong,
+body.dark .patient-search-empty h3 {
+  color: #eef4fc;
+}
+
+html[data-theme="dark"] .patient-search-main input,
+body.dark .patient-search-main input {
+  color: #eef4fc;
+}
+
+html[data-theme="dark"] .patient-search-field select,
+body.dark .patient-search-field select {
+  background: rgba(10, 19, 32, 0.78);
+  border-color: rgba(255, 255, 255, 0.07);
+  color: #eef4fc;
+}
+
+html[data-theme="dark"] .patient-search-doctor__meta > div,
+body.dark .patient-search-doctor__meta > div {
+  background: rgba(10, 19, 32, 0.65);
+}
+
+html[data-theme="dark"] .patient-search-doctor__clinic,
+body.dark .patient-search-doctor__clinic {
+  background: rgba(66, 116, 217, 0.08);
+}
+
+html[data-theme="dark"] .mobile-bottom-nav,
+body.dark .mobile-bottom-nav {
+  background: rgba(14, 24, 40, 0.93);
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+/* =====================================================
+   ACCESSIBILITY
+   ===================================================== */
+
+.patient-search button:focus-visible,
+.patient-search input:focus-visible,
+.patient-search select:focus-visible {
+  outline: 3px solid rgba(66, 116, 217, 0.2);
+  outline-offset: 2px;
+}
+
+/* =====================================================
+   REDUCED MOTION
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .patient-search *,
+  .patient-search *::before,
+  .patient-search *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

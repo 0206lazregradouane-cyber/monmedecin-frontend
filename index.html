@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Mon Médecin - منصة حجز المواعيد الطبية</title>
+  <meta name="theme-color" content="#4274d9">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans Arabic', sans-serif; background: #f7f9fc; color: #15263e; min-height: 100vh; }
+    #app { min-height: 100vh; width: 100%; }
+    .app-loading { min-height:100vh; display:grid; place-items:center; }
+    .app-loading .spinner { width:40px; height:40px; border:3px solid rgba(66,116,217,0.12); border-top-color:#4274d9; border-radius:50%; animation:spin 0.7s linear infinite; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    .mobile-bottom-nav { position:fixed; z-index:70; right:12px; bottom:10px; left:12px; display:none; grid-template-columns:repeat(4,1fr); gap:4px; min-height:66px; padding:7px; border-radius:21px; background:rgba(255,255,255,0.92); box-shadow:0 16px 38px rgba(20,49,87,0.14); backdrop-filter:blur(20px); }
+    .mobile-bottom-nav__item { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; border:0; border-radius:15px; background:transparent; color:#8895a6; font-size:9px; font-weight:800; cursor:pointer; }
+    .mobile-bottom-nav__item.is-active { background:rgba(66,116,217,0.1); color:#3d70bd; }
+    .mobile-bottom-nav__icon { font-size:17px; }
+    @media (max-width:1024px) { .mobile-bottom-nav { display:grid !important; } .has-bottom-nav { padding-bottom:85px !important; } }
+    @media (min-width:1025px) { .mobile-bottom-nav { display:none !important; } }
+    html[data-theme="dark"] body { background:#0b1321; color:#edf3fc; }
+  </style>
+
+  <!-- ===== CSS FILES ===== -->
+  <!-- Theme CSS - يجب تحميله أولاً -->
+  <link rel="stylesheet" href="theme.css">
+  
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="app.css">
+  
+  <!-- Public Screens CSS -->
+  <link rel="stylesheet" href="splash.css">
+  <link rel="stylesheet" href="onboarding.css">
+  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="register.css">
+  <link rel="stylesheet" href="forgot-password.css">
+  <link rel="stylesheet" href="reset-password.css">
+  <link rel="stylesheet" href="change-password.css">
+
+  <!-- Patient CSS -->
+  <link rel="stylesheet" href="patient-home.css">
+  <link rel="stylesheet" href="patient-search.css">
+  <link rel="stylesheet" href="doctor-profile.css">
+  <link rel="stylesheet" href="patient-booking.css">
+  <link rel="stylesheet" href="patient-booking-other.css">
+  <link rel="stylesheet" href="patient-booking-confirm.css">
+  <link rel="stylesheet" href="patient-booking-success.css">
+  <link rel="stylesheet" href="patient-appointments.css">
+  <link rel="stylesheet" href="patient-favorites.css">
+  <link rel="stylesheet" href="patient-profile.css">
+  <link rel="stylesheet" href="patient-notifications.css">
+
+  <!-- Doctor CSS -->
+  <link rel="stylesheet" href="doctor-dashboard.css">
+  <link rel="stylesheet" href="doctor-appointments.css">
+  <link rel="stylesheet" href="doctor-schedule.css">
+  <link rel="stylesheet" href="doctor-services.css">
+  <link rel="stylesheet" href="doctor-secretary.css">
+  <link rel="stylesheet" href="doctor-patients.css">
+  <link rel="stylesheet" href="doctor-profile.css">
+  <link rel="stylesheet" href="doctor-account.css">
+  <link rel="stylesheet" href="doctor-professional.css">
+  <link rel="stylesheet" href="doctor-notifications.css">
+  <link rel="stylesheet" href="doctor-queue.css">
+
+  <!-- Secretary CSS -->
+  <link rel="stylesheet" href="secretary-dashboard.css">
+  <link rel="stylesheet" href="secretary-appointments.css">
+  <link rel="stylesheet" href="secretary-patients.css">
+  <link rel="stylesheet" href="secretary-schedule.css">
+  <link rel="stylesheet" href="secretary-profile.css">
+  <link rel="stylesheet" href="secretary-settings.css">
+  <link rel="stylesheet" href="secretary-doctor-profile.css">
+  <link rel="stylesheet" href="secretary-notifications.css">
+  <link rel="stylesheet" href="secretary-queue.css">
+
+  <!-- Admin CSS -->
+  <link rel="stylesheet" href="admin-dashboard.css">
+  <link rel="stylesheet" href="admin-doctors.css">
+  <link rel="stylesheet" href="admin-patients.css">
+  <link rel="stylesheet" href="admin-appointments.css">
+  <link rel="stylesheet" href="admin-settings.css">
+  <link rel="stylesheet" href="admin-users.css">
+  <link rel="stylesheet" href="admin-reports.css">
+  <link rel="stylesheet" href="admin-complaints.css">
+  <link rel="stylesheet" href="admin-notifications.css">
+  <link rel="stylesheet" href="admin-content.css">
+  <link rel="stylesheet" href="admin-specialties.css">
+
+  <!-- ===== JAVASCRIPT FILES ===== -->
+  <!-- Core -->
+  <script src="helpers.js"></script>
+  <script src="constants.js"></script>
+  <script src="validators.js"></script>
+  <script src="algeria-locations.js"></script>
+  <script src="medical-specialties.js"></script>
+  <script src="data-service.js"></script>
+  <script src="auth-service.js"></script>
+  <script src="notification-service.js"></script>
+  <script src="reminder-scheduler.js"></script>
+  <script src="queue-service.js"></script>
+  <script src="notification-bell.js"></script>
+  <script src="app.js"></script>
+
+  <!-- Screens -->
+  <script src="coming-soon.js"></script>
+  <script src="splash.js"></script>
+  <script src="onboarding.js"></script>
+  <script src="login.js"></script>
+  <script src="register.js"></script>
+  <script src="forgot-password.js"></script>
+  <script src="reset-password.js"></script>
+  <script src="change-password.js"></script>
+
+  <!-- Patient -->
+  <script src="patient-home.js"></script>
+  <script src="patient-search.js"></script>
+  <script src="doctor-profile.js"></script>
+  <script src="patient-booking.js"></script>
+  <script src="patient-booking-other.js"></script>
+  <script src="patient-booking-confirm.js"></script>
+  <script src="patient-booking-success.js"></script>
+  <script src="patient-appointments.js"></script>
+  <script src="patient-favorites.js"></script>
+  <script src="patient-profile.js"></script>
+  <script src="patient-notifications.js"></script>
+
+  <!-- Doctor -->
+  <script src="doctor-dashboard.js"></script>
+  <script src="doctor-appointments.js"></script>
+  <script src="doctor-schedule.js"></script>
+  <script src="doctor-services.js"></script>
+  <script src="doctor-secretary.js"></script>
+  <script src="doctor-patients.js"></script>
+  <script src="doctor-profile.js"></script>
+  <script src="doctor-account.js"></script>
+  <script src="doctor-professional.js"></script>
+  <script src="doctor-notifications.js"></script>
+  <script src="doctor-queue.js"></script>
+
+  <!-- Secretary -->
+  <script src="secretary-dashboard.js"></script>
+  <script src="secretary-appointments.js"></script>
+  <script src="secretary-patients.js"></script>
+  <script src="secretary-schedule.js"></script>
+  <script src="secretary-profile.js"></script>
+  <script src="secretary-settings.js"></script>
+  <script src="secretary-doctor-profile.js"></script>
+  <script src="secretary-notifications.js"></script>
+  <script src="secretary-queue.js"></script>
+
+  <!-- Admin -->
+  <script src="admin-dashboard.js"></script>
+  <script src="admin-doctors.js"></script>
+  <script src="admin-patients.js"></script>
+  <script src="admin-appointments.js"></script>
+  <script src="admin-settings.js"></script>
+  <script src="admin-users.js"></script>
+  <script src="admin-reports.js"></script>
+  <script src="admin-complaints.js"></script>
+  <script src="admin-notifications.js"></script>
+  <script src="admin-content.js"></script>
+  <script src="admin-specialties.js"></script>
+
+  <!-- Dev -->
+  <!-- <script src="js/workflow-test.js"></script> -->
+
+</head>
+<body>
+  <div id="app">
+    <div class="app-loading">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:16px;">
+        <div style="width:64px;height:64px;display:grid;place-items:center;border-radius:20px;background:linear-gradient(145deg,#345fa9,#4274d9,#5a8ad9);color:#fff;font-size:32px;font-weight:900;box-shadow:0 20px 50px rgba(66,116,217,0.25);">M</div>
+        <div class="spinner"></div>
+        <p style="color:#7c8a9c;font-size:12px;">جاري تحميل Mon Médecin...</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      function waitForApp() {
+        if (window.App && window.App.boot) {
+          console.log('🏥 Mon Médecin - Booting...');
+          window.App.boot();
+          return;
+        }
+        if (window.App) {
+          window.App.boot();
+          return;
+        }
+        setTimeout(waitForApp, 200);
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', waitForApp);
+      } else {
+        waitForApp();
+      }
+
+      // Error handling
+      window.addEventListener('error', function(e) {
+        console.error('❌ Error:', e.message);
+      });
+    })();
+  </script>
+</body>
+</html>
